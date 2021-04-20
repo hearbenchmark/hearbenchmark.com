@@ -1,2 +1,3 @@
 # neuralaudio.github.io
-Homepage
+
+Static site for [Neural Audio AI](https://neuralaudio.ai)
