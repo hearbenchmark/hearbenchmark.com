@@ -30,7 +30,10 @@ github_username:  jekyll
 
 # Build settings
 #theme: default
-remote_theme: hammie217/latexjekyll
+# Original
+#remote_theme: hammie217/latexjekyll
+# Add favicon and later some style tweaks
+remote_theme: turian/latexjekyll
 plugins:
   - jekyll-feed
 
