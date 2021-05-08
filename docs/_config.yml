@@ -3,7 +3,7 @@ email: deep@neuralaudio.ai
 description: >- # this means to ignore newlines until "baseurl:"
   Neural Audio AI research and NeuroIPS 2021 audio representation
   competition.
-baseurl: "neuralaudio.github.io" # the subpath of your site, e.g. /blog
+baseurl: "/neuralaudio.github.io" # the subpath of your site, e.g. /blog
 url: #"https://neuralaudio.ai" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
