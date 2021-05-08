@@ -6,11 +6,12 @@ layout: page
 title: Neural Audio AI
 date: 2021-05-01
 author: Joseph Turian
-abstract: We believe that machine learning for audio should connect all subcommunities of audio ML researchers (speech,
-music, environmental sounds, etc.). Moreover, we encourage cross-polination of audio ML research with adjacent fields,
-such as vision, deep learning, traditional DSP, NLP, and beyond. We specifically encourage benchmarking on audio ML
-tasks that have high societal impact, in addition to our broader mission of promoting cross-domain evaluation and
-knowledge sharing.
+abstract: >
+  We believe that machine learning for audio should connect all subcommunities of audio ML researchers (speech,
+  music, environmental sounds, etc.). Moreover, we encourage cross-polination of audio ML research with adjacent fields,
+  such as vision, deep learning, traditional DSP, NLP, and beyond. We specifically encourage benchmarking on audio ML
+  tasks that have high societal impact, in addition to our broader mission of promoting cross-domain evaluation and
+  knowledge sharing.
 ---
 
 ## News
