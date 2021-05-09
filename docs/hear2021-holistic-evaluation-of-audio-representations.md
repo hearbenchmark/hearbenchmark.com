@@ -104,6 +104,7 @@ of easy-to-use, freely-available general-purpose audio representation
 models. If you have any questions about the rules, please post on
 the forum or email us privately.
 
+<p></p>
 **Freely-available:**
 * You must release your code as a pip3-installable package under an Apache-2.0  or compatible (BSD, MIT, etc) license.
 * Your model weights must be released under a Creative Commons Attribution 4.0 International License, or compatible license.
@@ -112,6 +113,7 @@ the forum or email us privately.
   * It is documented in your final written submission.
   * Any existing data marked as test may not be used for training.
 
+<p></p>
 **Easy-to-use:**
 * Your code must use PyTorch >= 1.7 or Tensorflow >= 2.0. Notable marks will be given to models that work nearly identically for both libraries.
 * Speed:
@@ -120,6 +122,7 @@ the forum or email us privately.
   * If your model has more than one possible embedding size (see below for more information on embedding sizes), it must still output all embeddings together at the target speed.
 * Your model must be able to work on an 8GB GPU machine.
 
+<p></p>
 **Common format:**
 * Your code must follow a common API, described in the section below.
 * Your model must accept audio time series data of arbitrary length, as both a native tensor (perhaps already on CUDA) in the library of your choice, as well as numpy.ndarrays.
@@ -131,6 +134,7 @@ the forum or email us privately.
 * The choice of analysis window length (receptive field) is at the discretion of the participants.
 * Padding might be necessary, which will also be included in the dev-kit. All frames are expected to be time-centered.
 
+<p></p>
 **Sharing:**
 * You will be provided with a dev-kit with several datasets, multi-modal training, baseline, and evaluation.
 * This dev-kit will include a standardized API, including performing resampling.
