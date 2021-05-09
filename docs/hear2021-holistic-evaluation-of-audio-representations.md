@@ -157,12 +157,14 @@ different receptive field length depending upon the hop-size, that
 is your choice.
 
 The primary functions of the common API are:
+<p></p>
 * input_sample_rate() -> Int:
   * **Returns:** One of the following values: [16000, 22050, 44100, 48000]. To avoid resampling on-the-fly, we will query your model to find out what sample rate audio to provide it.
 * load_model(model_file_path: Str, device: str = “cpu”) -> Any
   * model_file_path: Load model checkpoint from this file path.
   * device: For inference on machines with multiple GPUs, this instructs the participant which device to use. If “cpu”, the CPU should be used. (Multi-GPU support is not required.)
   * **Returns:** Model
+<p></p>
 * get_audio_embedding(audio: tensor, model: Any, hop_size: Int, batch_size: Optional[Int], device: Optional[str], center: Bool =True) -> Tuple[Dict(int, Tensor), List(float)]
   * audio: n_sounds x n_samples of mono audio in the range [-1, 1]. This should be moved to the same device as the model. We are making the simplifying assumption that for every task, all sounds will be padded/trimmed to the same length. This doesn’t preclude people from using the API for corpora of variable-length sounds; merely we don’t implement that as a core feature. It could be a wrapper function added later.
   * model: Loaded model, in PyTorch or Tensorflow 2.x.
@@ -170,6 +172,7 @@ The primary functions of the common API are:
   * batch_size: The participants are responsible for estimating the batch_size that will achieve high-throughput while maintaining appropriate memory constraints. However, batch_size is a useful feature for end-users to be able to toggle.
   * center: If True, the timestamps correspond to the center of each analysis window. Center=True will be used for all evaluation tasks.
   * **Returns:** ({embedding_size: Tensor}, list(frame timestamps)) where embedding_size can be any of [4096, 2048, 512, 128, 20]. Tensor is float32 (or signed int for 20-dim), n_sounds x n_frames x dim
+<p></p>
 * pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
   * emb1: Tensor of shape (n_samples1, n_frames, emb_dimension)
   * emb2: Tensor of shape (n_samples2, n_frames, emb_dimension)
