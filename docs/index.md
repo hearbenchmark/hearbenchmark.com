@@ -4,8 +4,8 @@
 
 layout: page
 title: Neural Audio AI
-date: 2021-05-01
-author: Joseph Turian
+date: 2021-05-09
+#author: Joseph Turian
 abstract: >
   We believe that machine learning for audio should connect all subcommunities of audio ML researchers (speech,
   music, environmental sounds, etc.). Moreover, we encourage cross-polination of audio ML research with adjacent fields,
@@ -16,8 +16,8 @@ abstract: >
 
 ## News
 
-We will be hosting a NeuroIPS 2021 challenge entitled ["HEAR 2021: Holistic Evaluation of Audio
-Representations"](https://neuralaudio.ai/hear2021-holistic-evaluation-of-audio-representations.html).
+We will be hosting a NeurIPS challenge entitled ["HEAR 2021: Holistic Evaluation of Audio
+Representations"](hear2021-holistic-evaluation-of-audio-representations.html).
 
 Please consider subscribing to our low-volume announcement [mailing list](http://eepurl.com/hwrhrz) and following us on
 [twitter](https://twitter.com/neuralaudio). Or simply check this web-page for updates.

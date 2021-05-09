@@ -1,8 +1,10 @@
-- name: Home
-  link: /
+#- name: Home
+#  link: 
 - name: HEAR 2021 
-  link: /hear2021-holistic-evaluation-of-audio-representations
+  link: hear2021-holistic-evaluation-of-audio-representations.html
 - name: Discuss
-  link: "#"
-- name: News
-  link: "#"
+  link: /discuss.neuralaudio.ai/
+- name: Github
+  link: /https://github.com/neuralaudio
+# - name: News
+# link: "#"
