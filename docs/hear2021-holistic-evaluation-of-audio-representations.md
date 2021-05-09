@@ -39,6 +39,7 @@ domains: speech, environmental sound, clinical audio, and music,
 with tasks that involve short and long time spans. Evaluation will
 be on classification, tagging, temporal tagging, and distance tasks.
 
+<p></p>
 ## Announcements
 
 Look forward to the following announcements: starter-kit, sandbox,
@@ -51,6 +52,7 @@ this competition.
 * Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
 * Our [twitter](https://twitter.com/neuralaudio) account.
 
+<p></p>
 ## Timeline
 
 * May 10, 2021 - Competition begins.
@@ -60,6 +62,7 @@ this competition.
 * November 31, 2021 - Deadline for final submission of brief (4 page) paper describing the submission.  Participants are free to additionally include fine-tuning the pretrained weights from their own compute resources.
 * December 13-14, 2021 - Presentation of the challenge results at NeurIPS.
 
+<p></p>
 ## Evaluation
 
 Benchmarks span multiple audio domains:  speech, environmental
@@ -93,6 +96,7 @@ For the following kinds of tasks, we will use embedding distance and no learning
 * Ranking tasks, e.g. rank this sound that was ogg-encoded with quality 1 thru 9.
 * Just-noticeable-difference (JND) tasks.
 
+<p></p>
 ## Rules
 
 A primary goal of this competition is to encourage the development
@@ -135,6 +139,7 @@ the forum or email us privately.
 
 For low-resource participants, *please reach out!* We are seeking GPU sponsors.
 
+<p></p>
 ## Common API
 
 Entries can use whatever receptive field length (window size) they
@@ -170,10 +175,12 @@ The primary functions of the common API are:
     * If you really want to use a divergence and not a distance, and have a
     compelling argument for why, please contact us.
 
+<p></p>
 ## Organizing Team
 
 You can learn more about the committee [here](hear2021-committee-members).
 
+<p></p>
 ## Questions?
 
 We encourage you to post on the
