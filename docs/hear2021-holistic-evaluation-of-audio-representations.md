@@ -178,5 +178,5 @@ You can learn more about the committee [here](hear2021-committee-members).
 
 We encourage you to post on the
 [forum](https://discuss.neuralaudio.ai/c/hear-2021-neurorips-challenge/).
-However, if your question is private, please [email us](mailto:deep
-at neuralaudio.ai) directly.
+However, if your question is private, please [email
+us](mailto:deep-at-neuralaudio.ai) directly.
