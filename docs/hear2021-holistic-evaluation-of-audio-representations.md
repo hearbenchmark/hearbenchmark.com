@@ -40,6 +40,7 @@ domains: speech, environmental sound, clinical audio, and music,
 with tasks that involve short and long time spans. Evaluation will
 be on classification, tagging, temporal tagging, and distance tasks.
 
+<p></p>
 ## Announcements
 
 Look forward to the following announcements: starter-kit, sandbox,
@@ -52,6 +53,7 @@ this competition.
 * Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
 * Our [twitter](https://twitter.com/neuralaudio) account.
 
+<p></p>
 ## Timeline
 
 * May 10, 2021 - Competition begins.
@@ -61,6 +63,7 @@ this competition.
 * November 31, 2021 - Deadline for final submission of brief (4 page) paper describing the submission.  Participants are free to additionally include fine-tuning the pretrained weights from their own compute resources.
 * December 13-14, 2021 - Presentation of the challenge results at NeurIPS.
 
+<p></p>
 ## Evaluation
 
 Benchmarks span multiple audio domains:  speech, environmental
@@ -94,6 +97,7 @@ For the following kinds of tasks, we will use embedding distance and no learning
 * Ranking tasks, e.g. rank this sound that was ogg-encoded with quality 1 thru 9.
 * Just-noticeable-difference (JND) tasks.
 
+<p></p>
 ## Rules
 
 A primary goal of this competition is to encourage the development
@@ -101,6 +105,7 @@ of easy-to-use, freely-available general-purpose audio representation
 models. If you have any questions about the rules, please post on
 the forum or email us privately.
 
+<p></p>
 **Freely-available:**
 * You must release your code as a pip3-installable package under an Apache-2.0  or compatible (BSD, MIT, etc) license.
 * Your model weights must be released under a Creative Commons Attribution 4.0 International License, or compatible license.
@@ -109,6 +114,7 @@ the forum or email us privately.
   * It is documented in your final written submission.
   * Any existing data marked as test may not be used for training.
 
+<p></p>
 **Easy-to-use:**
 * Your code must use PyTorch >= 1.7 or Tensorflow >= 2.0. Notable marks will be given to models that work nearly identically for both libraries.
 * Speed:
@@ -117,6 +123,7 @@ the forum or email us privately.
   * If your model has more than one possible embedding size (see below for more information on embedding sizes), it must still output all embeddings together at the target speed.
 * Your model must be able to work on an 8GB GPU machine.
 
+<p></p>
 **Common format:**
 * Your code must follow a common API, described in the section below.
 * Your model must accept audio time series data of arbitrary length, as both a native tensor (perhaps already on CUDA) in the library of your choice, as well as numpy.ndarrays.
@@ -128,6 +135,7 @@ the forum or email us privately.
 * The choice of analysis window length (receptive field) is at the discretion of the participants.
 * Padding might be necessary, which will also be included in the dev-kit. All frames are expected to be time-centered.
 
+<p></p>
 **Sharing:**
 * You will be provided with a dev-kit with several datasets, multi-modal training, baseline, and evaluation.
 * This dev-kit will include a standardized API, including performing resampling.
@@ -136,6 +144,7 @@ the forum or email us privately.
 
 For low-resource participants, *please reach out!* We are seeking GPU sponsors.
 
+<p></p>
 ## Common API
 
 Entries can use whatever receptive field length (window size) they
@@ -149,6 +158,7 @@ different receptive field length depending upon the hop-size, that
 is your choice.
 
 The primary functions of the common API are:
+
 ```python
 input_sample_rate() -> Int:
 ```
@@ -179,7 +189,7 @@ get_audio_embedding(
 ) -> Tuple[Dict(int, Tensor), List(float)]
 ```
 
-  * `audio`: n_sounds x n_samples of mono audio in the range `[-1, 1]`. This should be
+  * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
     moved to the same device as the model. We are making the simplifying assumption
     that for every task, all sounds will be padded/trimmed to the same length.
     This doesn’t preclude people from using the API for corpora of variable-length
@@ -190,29 +200,28 @@ get_audio_embedding(
   * `batch_size`: The participants are responsible for estimating the `batch_size` that
     will achieve high-throughput while maintaining appropriate memory constraints.
     However, `batch_size` is a useful feature for end-users to be able to toggle.
-  * `center`: If True, the timestamps correspond to the center of each analysis window.
+  * `center`: If `True`, the timestamps correspond to the center of each analysis window.
     `center=True` will be used for all evaluation tasks.
   * **Returns:** `({embedding_size: Tensor}, list(frame timestamps))` where
     `embedding_size` can be any of `[4096, 2048, 512, 128, 20]`. `Tensor` is `float32`
-    (or signed int for 20-dim), n_sounds x n_frames x dim
+    (or signed `int` for 20-dim), `n_sounds x n_frames x dim`
 
 <hr />
 
 ```python
 pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
 ```
-  * `emb1`: `Tensor` of shape (n_samples1, n_frames, emb_dimension)
-  * `emb2`: `Tensor` of shape (n_samples2, n_frames, emb_dimension)
-  * **Returns:** Pairwise distance tensor (n_samples1, n_samples2)
-    * If this method is not defined, we will use unnormalized l1.
-    But you are welcome to override this method if you wish.
-    * If you really want to use a divergence and not a distance, and have a
-    compelling argument for why, please contact us.
+  * `emb1`: `Tensor` of shape `(n_samples1, n_frames, emb_dimension)`
+  * `emb2`: `Tensor` of shape `(n_samples2, n_frames, emb_dimension)`
 
+<hr />
+
+<p></p>
 ## Organizing Team
 
 You can learn more about the committee [here](hear2021-committee-members).
 
+<p></p>
 ## Questions?
 
 We encourage you to post on the
