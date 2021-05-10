@@ -230,4 +230,4 @@ degree in computer science from Princeton University adviced by
 Adam Finkelstein and M.S in music technology in Carnegie Mellon
 University. Between 2015 and 2017, he interned at Adobe for three
 times and presented his primary research project–VoCo–at Adobe
-MAX Sneaks (link to video) in 2016.
+MAX Sneaks in 2016.
