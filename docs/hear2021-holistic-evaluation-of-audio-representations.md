@@ -85,7 +85,7 @@ or using distances over the representation space.
 
 For the following, we will take the participant embeddings, and
 learn a simple model over their output with no-finetuning. A handful
-of benchmarks will have little fine-tuning data, to understand how
+of benchmarks will have little training data, to understand how
 well models generalize to resource-poor tasks.
 * Classification/multi-classification of the entire sound.
 * Tagging (multilabel sound event classification) of the entire sound.
