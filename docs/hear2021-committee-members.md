@@ -190,7 +190,7 @@ and open source software & data.
 
 **Philippe Esling** is an associate professor and researcher in
 machine learning and artificial intelligence applied to music at
-IRCAM, where I am head of the ACIDS research group. He teaches
+IRCAM, where he is head of the ACIDS research group. He teaches
 computer science and mathematics at Sorbonne Université (Formerly
 UPMC - Paris 6) and machine learning in the ATIAM Masters. He also
 participates in ecological monitoring and metagenetics research
