@@ -1,4 +1,4 @@
-HEAR 2021 ---
+---
 layout: page
 title: HEAR 2021 NeurIPS Challenge
 subtitle: Holistic Evaluation of Audio Representations
