@@ -159,6 +159,7 @@ is your choice.
 
 The primary functions of the common API are:
 
+<hr />
 ```python
 input_sample_rate() -> Int:
 ```
@@ -213,7 +214,11 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
 ```
   * `emb1`: `Tensor` of shape `(n_samples1, n_frames, emb_dimension)`
   * `emb2`: `Tensor` of shape `(n_samples2, n_frames, emb_dimension)`
-
+  * **Returns:** Pairwise distance tensor `(n_samples1, n_samples2)`
+    * If this method is not defined, we will use unnormalized l1.
+    But you are welcome to override this method if you wish.
+    * If you really want to use a divergence and not a distance, and have a
+    compelling argument for why, please contact us.
 <hr />
 
 <p></p>
