@@ -93,7 +93,7 @@ well models generalize to resource-poor tasks.
   * We will assume a fixed hop-size, for simplicity, and evaluate
   on a frame-based level. We will not apply any seq2seq model.
 
-For the following kinds of tasks, we will use embedding distance and no learning:
+For the following kinds of tasks, we will use only embedding distance (no learning):
 * Ranking tasks, e.g. rank this sound that was ogg-encoded with quality 1 thru 9.
 * Just-noticeable-difference (JND) tasks.
 
