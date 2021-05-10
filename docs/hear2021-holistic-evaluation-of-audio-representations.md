@@ -13,7 +13,7 @@ abstract: >
   come/don't come from the same source and are/aren't identical).
   Can any one learned representation do the same?
   <br><br>
-  The aim of this competition is to develop a general-purpose audio
+  The aim of this challenge is to develop a general-purpose audio
   representation that provides a strong basis for learning in a
   wide variety of tasks and scenarios. HEAR 2021 challenges participants
   with the following questions: Is it possible to develop a single
@@ -49,7 +49,7 @@ leaderboard, etc. We will be making announcements in several places:
 2021](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/)
 category in the Neural Audio AI [forum](https://discuss.neuralaudio.ai/).
 The forum also provides a place to discuss audio ML research beyond
-this competition.
+this challenge.
 * Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
 * Our [twitter](https://twitter.com/neuralaudio) account.
 
@@ -100,7 +100,7 @@ For the following kinds of tasks, we will use only embedding distance (no learni
 <p></p>
 ## Rules
 
-A primary goal of this competition is to encourage the development
+A primary goal of this challenge is to encourage the development
 of easy-to-use, freely-available general-purpose audio representation
 models. If you have any questions about the rules, please post on
 the
@@ -120,7 +120,7 @@ the
 **Easy-to-use:**
 * Your code must use PyTorch >= 1.7 or Tensorflow >= 2.0. Notable marks will be given to models that work nearly identically for both libraries.
 * Speed:
-  * There will be two competition tracks: 10x and 100x realtime.
+  * There will be two challenge tracks: 10x and 100x realtime.
   * Your model must be fast enough to be able to process audio, which has already been loaded onto the GPU, at least 10x or 100x faster than realtime on a V100 GPU.
   * If your model has more than one possible embedding size (see below for more information on embedding sizes), it must still output all embeddings together at the target speed.
 * Your model must be able to work on an 8GB GPU machine.
