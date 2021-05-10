@@ -46,9 +46,9 @@ be on classification, tagging, temporal tagging, and distance tasks.
 Look forward to the following announcements: starter-kit, sandbox,
 leaderboard, etc. We will be making announcements in several places:
 * Our [HEAR
-2021](https://discuss.neuralaudio.ai/c/hear-2021-neurorips-challenge/) in
-the Neural Audio AI [forum](https://discuss.neuralaudio.ai/). The
-forum also provides a place to discuss audio ML research beyond
+2021](https://discuss.neuralaudio.ai/c/hear-2021-neurorips-challenge/)
+category in the Neural Audio AI [forum](https://discuss.neuralaudio.ai/).
+The forum also provides a place to discuss audio ML research beyond
 this competition.
 * Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
 * Our [twitter](https://twitter.com/neuralaudio) account.
