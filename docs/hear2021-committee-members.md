@@ -1,6 +1,7 @@
 ---
 layout: page
-title: HEAR 2021<br>Committee Members
+title: HEAR 2021
+subtitle: Committee Members
 #date: 2021-05-09
 ---
 
