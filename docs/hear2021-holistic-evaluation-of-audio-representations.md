@@ -1,4 +1,4 @@
----
+HEAR 2021 ---
 layout: page
 title: HEAR 2021 NeurIPS Challenge
 subtitle: Holistic Evaluation of Audio Representations
@@ -15,7 +15,7 @@ abstract: >
   <br><br>
   The aim of this competition is to develop a general-purpose audio
   representation that provides a strong basis for learning in a
-  wide variety of tasks and scenarios. We challenge participants
+  wide variety of tasks and scenarios. HEAR 2021 challenges participants
   with the following questions: Is it possible to develop a single
   representation that models all psychoacoustic phenomena? What
   approach best generalizes to a wide range of downstream audio
@@ -23,7 +23,7 @@ abstract: >
   researchers to formulate and solve novel and societally-valuable
   problems in simple, repeatable ways?
   <br><br>
-  We will evaluate audio representations using a benchmark suite
+  HEAR 2021 will evaluate audio representations using a benchmark suite
   across a variety of domains, including speech, environmental
   sound, medical audio, and music. In the spirit of shared exchange,
   all participants must submit an audio embedding model following
