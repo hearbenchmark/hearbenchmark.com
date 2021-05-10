@@ -116,7 +116,7 @@ systems. To this end, he recently co-founded Cygni Labs.
 **Yonatan Bisk**  is an Assistant Professor at CMU's Language
 Technologies Institute. His research focuses include multi-modal
 learning, and connecting language to perception and control. He has
-co-organized well attended workshops at 2*NeurIPS, 2*NAACL, ECCV,
+co-organized well attended workshops at 2xNeurIPS, 2xNAACL, ECCV,
 and ACL.
 
 ## Associate Committee
