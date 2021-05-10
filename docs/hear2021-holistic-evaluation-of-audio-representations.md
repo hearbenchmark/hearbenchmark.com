@@ -103,7 +103,9 @@ For the following kinds of tasks, we will use only embedding distance (no learni
 A primary goal of this competition is to encourage the development
 of easy-to-use, freely-available general-purpose audio representation
 models. If you have any questions about the rules, please post on
-the forum or email us privately.
+the
+[forum](https://discuss.neuralaudio.ai/c/hear-2021-neurorips-challenge/) or
+[email us](mailto:deep-at-neuralaudio.ai) privately.
 
 <p></p>
 **Freely-available:**
