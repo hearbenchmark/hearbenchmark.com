@@ -60,7 +60,7 @@ this challenge.
 * October 15, 2021 - Deadline for final submissions of models.
 * October 16, 2021 - Secret evaluation datasets and code are released.
 * November 15, 2021 - Announce results.
-* November 31, 2021 - Deadline for final submission of brief (4 page) paper describing the submission.  Participants are free to additionally include fine-tuning the pretrained weights from their own compute resources.
+* November 30, 2021 - Deadline for final submission of brief (4 page) paper describing the submission.  Participants are free to additionally include fine-tuning the pretrained weights from their own compute resources.
 * December 13-14, 2021 - Presentation of the challenge results at NeurIPS.
 
 <p></p>
