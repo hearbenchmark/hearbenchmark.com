@@ -185,11 +185,10 @@ load_model(model_file_path: Str, device: str=“cpu”) -> Any
 get_audio_embedding(
     audio: Tensor,
     model: Any,
-    hop_size: Int,
-    batch_size: Optional[Int],
-    device: Optional[str],
-    center: Bool=True
-) -> Tuple[Dict(int, Tensor), List(float)]
+    hop_size: int,
+    batch_size: Optional[int]=None,
+    center: bool=True
+) -> Tuple[Dict[int, Tensor], Tensor]
 ```
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
@@ -198,16 +197,21 @@ get_audio_embedding(
     This doesn’t preclude people from using the API for corpora of variable-length
     sounds; merely we don’t implement that as a core feature. It could be a wrapper
     function added later.
-  * `model`: Loaded model, in PyTorch or Tensorflow 2.x.
+  * `model`: Loaded model, in PyTorch or Tensorflow 2.x. This
+     should be moved to the device the audio tensor is on.
   * `hop_size`: Number of audio samples between adjacent frames
   * `batch_size`: The participants are responsible for estimating the `batch_size` that
     will achieve high-throughput while maintaining appropriate memory constraints.
     However, `batch_size` is a useful feature for end-users to be able to toggle.
   * `center`: If `True`, the timestamps correspond to the center of each analysis window.
     `center=True` will be used for all evaluation tasks.
-  * **Returns:** `({embedding_size: Tensor}, list(frame timestamps))` where
-    `embedding_size` can be any of `[4096, 2048, 512, 128, 20]`. `Tensor` is `float32`
-    (or signed `int` for 20-dim), `n_sounds x n_frames x dim`
+  * **Returns:**
+    * embeddings: `{embedding_size: Tensor}`. A dictionary of embeddings keyed on the
+    `embedding_size`, where `embedding_size` can be any of `[4096, 2048, 512, 128, 20]`. 
+     `Tensor` is `float32` (or signed `int8` for 20-dim), with shape
+     (`n_sounds, n_frames, embedding_size)`.
+     * timestamps: `Tensor`. Timestamps in seconds corresponding to each embedding
+     in the output.
 
 <hr />
 
@@ -217,10 +221,14 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
   * `emb1`: `Tensor` of shape `(n_samples1, n_frames, emb_dimension)`
   * `emb2`: `Tensor` of shape `(n_samples2, n_frames, emb_dimension)`
   * **Returns:** Pairwise distance tensor `(n_samples1, n_samples2)`
-    * If this method is not defined, we will use unnormalized l1.
-    But you are welcome to override this method if you wish.
+  * *Note*:
+    * This method is optional. If this method is not defined, we will use unnormalized
+    l1. But you are welcome to override this implement it if you would like to define a
+    different distance metric for your embeddings.
     * If you really want to use a divergence and not a distance, and have a
     compelling argument for why, please contact us.
+    * You can assume that all input embeddings will have been converted to floats
+    already.
 <hr />
 
 <p></p>
