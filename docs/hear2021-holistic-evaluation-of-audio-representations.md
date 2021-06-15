@@ -120,31 +120,39 @@ the
 **Easy-to-use:**
 * Your code must use PyTorch >= 1.7 or Tensorflow >= 2.0. Notable marks will be given to models that work nearly identically for both libraries.
 * Speed:
-  * There will be two challenge tracks: 10x and 100x realtime.
-  * Your model must be fast enough to be able to process audio, which has already been loaded onto the GPU, at least 10x or 100x faster than realtime on a V100 GPU.
-  * If your model has more than one possible embedding size (see below for more information on embedding sizes), it must still output all embeddings together at the target speed.
+  * Your model must be fast enough to be able to process audio, which has already been loaded onto the GPU, and return at least X embeddings per second.
+  * Your model must be able to run at this speed using the following hardware architecture: X
+    * This is *not* the architecture that we will be running evaluations on.
 * Your model must be able to work on an 8GB GPU machine.
 
 <p></p>
 **Common format:**
 * Your code must follow a common API, described in the section below.
-* Your model must accept audio time series data of arbitrary length, as both a native tensor (perhaps already on CUDA) in the library of your choice, as well as numpy.ndarrays.
+* Your model must accept audio time series data of arbitrary length, as both a native tensor (perhaps already on CUDA) in the library of your choice, as well as *numpy.ndarrays*.
 * Your model must work with audio at a specific sample rate. You may select from one of the four following sample rates: [16000Hz, 22050Hz, 44100Hz, 48000Hz]. Your model must expose which sample rate it expects as input. We will resample audio to that sample rate prior to input to your model. (We will use ffmpeg---robust, cross platform, good format support, etc.---as the main command line tool for resampling, but with high quality [resampling from sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
-* Your model is expected to process audio frame-by-frame and produce an embedding / embeddings for each frame. Different hop-sizes must be supported, to enable evaluation on short time scale and long time scale tasks.
-* Your model must output at least one, but preferably all of the following embedding sizes: [4096, 2048, 512, 128, 20] for each frame. Each embedding is expected to be a float32 tensor for all embedding sizes except 20, which must be a signed int tensor. Submission results will be presented separately for each embedding size.
-  * The development of strong yet compact audio representations could democratize access to hard-to-obtain large scale audio corpora. Also, high-quality low-bitrate audio embeddings enable faster research iteration, with the expectation that they can later be fine-tuned on larger embeddings that have greater capacity.
-* A separate evaluation will be performed for different sized representations.
+* Your model is expected to process audio and produce a specific number of embeddings per second corresponding to a frame rate argument. Your model must also return
+    timestamps in seconds that correspond to each embedding returned. For example, if we specified a frame rate of 4Hz we would expect you model to return
+    four embeddings per second corresponding to the timestamps: 0.0s, 0.25s, 0.5s, ..., etc.
+* There will be two competition tracks based on embedding dimensionality:
+    * The main track will be for embeddings that have 6144 or less dimensions (this is based on the largest embedding size available in [openl3](https://openl3.readthedocs.io/en/latest/)).
+    * A compact audio representation track will be held for embeddings that have 64 of less dimensions.
+    * The development of strong yet compact audio representations could democratize access to hard-to-obtain large scale audio corpora. Also, high-quality low-bitrate audio embeddings enable faster research iteration, with the expectation that they can later be fine-tuned on larger embeddings that have greater capacity.
+    * Each team may submit one model for each track.
 * The choice of analysis window length (receptive field) is at the discretion of the participants.
-* Padding might be necessary, which will also be included in the dev-kit. All frames are expected to be time-centered.
 
 <p></p>
 **Sharing:**
-* You will be provided with a dev-kit with several datasets, multi-modal training, baseline, and evaluation.
+* You will be provided with a dev-kit with several datasets, multi-modal training,
+    baseline, and evaluation.
 * This dev-kit will include a standardized API, including performing resampling.
-* You are encouraged to submit new evaluation tasks to the dev kit github, particularly those that are of high-societal impact.
-* Participants that submit new evaluation tasks to the dev-kit during the development period, to aid other teams, will be highlighted in the summary paper.
+* You are encouraged to submit new evaluation tasks to the dev kit github, particularly
+    those that are of high-societal impact.
+* Participants that submit new evaluation tasks to the dev-kit during the development
+    period, to aid other teams, will be highlighted in the summary paper.
 
-For low-resource participants, *please reach out!* We are seeking GPU sponsors.
+For low-resource participants, *please reach out!* We are pleased to announce that
+Google is sponsoring HEAR 2021 and that we are accepting applications for
+Google Cloud Platform credit awards for low-resource teams.
 
 <p></p>
 ## Common API
@@ -156,28 +164,28 @@ will provide code for this in the upcoming starter-kit.
 Some tasks by definition need very different input lengths (e.g.
 some bioacoustics tasks are on the order of milliseconds whereas
 SED is typically on the order of seconds). If you want to use a
-different receptive field length depending upon the hop-size, that
+different receptive field length depending upon the frame-rate, that
 is your choice.
 
 The primary functions of the common API are:
 
 <hr />
 ```python
-input_sample_rate() -> Int:
-```
-  * **Returns:** One of the following values: `[16000, 22050, 44100, 48000]`. To avoid
-    resampling on-the-fly, we will query your model to find out what sample rate audio
-    to provide it.
-
-<hr />
-```python
-load_model(model_file_path: Str, device: str=“cpu”) -> Any
+load_model(model_file_path: Str, device: str=“cpu”) -> Tuple[Model, Dict[str, Any]]
 ```
   * `model_file_path`: Load model checkpoint from this file path.
   * `device`: For inference on machines with multiple GPUs, this instructs the
     participant which device to use. If `“cpu”`, the CPU should be used
     (Multi-GPU support is not required).
-  * **Returns:** `Model`
+  * **Returns:**
+    * `Model` - TensorFlow or PyTorch Model object already loaded on the correct device
+    * `Dict` - A dictionary of metadata specific to your model. This *must* include
+        the following entries:
+        * `sample_rate` the sampling rate that your model accepts
+            audio at. One of `[16000, 22050, 44100, 48000]`.
+        * `embedding_size` the dimensionality of the embeddings that are
+            produced by your model. Must be `<= 6144` for the main competition track or
+            `<= 64` for the compact audio representation track.
 
 <hr />
 
@@ -185,10 +193,9 @@ load_model(model_file_path: Str, device: str=“cpu”) -> Any
 get_audio_embedding(
     audio: Tensor,
     model: Any,
-    hop_size: int,
+    frame_rate: float,
     batch_size: Optional[int]=None,
-    center: bool=True
-) -> Tuple[Dict[int, Tensor], Tensor]
+) -> Tuple[Tensor, Tensor]
 ```
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
@@ -204,14 +211,10 @@ get_audio_embedding(
     will achieve high-throughput while maintaining appropriate memory constraints.
     However, `batch_size` is a useful feature for end-users to be able to toggle.
   * `center`: If `True`, the timestamps correspond to the center of each analysis window.
-    `center=True` will be used for all evaluation tasks.
   * **Returns:**
-    * embeddings: `{embedding_size: Tensor}`. A dictionary of embeddings keyed on the
-    `embedding_size`, where `embedding_size` can be any of `[4096, 2048, 512, 128, 20]`. 
-     `Tensor` is `float32` (or signed `int8` for 20-dim), with shape
-     (`n_sounds, n_frames, embedding_size)`.
-     * timestamps: `Tensor`. Timestamps in seconds corresponding to each embedding
-     in the output.
+    * embedding: A `float32` `Tensor` with shape (`n_sounds, n_frames, embedding_size)`.
+    * timestamps: `Tensor`. Timestamps in seconds corresponding to each embedding
+        in the output.
 
 <hr />
 
