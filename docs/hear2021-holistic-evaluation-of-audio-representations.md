@@ -3,7 +3,7 @@ layout: page
 title: HEAR 2021 NeurIPS Challenge
 subtitle: Holistic Evaluation of Audio Representations
 author: Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller and Christian James Steinmetz and Colin Malloy and George Tzanetakis and Gissel Velarde and Kirk McNally and Max Henry and Nicolas Pinto and Yonatan Bisk and Gyanendra Das and Humair Raj Khan and Camille Noufi and Dorien Herremans and Jesse Engel and Justin Salamon and Philippe Esling and Pranay Manocha and Shinji Watanabe and Zeyu Jin
-date: 2021-05-09
+date: 2021-06-15
 abstract: >
   Humans can infer a wide range of properties from a perceived
   sound, such as information about the source (e.g. what generated
@@ -52,6 +52,12 @@ The forum also provides a place to discuss audio ML research beyond
 this challenge.
 * Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
 * Our [twitter](https://twitter.com/neuralaudio) account.
+
+<p></p>
+## Competition Updates
+<b>June 15, 2021</b>
+
+
 
 <p></p>
 ## Timeline
@@ -130,13 +136,22 @@ the
 * Your code must follow a common API, described in the section below.
 * Your model must accept audio time series data of arbitrary length, as both a native tensor (perhaps already on CUDA) in the library of your choice, as well as *numpy.ndarrays*.
 * Your model must work with audio at a specific sample rate. You may select from one of the four following sample rates: [16000Hz, 22050Hz, 44100Hz, 48000Hz]. Your model must expose which sample rate it expects as input. We will resample audio to that sample rate prior to input to your model. (We will use ffmpeg---robust, cross platform, good format support, etc.---as the main command line tool for resampling, but with high quality [resampling from sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
-* Your model is expected to process audio and produce a specific number of embeddings per second corresponding to a frame rate argument. Your model must also return
-    timestamps in seconds that correspond to each embedding returned. For example, if we specified a frame rate of 4Hz we would expect you model to return
-    four embeddings per second corresponding to the timestamps: 0.0s, 0.25s, 0.5s, ..., etc.
-* There will be two competition tracks based on embedding dimensionality:
-    * The main track will be for embeddings that have 6144 or less dimensions (this is based on the largest embedding size available in [openl3](https://openl3.readthedocs.io/en/latest/)).
-    * A compact audio representation track will be held for embeddings that have 64 of less dimensions.
-    * The development of strong yet compact audio representations could democratize access to hard-to-obtain large scale audio corpora. Also, high-quality low-bitrate audio embeddings enable faster research iteration, with the expectation that they can later be fine-tuned on larger embeddings that have greater capacity.
+* Your model is expected to process audio and produce a specific number of embeddings
+    per second corresponding to a frame rate argument. Your model must also return
+    timestamps in seconds that correspond to each embedding returned. For example, if
+    a frame rate of 4Hz was specified, your model would be expected to return four
+    embeddings per second corresponding to the timestamps: 0.0s, 0.25s, 0.5s, ..., etc.
+* There will be two competition tracks based on embedding size:
+    * The main track will be for models that have an embedding size of 6144 or less.
+        This is  based on the largest embedding size available in
+        [openl3](https://openl3.readthedocs.io/en/latest/).
+    * A second track will run for compact audio representations with
+        an embedding size of 64 or less.
+    * The development of strong yet compact audio representations could democratize
+        access to hard-to-obtain large scale audio corpora. Also, high-quality
+        low-bitrate audio embeddings enable faster research iteration, with the
+        expectation that they can later be fine-tuned on larger embeddings that
+        have greater capacity.
     * Each team may submit one model for each track.
 * The choice of analysis window length (receptive field) is at the discretion of the participants.
 
