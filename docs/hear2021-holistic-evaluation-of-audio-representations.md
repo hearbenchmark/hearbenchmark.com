@@ -55,9 +55,9 @@ this challenge.
 
 <p></p>
 ## Competition Updates
-<b>June 15, 2021</b>
-
-
+<b>June 15, 2021</b> - An amendment to competition rules and API was made. Please see
+the [changelog](https://github.com/neuralaudio/neuralaudio.github.io/issues/8) for these
+updates, which are reflected in this documentation.
 
 <p></p>
 ## Timeline
