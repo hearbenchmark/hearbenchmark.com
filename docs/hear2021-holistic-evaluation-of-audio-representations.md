@@ -186,6 +186,7 @@ load_model(model_file_path: Str, device: str=“cpu”) -> Tuple[Model, Dict[str
         * `embedding_size` the dimensionality of the embeddings that are
             produced by your model. Must be `<= 6144` for the main competition track or
             `<= 64` for the compact audio representation track.
+        * `version` a string indicating the version of your model that has been loaded.
 
 <hr />
 
@@ -206,11 +207,13 @@ get_audio_embedding(
     function added later.
   * `model`: Loaded model, in PyTorch or Tensorflow 2.x. This
      should be moved to the device the audio tensor is on.
-  * `hop_size`: Number of audio samples between adjacent frames
+  * `frame_rate`: Number of embeddings that the model should return per second.
+    Embeddings and the corresponding timestamps should start at 0s and increment by
+    1/frame_rate seconds. For example, if the audio is 1.1s and the frame_rate is 4.0,
+    then we should return embeddings centered at 0.0s, 0.25s, 0.5s, 0.75s and 1.0s.
   * `batch_size`: The participants are responsible for estimating the `batch_size` that
     will achieve high-throughput while maintaining appropriate memory constraints.
     However, `batch_size` is a useful feature for end-users to be able to toggle.
-  * `center`: If `True`, the timestamps correspond to the center of each analysis window.
   * **Returns:**
     * embedding: A `float32` `Tensor` with shape (`n_sounds, n_frames, embedding_size)`.
     * timestamps: `Tensor`. Timestamps in seconds corresponding to each embedding
@@ -233,6 +236,12 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
     * You can assume that all input embeddings will have been converted to floats
     already.
 <hr />
+
+<p></p>
+## Sponsors
+
+We are proud to announce that HEAR 2021 is sponsored by Google and that all competition
+evaluations will be performed on Google Cloud Platform.
 
 <p></p>
 ## Organizing Team
