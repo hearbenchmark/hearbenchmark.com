@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% include head.html %}
+</head>
+
+<body style="padding: {{site.data.sizes.body-padding}};">
+	{% include header.html %}
+
+	<main>
+		{{ content | replace: '&#8617;', '&#8617;&#xfe0e;' }}
+	</main>
+
+</body>
+
+</html>
