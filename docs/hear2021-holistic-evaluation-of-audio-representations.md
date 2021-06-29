@@ -84,6 +84,7 @@ this challenge.
 
 <p></p>
 ## Competition Updates
+
 <b>June 15, 2021</b> - An amendment to competition rules and API was made. Please see
 the [changelog](https://github.com/neuralaudio/neuralaudio.github.io/issues/8) for these
 updates, which are reflected in this documentation.
@@ -99,28 +100,22 @@ endeavoured to find evaluation tasks that particularly benefit
 humanity, such as low-resource speech, environmental safety, clinical
 speech, and ethnomusicology.
 
-Evaluation will be on classification, tagging, and distance tasks.
-Because some tasks involve frame-by-frame comparisons, we will
-specify a hop-size for each evaluation task—though the size of the
-analysis window is a design choice left to the participants. The
-hop size can range from milliseconds to seconds depending upon the
-task.
+Evaluation will be on classification, tagging, and distance tasks. Tasks will either
+be evaluated on a frame-by-frame basis (i.e., sound event detection, music
+transcription) or on the entire audio clip (i.e., classification,
+tagging, ranking).
 
 Embeddings will be evaluated either as the input to a shallow model,
 or using distances over the representation space.
 
 For the following, we will take the participant embeddings, and
-learn a simple model over their output with no-finetuning. A handful
-of benchmarks will have little training data, to understand how
-well models generalize to resource-poor tasks.
+learn a simple model over their output with no-finetuning:
 * Classification/multi-classification of the entire sound.
-* Tagging (multilabel sound event classification) of the entire sound.
-* Temporal multilabel (e.g. transcription and sound event detection):
-  * We will assume a fixed hop-size, for simplicity, and evaluate
-  on a frame-based level. We will not apply any seq2seq model.
+* Tagging (multilabel classification) of the entire sound.
+* Temporal classification / tagging (e.g. transcription and sound event detection).
 
 For the following kinds of tasks, we will use only embedding distance (no learning):
-* Ranking tasks, e.g. rank this sound that was ogg-encoded with quality 1 thru 9.
+* Ranking tasks.
 * Just-noticeable-difference (JND) tasks.
 
 <p></p>
@@ -140,6 +135,12 @@ error rate and onset F-measure, as per the original DCASE evaluation.
 **NSYNTH Pitch Detection** – Multiclass categorization of a single note into one of 88
 pitch classes, and 12 chromas. Evaluated using pitch accuracy and chroma accuracy,
 as per CREPE.
+
+<p></p>
+### Secret Tasks
+Part of our interest in developing a generic embedding is their use on tasks where
+few data are available. As such, secret tasks will have a special emphasis on
+low-resource and/or underrepresented domains.
 
 <p></p>
 ## Rules
