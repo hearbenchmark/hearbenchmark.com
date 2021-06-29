@@ -166,45 +166,43 @@ the
 
 <p></p>
 **Freely-available:**
-* You must release your code as a pip3-installable package under an Apache-2.0  or compatible (BSD, MIT, etc) license.
-* Your model weights must be released under a Creative Commons Attribution 4.0 International License, or compatible license.
-  * Motivation: Non-commercial and non-derivative restrictions disproportionately hurt low-resource entities building audio applications for the common good. Larger companies are relatively unaffected by these restrictions, given their enormous internal resources.
-* You are welcome to use whatever training data like, provided you adhere to all other competition rules, and:
+* You must release your code as a pip3-installable package under an Apache-2.0  or
+    compatible (BSD, MIT, etc) license.
+* Your model weights must be released under a Creative Commons Attribution 4.0
+    International License, or compatible license.
+  * Motivation: Non-commercial and non-derivative restrictions disproportionately hurt
+    low-resource entities building audio applications for the common good. Larger
+    companies are relatively unaffected by these restrictions, given their enormous
+    internal resources.
+* You are welcome to use whatever training data like, provided you adhere to all other
+    competition rules, and:
   * It is documented in your final written submission.
   * Any existing data marked as test may not be used for training.
 
 <p></p>
 **Easy-to-use:**
-* Your code must use PyTorch >= 1.7 or Tensorflow >= 2.0. Notable marks will be given to models that work nearly identically for both libraries.
-* Speed:
-  * Your model must be fast enough to be able to process audio, which has already been loaded onto the GPU, and return at least X embeddings per second.
-  * Your model must be able to run at this speed using the following hardware architecture: X
-    * This is *not* the architecture that we will be running evaluations on.
+* Your code must use PyTorch >= 1.7 or Tensorflow >= 2.0. Notable marks will be given
+    to models that work nearly identically for both libraries.
 * Your model must be able to work on an 8GB GPU machine.
 
 <p></p>
 **Common format:**
 * Your code must follow a common API, described in the section below.
-* Your model must accept audio time series data of arbitrary length, as both a native tensor (perhaps already on CUDA) in the library of your choice, as well as *numpy.ndarrays*.
-* Your model must work with audio at a specific sample rate. You may select from one of the four following sample rates: [16000Hz, 22050Hz, 44100Hz, 48000Hz]. Your model must expose which sample rate it expects as input. We will resample audio to that sample rate prior to input to your model. (We will use ffmpeg---robust, cross platform, good format support, etc.---as the main command line tool for resampling, but with high quality [resampling from sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
-* Your model is expected to process audio and produce a specific number of embeddings
-    per second corresponding to a frame rate argument. Your model must also return
-    timestamps in seconds that correspond to each embedding returned. For example, if
-    a frame rate of 4Hz was specified, your model would be expected to return four
-    embeddings per second corresponding to the timestamps: 0.0s, 0.25s, 0.5s, ..., etc.
-* There will be two competition tracks based on embedding size:
-    * The main track will be for models that have an embedding size of 6144 or less.
-        This is  based on the largest embedding size available in
-        [openl3](https://openl3.readthedocs.io/en/latest/).
-    * A second track will run for compact audio representations with
-        an embedding size of 64 or less.
-    * The development of strong yet compact audio representations could democratize
-        access to hard-to-obtain large scale audio corpora. Also, high-quality
-        low-bitrate audio embeddings enable faster research iteration, with the
-        expectation that they can later be fine-tuned on larger embeddings that
-        have greater capacity.
-    * Each team may submit one model for each track.
-* The choice of analysis window length (receptive field) is at the discretion of the participants.
+* Your model must accept audio time series data of arbitrary length, as both a
+    native tensor (perhaps already on CUDA) in either PyTorch or TensorFlow.
+* Your model must work with audio at a specific sample rate. You may select from one
+    of the four following sample rates: [16000Hz, 22050Hz, 44100Hz, 48000Hz].
+    Your model must expose which sample rate it expects as input. We will resample
+    audio to that sample rate prior to input to your model. (We will use ffmpeg---robust,
+    cross platform, good format support, etc.---as the main command line tool for
+    resampling, but with high quality
+    [resampling from sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
+* Your API must expose two different functions for producing embeddings:
+    * Time-based embeddings: return embeddings at regular intervals centered at timestamps.
+        You may select the time interval (hop-size) between adjacent embeddings, but we
+        suggest one that is `<= 50ms` to handle a temporal tolerance of `+/- 50ms` for
+        music transcription tasks.
+    * Scene embeddings: return a single embedding for a given audio clip.
 
 <p></p>
 **Sharing:**
@@ -302,6 +300,13 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
     * You can assume that all input embeddings will have been converted to floats
     already.
 <hr />
+
+<p></p>
+## Submissions
+Submissions are open! Submit your entry prior to July 15th 21' AoE to be included in the
+first leaderboard update.
+
+[Submission Form](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
 
 <p></p>
 ## Sponsors
