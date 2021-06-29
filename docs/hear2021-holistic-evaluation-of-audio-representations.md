@@ -63,7 +63,7 @@ are low-resource.
 | Oct 15 '21 AoE  | Deadline for final submissions.                             |
 | Oct 16 '21      | Secret evaluation datasets and code are released.           |
 | Nov 15 '21      | Final results announced.                                    |
-| Dec 6 '21       | NeurIPS Conference begins.                                  | 
+| Dec 6 '21       | NeurIPS Conference begins.                                  |
 
 An accompanying NeurIPS workshop is being planned, with exact dates to be announced. HEAR will
 be accepting proposals for competitors to present during a special session, more details
@@ -85,15 +85,14 @@ this challenge.
 <p></p>
 ## Evaluation
 
-We adopt the principles put forward by 
+We adopt the principles proposed by
 [Groyal *et. al* (2019)](https://arxiv.org/pdf/1905.01235.pdf) for evaluating
-representations: a good representation should (1) transfer to a wide range
-of different tasks, and, (2) transfer with limited
-supervision and fine-tuning.
+the quality of a learned representation: a good representation should (1) transfer to
+a wide range of different tasks, and, (2) transfer with limited supervision and fine-tuning.
 
 <p></p>
 ### 1) Wide Range of Tasks
-Benchmarks span multiple audio domains: speech,
+HEAR 2021 benchmarks span multiple audio domains: speech,
 environmental sound, and music, with tasks that involve short and
 long time spans. In addition to well-known baselines, we have
 endeavoured to find evaluation tasks that particularly benefit
@@ -110,11 +109,11 @@ For the following kinds of tasks, we will use only embedding distance (no learni
 * Just-noticeable-difference (JND) tasks.
 
 <p></p>
-### 2) Minimal Training
+### 2) Limited Downstream Training
 For evaluation tasks that require training, a shallow downstream model will be learned
 with no fine-tuning of participant models. The specific details of the downstream
-model will vary per task; however, the model will either be linear or, for more 
-complicated tasks, a fully-connected network with 1-3 hidden layers.
+model will vary per task; however, the model will either be linear or, for more
+complicated tasks, a fully-connected network with 1-3 non-linear hidden layers.
 
 <p></p>
 ## Open Tasks
@@ -128,8 +127,8 @@ unknown commands. Evaluation is top-one error as per [Warden (2018)](https://arx
 
 **[DCASE 2016](http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio):
 Sound event detection in synthetic audio**<br />
-Time-based event detection of possibly overlapping office sounds. 
-Evaluation will be performed using total (frame) error rate and onset F-measure, 
+Time-based event detection of possibly overlapping office sounds.
+Evaluation will be performed using total (frame) error rate and onset F-measure,
 as per the original DCASE evaluation.
 
 **[NSynth](https://magenta.tensorflow.org/datasets/nsynth) Pitch Detection**<br />
@@ -173,8 +172,8 @@ the
 
 <p></p>
 **Easy-to-use:**
-* Your code must be written in Python >= 3.6 and use PyTorch >= 1.7 or 
-    Tensorflow >= 2.0. Notable marks will be given to models that work 
+* Your code must be written in `Python >= 3.6` and use `PyTorch >= 1.7` or
+    `Tensorflow >= 2.0`. Notable marks will be given to models that work
     nearly identically for both libraries.
 * Your model must be able to work on an 8GB GPU machine.
 
@@ -206,10 +205,6 @@ the
     those that are of high-societal impact.
 * Participants that submit new evaluation tasks to the dev-kit during the development
     period, to aid other teams, will be highlighted in the summary paper.
-
-For low-resource participants, *please reach out!* We are pleased to announce that
-Google is sponsoring HEAR 2021 and that we are accepting applications for
-Google Cloud Platform credit awards for low-resource teams.
 
 <p></p>
 ## Common API
@@ -244,10 +239,10 @@ get_framewise_embedding(
 ) -> Tuple[Tensor, Tensor]
 ```
 This function must return embeddings at regular intervals centered at timestamps. The
-corresponding timestamps in seconds must also be returned. You must select the time
+corresponding timestamps in seconds must also be returned. You are free to select the time
 interval (hop-size) between adjacent embeddings. We suggest one that is `<= 50ms`
 to handle a temporal tolerance of `+/- 50ms` for music transcription tasks. `hop_size`
-may be added as an optional argument, but the default provided will be used for all
+may be added as an optional argument, but a default must be provided and will be used for all
 evaluation tasks.
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
@@ -277,10 +272,10 @@ get_scene_embedding(
 ```
 This function must return a single embedding for each audio
 clip. This function will be called to produce embeddings used for evaluation tasks such
-as classification that look at an entire audio clip. This function provides participants
-the opportunity to impement summarization of the temporal aspects of audio into a
-single embedding. A simple approach would be to take the average of all framewise
-embeddings returned for `get_framewise_embedding`
+as classification that look at an entire audio clip. Participants are free to implement
+summarization of the temporal aspects of audio into a single embedding in whatever way
+they wish. A simple approach would be to take the average of all framewise embeddings
+returned for `get_framewise_embedding`
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
     moved to the same device as the model. We are making the simplifying assumption
@@ -316,7 +311,7 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
 
 <p></p>
 ## Submissions
-Submissions are open! Submit your entry prior to July 15th 21' AoE to be included in the
+Submissions are now open! Submit your entry prior to July 15th 21' AoE to be included in the
 first leaderboard update.
 
 Code must hosted in a publicly facing GitHub repository. We will clone your repository
@@ -327,16 +322,20 @@ information for running your submission including the CUDA and cuDNN versions.
 
 Make sure that your submission follows the [common API](#common-api) specified above.
 
-If you have any questions or are concerned about hosting your submission publicly, 
-please do not hesitate to contact competition organizers at deep-at-neuralaudio.ai 
+If you have any questions or are concerned about hosting your submission publicly,
+please do not hesitate to contact competition organizers at deep-at-neuralaudio.ai
 
 [**Submission Form**](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
 
 <p></p>
 ## Sponsors
-
 We are proud to announce that HEAR 2021 is sponsored by Google and that all competition
 evaluations will be performed on Google Cloud Platform.
+
+<p></p>
+## Low Resource Participants
+For low-resource participants, *please reach out!* We are pleased to announce that we
+are accepting applications for Google Cloud Platform credit awards.
 
 <p></p>
 ## Organizing Team
