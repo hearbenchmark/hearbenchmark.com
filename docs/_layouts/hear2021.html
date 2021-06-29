@@ -32,9 +32,11 @@ layout: default
 
         <div>
             <p><b>Summary</b></p>
-            {% include toc.html html=content %}
+            {% include toc.html html=content h_max=2 id="hear-toc"%}
         </div>
         {{ content }}
 
     </div>
 </article>
+
+<link rel="stylesheet" href="{{ "/assets/hear2021.css" | prepend: site.baseurl | prepend: site.url }}">
