@@ -65,8 +65,8 @@ are low-resource.
 | Nov 15 '21      | Final results announced.                                    |
 | Dec 6 '21       | NeurIPS Conference begins.                                  | 
 
-An accompanying NeurIPS workshop is planned, with exact dates to be announced. HEAR will
-be accepting proposals to present competition models during a special session, more details
+An accompanying NeurIPS workshop is being planned, with exact dates to be announced. HEAR will
+be accepting proposals for competitors to present during a special session, more details
 will be provided soon.
 
 <p></p>
@@ -81,14 +81,6 @@ The forum also provides a place to discuss audio ML research beyond
 this challenge.
 * Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
 * Our [twitter](https://twitter.com/neuralaudio) account.
-
-<p></p>
-## Competition Updates
-
-<b>June 15, 2021</b> - An amendment to competition rules and API was made. Please see
-the [changelog](https://github.com/neuralaudio/neuralaudio.github.io/issues/8) for these
-updates, which are reflected in this documentation.
- |
 
 <p></p>
 ## Evaluation
@@ -187,22 +179,22 @@ the
 
 <p></p>
 **Common format:**
-* Your code must follow a common API, described in the section below.
+* Your code must follow a [common API](#common-api), described in detail in the section below.
 * Your model must accept audio time series data of arbitrary length, as both a
     native tensor (perhaps already on CUDA) in either PyTorch or TensorFlow.
 * Your model must work with audio at a specific sample rate. You may select from one
-    of the four following sample rates: [16000Hz, 22050Hz, 44100Hz, 48000Hz].
+    of the four following sample rates: `[16000Hz, 22050Hz, 44100Hz, 48000Hz]`.
     Your model must expose which sample rate it expects as input. We will resample
     audio to that sample rate prior to input to your model. (We will use ffmpeg---robust,
     cross platform, good format support, etc.---as the main command line tool for
     resampling, but with high quality
     [resampling from sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
 * Your API must expose two different functions for producing embeddings:
-    * Time-based embeddings: return embeddings at regular intervals centered at timestamps.
+    * **Framewise embeddings**: return embeddings at regular intervals centered at timestamps.
         You may select the time interval (hop-size) between adjacent embeddings, but we
         suggest one that is `<= 50ms` to handle a temporal tolerance of `+/- 50ms` for
         music transcription tasks.
-    * Scene embeddings: return a single embedding for a given audio clip.
+    * **Scene embeddings**: return a single embedding for a given audio clip.
 
 <p></p>
 **Sharing:**
@@ -220,48 +212,42 @@ Google Cloud Platform credit awards for low-resource teams.
 
 <p></p>
 ## Common API
-
-Entries can use whatever receptive field length (window size) they
-desire. However, you are responsible for padding as necessary. We
-will provide code for this in the upcoming starter-kit.
-
-Some tasks by definition need very different input lengths (e.g.
-some bioacoustics tasks are on the order of milliseconds whereas
-SED is typically on the order of seconds). If you want to use a
-different receptive field length depending upon the frame-rate, that
-is your choice.
-
-The primary functions of the common API are:
+Your submission must implement the following functions required for evaluation:
 
 <hr />
 ```python
-load_model(model_file_path: Str, device: str=“cpu”) -> Tuple[Model, Dict[str, Any]]
+load_model(model_file_path: Str, device: str=“cpu”) -> Model
 ```
   * `model_file_path`: Load model checkpoint from this file path.
   * `device`: For inference on machines with multiple GPUs, this instructs the
     participant which device to use. If `“cpu”`, the CPU should be used
     (Multi-GPU support is not required).
   * **Returns:**
-    * `Model` - TensorFlow or PyTorch Model object already loaded on the correct device
-    * `Dict` - A dictionary of metadata specific to your model. This *must* include
-        the following entries:
-        * `sample_rate` the sampling rate that your model accepts
-            audio at. One of `[16000, 22050, 44100, 48000]`.
-        * `embedding_size` the dimensionality of the embeddings that are
-            produced by your model. Must be `<= 6144` for the main competition track or
-            `<= 64` for the compact audio representation track.
-        * `version` a string indicating the version of your model that has been loaded.
+    * `Model` - TensorFlow or PyTorch Module object already loaded on the correct device
 
+The returned `Model` must have the following attributes:
+  * `sample_rate`: Audio sample rate that your model expects. Must be one of
+        `[16000, 22050, 44100, 48000]`.
+  * `embedding_size`: The dimensionality of the embedding returned by your model. If your
+        model returns different embedding sizes for framewise vs. scene embeddings this
+        should be a dictionary with the follow keys: `framewise`, `scene`. You are free
+        to select any `embedding_size` that you like, but please consider the memory
+        required to run your model.
 <hr />
 
 ```python
-get_audio_embedding(
+get_framewise_embedding(
     audio: Tensor,
     model: Any,
-    frame_rate: float,
     batch_size: Optional[int]=None,
 ) -> Tuple[Tensor, Tensor]
 ```
+This function must return embeddings at regular intervals centered at timestamps. The
+corresponding timestamps in seconds must also be returned. You must select the time
+interval (hop-size) between adjacent embeddings. We suggest one that is `<= 50ms`
+to handle a temporal tolerance of `+/- 50ms` for music transcription tasks. `hop_size`
+may be added as an optional argument, but the default provided will be used for all
+evaluation tasks.
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
     moved to the same device as the model. We are making the simplifying assumption
@@ -271,10 +257,6 @@ get_audio_embedding(
     function added later.
   * `model`: Loaded model, in PyTorch or Tensorflow 2.x. This
      should be moved to the device the audio tensor is on.
-  * `frame_rate`: Number of embeddings that the model should return per second.
-    Embeddings and the corresponding timestamps should start at 0s and increment by
-    1/frame_rate seconds. For example, if the audio is 1.1s and the frame_rate is 4.0,
-    then we should return embeddings centered at 0.0s, 0.25s, 0.5s, 0.75s and 1.0s.
   * `batch_size`: The participants are responsible for estimating the `batch_size` that
     will achieve high-throughput while maintaining appropriate memory constraints.
     However, `batch_size` is a useful feature for end-users to be able to toggle.
@@ -282,6 +264,36 @@ get_audio_embedding(
     * embedding: A `float32` `Tensor` with shape (`n_sounds, n_frames, embedding_size)`.
     * timestamps: `Tensor`. Timestamps in seconds corresponding to each embedding
         in the output.
+
+<hr />
+
+```python
+get_scene_embedding(
+    audio: Tensor,
+    model: Any,
+    batch_size: Optional[int]=None,
+) -> Tensor
+```
+This function must return a single embedding for each audio
+clip. This function will be called to produce embeddings used for evaluation tasks such
+as classification that look at an entire audio clip. This function provides participants
+the opportunity to impement summarization of the temporal aspects of audio into a
+single embedding. A simple approach would be to take the average of all framewise
+embeddings returned for `get_framewise_embedding`
+
+  * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
+    moved to the same device as the model. We are making the simplifying assumption
+    that for every task, all sounds will be padded/trimmed to the same length.
+    This doesn’t preclude people from using the API for corpora of variable-length
+    sounds; merely we don’t implement that as a core feature. It could be a wrapper
+    function added later.
+  * `model`: Loaded model, in PyTorch or Tensorflow 2.x. This
+     should be moved to the device the audio tensor is on.
+  * `batch_size`: The participants are responsible for estimating the `batch_size` that
+    will achieve high-throughput while maintaining appropriate memory constraints.
+    However, `batch_size` is a useful feature for end-users to be able to toggle.
+  * **Returns:**
+    * embedding: A `float32` `Tensor` with shape (`n_sounds, embedding_size)`.
 
 <hr />
 
