@@ -318,8 +318,9 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
 
 <p></p>
 ## Submissions
-Submissions are now open! Submit your entry prior to July 15th 21' AoE to be included in the
-first leaderboard update.
+**Submissions are now open!** Submit your entry prior to July 15th 21' AoE to be included in the
+first leaderboard update. We will be holding monthly leaderboard updates up until
+the final submission deadline of October 15th 21'.
 
 Code must hosted in a publicly facing GitHub repository. We will clone your repository
 and install it using `pip3 install .`. Your package does not need to be uploaded to
