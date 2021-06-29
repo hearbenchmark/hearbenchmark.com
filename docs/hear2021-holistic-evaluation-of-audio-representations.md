@@ -93,23 +93,22 @@ updates, which are reflected in this documentation.
 <p></p>
 ## Evaluation
 
-Benchmarks span multiple audio domains:  speech, environmental
-sound, and music, with tasks that involve short and
+We adopt the principles put forward by 
+[Groyal *et. al* (2019)](https://arxiv.org/pdf/1905.01235.pdf) for evaluating
+representations: a good representation should (1) transfer to a wide range
+of different tasks, and, (2) transfer with limited
+supervision and fine-tuning.
+
+<p></p>
+### 1) Wide Range of Tasks
+Benchmarks span multiple audio domains: speech,
+environmental sound, and music, with tasks that involve short and
 long time spans. In addition to well-known baselines, we have
 endeavoured to find evaluation tasks that particularly benefit
 humanity, such as low-resource speech, environmental safety, clinical
 speech, and ethnomusicology.
 
-Evaluation will be on classification, tagging, and distance tasks. Tasks will either
-be evaluated on a frame-by-frame basis (i.e., sound event detection, music
-transcription) or on the entire audio clip (i.e., classification,
-tagging, ranking).
-
-Embeddings will be evaluated either as the input to a shallow model,
-or using distances over the representation space.
-
-For the following, we will take the participant embeddings, and
-learn a simple model over their output with no-finetuning:
+Evaluation tasks with downstream learning:
 * Classification/multi-classification of the entire sound.
 * Tagging (multilabel classification) of the entire sound.
 * Temporal classification / tagging (e.g. transcription and sound event detection).
@@ -119,22 +118,35 @@ For the following kinds of tasks, we will use only embedding distance (no learni
 * Just-noticeable-difference (JND) tasks.
 
 <p></p>
+### 2) Minimal Training
+For evaluation tasks that require training, a shallow downstream model will be learned
+with no fine-tuning of participant models. The specific details of the downstream
+model will vary per task; however, the model will either be linear or, for more 
+complicated tasks, a fully-connected network with 1-3 hidden layers.
+
+<p></p>
 ## Open Tasks
 
 All embeddings will be tested on the following three tasks, in addition to
 held-out secret tasks.
 
-**Google Speech Commands** – Classification of ten known spoken commands, with additional
-categories for silence and unknown commands. Evaluation is top-one error as per
-Warden (2018).
+**[Google Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands)**<br />
+Classification of ten known spoken commands, with additional categories for silence and
+unknown commands. Evaluation is top-one error as per [Warden (2018)](https://arxiv.org/abs/1804.03209).
 
-**DCASE 2016: Sound event detection in synthetic audio** – Time-based event detection of
-possibly overlapping office sounds. Evaluation will be performed using total (frame)
-error rate and onset F-measure, as per the original DCASE evaluation.
+**[DCASE 2016](http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio):
+Sound event detection in synthetic audio**<br />
+Time-based event detection of possibly overlapping office sounds. 
+Evaluation will be performed using total (frame) error rate and onset F-measure, 
+as per the original DCASE evaluation.
 
-**NSYNTH Pitch Detection** – Multiclass categorization of a single note into one of 88
+**[NSynth](https://magenta.tensorflow.org/datasets/nsynth) Pitch Detection**<br />
+Multiclass categorization of a single note into one of 88
 pitch classes, and 12 chromas. Evaluated using pitch accuracy and chroma accuracy,
-as per CREPE.
+as per [CREPE](https://arxiv.org/abs/1802.06182).
+
+Evaluation code, including the evaluation predictor models and training scripts, will
+be released in the coming weeks for each of these open tasks.
 
 <p></p>
 ### Secret Tasks
