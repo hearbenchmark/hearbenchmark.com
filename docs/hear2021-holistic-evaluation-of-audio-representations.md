@@ -173,8 +173,9 @@ the
 
 <p></p>
 **Easy-to-use:**
-* Your code must use PyTorch >= 1.7 or Tensorflow >= 2.0. Notable marks will be given
-    to models that work nearly identically for both libraries.
+* Your code must be written in Python >= 3.6 and use PyTorch >= 1.7 or 
+    Tensorflow >= 2.0. Notable marks will be given to models that work 
+    nearly identically for both libraries.
 * Your model must be able to work on an 8GB GPU machine.
 
 <p></p>
@@ -318,7 +319,18 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
 Submissions are open! Submit your entry prior to July 15th 21' AoE to be included in the
 first leaderboard update.
 
-[Submission Form](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
+Code must hosted in a publicly facing GitHub repository. We will clone your repository
+and install it using `pip3 install .`. Your package does not need to be uploaded to
+PyPI. Your model weights must also be available to download at a publicly accessible
+URL. Please include a README on your GitHub repository that contains additional important
+information for running your submission including the CUDA and cuDNN versions.
+
+Make sure that your submission follows the [common API](#common-api) specified above.
+
+If you have any questions or are concerned about hosting your submission publicly, 
+please do not hesitate to contact competition organizers at deep-at-neuralaudio.ai 
+
+[**Submission Form**](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
 
 <p></p>
 ## Sponsors
