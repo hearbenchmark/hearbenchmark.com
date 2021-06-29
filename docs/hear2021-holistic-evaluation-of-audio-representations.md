@@ -48,6 +48,24 @@ Embeddings will also be evaluated on diverse secret tasks, many of which
 are low-resource.
 
 <p></p>
+## Timeline
+
+| Date            |                                                             |
+|-----------------|-------------------------------------------------------------|
+| May 10 '21      | Competition begins.                                         |
+| Jul 15 '21 AoE  | Submissions deadline for inclusion in July leaderboard.     |
+| Jul 30 '21      | Leaderboard updated.                                        |
+| Aug 15 '21 AoE  | Submission deadline for inclusion in August leaderboard.    |
+| Aug 30 '21      | Leaderboard updated.                                        |
+| Sep 15 '21 AoE  | Submission deadline for inclusion in September leaderboard. |
+| Sep 30 '21      | Leaderboard updated.                                        |
+| Early Oct '21   | (tentative) Presentation proposal deadline for workshop.    |
+| Oct 15 '21 AoE  | Deadline for final submissions.                             |
+| Oct 16 '21      | Secret evaluation datasets and code are released.           |
+| Nov 15 '21      | Final results announced.                                    |
+| Dec 6 '21       | NeurIPS Conference begins.                                  | 
+
+<p></p>
 ## Announcements
 
 Look forward to the following announcements: starter-kit, sandbox,
@@ -65,22 +83,13 @@ this challenge.
 <b>June 15, 2021</b> - An amendment to competition rules and API was made. Please see
 the [changelog](https://github.com/neuralaudio/neuralaudio.github.io/issues/8) for these
 updates, which are reflected in this documentation.
-
-<p></p>
-## Timeline
-
-* May 10, 2021 - Competition begins.
-* October 15, 2021 - Deadline for final submissions of models.
-* October 16, 2021 - Secret evaluation datasets and code are released.
-* November 15, 2021 - Announce results.
-* November 30, 2021 - Deadline for final submission of brief (4 page) paper describing the submission.  Participants are free to additionally include fine-tuning the pretrained weights from their own compute resources.
-* December 13-14, 2021 - Presentation of the challenge results at NeurIPS.
+ |
 
 <p></p>
 ## Evaluation
 
 Benchmarks span multiple audio domains:  speech, environmental
-sound, clinical audio, and music, with tasks that involve short and
+sound, and music, with tasks that involve short and
 long time spans. In addition to well-known baselines, we have
 endeavoured to find evaluation tasks that particularly benefit
 humanity, such as low-resource speech, environmental safety, clinical
@@ -109,6 +118,24 @@ well models generalize to resource-poor tasks.
 For the following kinds of tasks, we will use only embedding distance (no learning):
 * Ranking tasks, e.g. rank this sound that was ogg-encoded with quality 1 thru 9.
 * Just-noticeable-difference (JND) tasks.
+
+<p></p>
+## Open Tasks
+
+All embeddings will be tested on the following three tasks, in addition to
+held-out secret tasks.
+
+**Google Speech Commands** – Classification of ten known spoken commands, with additional
+categories for silence and unknown commands. Evaluation is top-one error as per
+Warden (2018).
+
+**DCASE 2016: Sound event detection in synthetic audio** – Time-based event detection of
+possibly overlapping office sounds. Evaluation will be performed using total (frame)
+error rate and onset F-measure, as per the original DCASE evaluation.
+
+**NSYNTH Pitch Detection** – Multiclass categorization of a single note into one of 88
+pitch classes, and 12 chromas. Evaluated using pitch accuracy and chroma accuracy,
+as per CREPE.
 
 <p></p>
 ## Rules
