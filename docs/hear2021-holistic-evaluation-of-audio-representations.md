@@ -65,6 +65,10 @@ are low-resource.
 | Nov 15 '21      | Final results announced.                                    |
 | Dec 6 '21       | NeurIPS Conference begins.                                  | 
 
+An accompanying NeurIPS workshop is planned, with exact dates to be announced. HEAR will
+be accepting proposals to present competition models during a special session, more details
+will be provided soon.
+
 <p></p>
 ## Announcements
 
