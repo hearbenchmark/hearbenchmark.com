@@ -284,7 +284,7 @@ must be provided and will be used for all evaluation tasks.
     constant hop size (< 50 ms suggested) for all timestamp-based
     predictions.
   * **Returns:**
-    * embedding: A `float32` `Tensor` with shape (`n_sounds, n_timestamp, embedding_size)`.
+    * embedding: A `float32` `Tensor` with shape (`n_sounds, n_timestamp, model.embedding_size['timestamp'])`.
     * timestamps: `Tensor`. Centered timestamps in seconds corresponding
         to each embedding in the output.
 
