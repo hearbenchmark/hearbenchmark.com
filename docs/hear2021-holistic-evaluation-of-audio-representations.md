@@ -312,7 +312,7 @@ embeddings returned from `get_timestamp_embeddings`
     core feature. It could be a wrapper function added later.
   * `model`: Loaded `Model`.
   * **Returns:**
-    * embedding: A `float32` `Tensor` with shape (`n_sounds, embedding_size)`.
+    * embedding: A `float32` `Tensor` with shape (`n_sounds, model.embedding_size['scene'])`.
 
 <hr />
 
