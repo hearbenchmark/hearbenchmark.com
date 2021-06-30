@@ -100,7 +100,7 @@ quality of a learned representation: a good representation should
 with limited supervision and fine-tuning.
 
 <p></p>
-### 1) Wide Range of Tasks
+### Wide Range of Tasks
 HEAR 2021 benchmarks span multiple audio domains: speech,
 environmental sound, and music, with tasks that involve short and
 long time spans. In addition to well-known baselines, we have
@@ -113,15 +113,12 @@ Evaluation tasks with downstream learning:
 entire audio clip.
 * Timestamp-based: Temporal classification / tagging (e.g. transcription
 and sound event detection).
+For evaluation tasks that require training, a shallow downstream
+model will be learned with no fine-tuning of participant models.
 
 For the following kinds of tasks, we will use only embedding distance (no learning):
 * Ranking tasks.
 * Just-noticeable-difference (JND) tasks.
-
-<p></p>
-### 2) Limited Downstream Training
-For evaluation tasks that require training, a shallow downstream
-model will be learned with no fine-tuning of participant models.
 
 <p></p>
 ## Open Tasks
