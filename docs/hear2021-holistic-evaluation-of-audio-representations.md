@@ -172,10 +172,6 @@ the
     compatible (BSD, MIT, etc) license.
 * Your model weights must be released under a Creative Commons Attribution 4.0
     International License, or compatible license.
-  * Motivation: Non-commercial and non-derivative restrictions disproportionately hurt
-    low-resource entities building audio applications for the common good. Larger
-    companies are relatively unaffected by these restrictions, given their enormous
-    internal resources.
 * You are welcome to use whatever training data like, provided you adhere to all other
     competition rules, and:
   * It is documented in your final written submission.
