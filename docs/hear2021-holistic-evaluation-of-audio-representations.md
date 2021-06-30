@@ -48,19 +48,20 @@ Embeddings will also be evaluated on diverse secret tasks, many of which
 are low-resource.
 
 <p></p>
-### News + Announcements
+## News + Announcements
 
-  * **June 29** -
-    For detailed announcements, by see this [link](). In short:
+  * **2021-06-29** -
+    For a detailed set of updates, please see this [link](https://github.com/neuralaudio/neuralaudio.github.io/pull/10/). Summarized:
     * There will be a journal special issue for strong HEAR 2021
     participants.
     * The API has been simplified and clarified.
-    * The first leaderbord is *open*. Please submit
+    * Three open tasks have been announced.
+    * The first leaderbord is *ready for submission*. Please submit
     [here](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=send_form).
 
 <p></p>
 
-We will be making announcements in several places:
+To stay up-to-date, we will be making announcements in several places:
 * Our [HEAR
 2021](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/)
 category in the Neural Audio AI [forum](https://discuss.neuralaudio.ai/).
@@ -105,8 +106,7 @@ humanity, such as low-resource speech, environmental safety, clinical
 speech, and ethnomusicology.
 
 Evaluation tasks with downstream learning:
-* Classification/multi-classification of the entire sound.
-* Tagging (multilabel classification) of the entire sound.
+* Classification/multi-classification/tagging of an entire audio scene.
 * Temporal classification / tagging (e.g. transcription and sound event detection).
 
 For the following kinds of tasks, we will use only embedding distance (no learning):
@@ -115,10 +115,8 @@ For the following kinds of tasks, we will use only embedding distance (no learni
 
 <p></p>
 ### 2) Limited Downstream Training
-For evaluation tasks that require training, a shallow downstream model will be learned
-with no fine-tuning of participant models. The specific details of the downstream
-model will vary per task; however, the model will either be linear or, for more
-complicated tasks, a fully-connected network with 1-3 non-linear hidden layers.
+For evaluation tasks that require training, a shallow downstream
+model will be learned with no fine-tuning of participant models.
 
 <p></p>
 ## Open Tasks
@@ -127,28 +125,28 @@ All embeddings will be tested on the following three tasks, in addition to
 held-out secret tasks.
 
 **[Google Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands)**<br />
-Classification of ten known spoken commands, with additional categories for silence and
-unknown commands. Evaluation is top-one error as per [Warden (2018)](https://arxiv.org/abs/1804.03209).
+Classification of ten known spoken commands, with additional
+categories for silence and unknown commands. Evaluation is top-one
+error as per [Warden (2018)](https://arxiv.org/abs/1804.03209).
 
-**[DCASE 2016](http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio):
-Sound event detection in synthetic audio**<br />
+**[DCASE 2016](http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio): Sound event detection in synthetic audio**<br />
 Time-based event detection of possibly overlapping office sounds.
-Evaluation will be performed using total (frame) error rate and onset F-measure,
-as per the original DCASE evaluation.
+Evaluation will be performed using onset F-measure, as per the
+original DCASE evaluation.
 
 **[NSynth](https://magenta.tensorflow.org/datasets/nsynth) Pitch Detection**<br />
-Multiclass categorization of a single note into one of 88
-pitch classes, and 12 chromas. Evaluated using pitch accuracy and chroma accuracy,
-as per [CREPE](https://arxiv.org/abs/1802.06182).
+Multiclass categorization of a single note into one of 88 pitch
+classes, and 12 chromas. Evaluated using pitch accuracy and chroma
+accuracy, as per [CREPE](https://arxiv.org/abs/1802.06182).
 
 Evaluation code, including the evaluation predictor models and training scripts, will
 be released in the coming weeks for each of these open tasks.
 
 <p></p>
-### Secret Tasks
-Part of our interest in developing a generic embedding is their use on tasks where
-few data are available. As such, secret tasks will have a special emphasis on
-low-resource and/or underrepresented domains.
+## Secret Tasks
+Our interest in developing a generic embedding is their use on tasks
+where few data are available. As such, secret tasks will have a
+special emphasis on low-resource and/or underrepresented domains.
 
 <p></p>
 ## Rules
