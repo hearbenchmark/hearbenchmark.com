@@ -51,10 +51,9 @@ are low-resource.
 ## News + Announcements
 
   * **2021-06-29** -
-    For a detailed set of updates, please see this [link](https://github.com/neuralaudio/neuralaudio.github.io/pull/10/). Summarized:
     * There will be a journal special issue for strong HEAR 2021
     participants.
-    * The API has been simplified and clarified.
+    * The API has been simplified and clarified. For a detailed set of updates, please see this [link](https://github.com/neuralaudio/neuralaudio.github.io/pull/10/).
     * Three open tasks have been announced.
     * The first leaderbord is *ready for submission*. Please submit
     [here](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=send_form).
@@ -261,8 +260,8 @@ evaluation tasks.
     However, `batch_size` is a useful feature for end-users to be able to toggle.
   * **Returns:**
     * embedding: A `float32` `Tensor` with shape (`n_sounds, n_frames, embedding_size)`.
-    * timestamps: `Tensor`. Timestamps in seconds corresponding to each embedding
-        in the output.
+    * timestamps: `Tensor`. Centered timestamps in seconds corresponding
+        to each embedding in the output.
 
 <hr />
 
