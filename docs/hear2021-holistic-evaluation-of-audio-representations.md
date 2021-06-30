@@ -122,17 +122,17 @@ model will be learned with no fine-tuning of participant models.
 All embeddings will be tested on the following three tasks, in addition to
 held-out secret tasks.
 
-**[Google Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands)**<br />
+* **[Google Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands)**<br />
 Classification of ten known spoken commands, with additional
 categories for silence and unknown commands. Evaluation is top-one
 error as per [Warden (2018)](https://arxiv.org/abs/1804.03209).
 
-**[DCASE 2016](http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio): Sound event detection in synthetic audio**<br />
+* **[DCASE 2016](http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio): Sound event detection in synthetic audio**<br />
 Time-based event detection of possibly overlapping office sounds.
 Evaluation will be performed using onset F-measure, as per the
 original DCASE evaluation.
 
-**[NSynth](https://magenta.tensorflow.org/datasets/nsynth) Pitch Detection**<br />
+* **[NSynth](https://magenta.tensorflow.org/datasets/nsynth) Pitch Detection**<br />
 Multiclass categorization of a single note into one of 88 pitch
 classes, and 12 chromas. Evaluated using pitch accuracy and chroma
 accuracy, as per [CREPE](https://arxiv.org/abs/1802.06182).
