@@ -130,7 +130,7 @@ All embeddings will be tested on the following three tasks, in addition to
 held-out secret tasks.
 
 * **[Google Speech
-Commands](https://www.tensorflow.org/datasets/catalog/speech_commands)**<br
+Commands](https://www.tensorflow.org/datasets/catalog/speech_commands): Scene baed multilabel classification**<br
 /> Classification of ten known spoken commands, with additional
 categories for silence and unknown commands. Evaluation is top-one
 error as per [Warden (2018)](https://arxiv.org/abs/1804.03209).
@@ -142,7 +142,7 @@ detection of possibly overlapping office sounds.  Evaluation will
 be performed using onset F-measure, as per the original DCASE
 evaluation.
 
-* **[NSynth](https://magenta.tensorflow.org/datasets/nsynth) Pitch Detection**<br />
+* **[NSynth](https://magenta.tensorflow.org/datasets/nsynth) Pitch Detection**: Scene based multiclass prediction<br />
 Multiclass categorization of a single note into one of 88 pitch
 classes, and 12 chromas. Evaluated using pitch accuracy and chroma
 accuracy, as per [CREPE](https://arxiv.org/abs/1802.06182).
