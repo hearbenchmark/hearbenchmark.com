@@ -281,7 +281,7 @@ must be provided and will be used for all evaluation tasks.
     milliseconds. For sound event detection, this is typically
     200ms. For music transcription, this is typically 50ms.
     Participants can disregard this optional parameter and use a
-    contact hop size (< 50 ms suggested) for all timestamp-based
+    constant hop size (< 50 ms suggested) for all timestamp-based
     predictions.
   * **Returns:**
     * embedding: A `float32` `Tensor` with shape (`n_sounds, n_timestamp, embedding_size)`.
