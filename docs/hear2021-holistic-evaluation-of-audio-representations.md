@@ -23,6 +23,14 @@ abstract: >
   available to use.
 ---
 
+## Submissions
+**Submissions are now open!** [Submit your
+entry](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
+prior to July 15th 2021 AoE to be included in the first leaderboard
+update. We will be holding monthly leaderboard updates up until the
+final submission deadline of October 15th 2021.
+<p></p>
+
 ## Introduction
 
 The HEAR 2021 challenge invites you to create an audio embedding
@@ -89,26 +97,26 @@ We adopt the principles proposed by [Groyal *et. al*
 (2019)](https://arxiv.org/abs/1905.01235) for evaluating the
 quality of a learned representation: a good representation should
 (1) transfer to a wide range of different tasks, and, (2) transfer
-with limited supervision and fine-tuning.
+with limited supervision.
 
 <p></p>
 ### Wide Range of Tasks
 HEAR 2021 benchmarks span multiple audio domains: speech,
 environmental sound, and music, with tasks that involve short and
 long time spans. In addition to well-known baselines, we have
-endeavoured to find low-resource evaluation tasks that particularly benefit
+endeavored to find low-resource evaluation tasks that particularly benefit
 humanity.
 
 Evaluation tasks with downstream learning:
 * Scene-based: Classification/multi-classification/tagging of an
 entire audio clip.
-* Timestamp-based: Temporal classification / tagging (e.g. transcription
-and sound event detection).
+* Timestamp-based: Sound event detection/transcription.
 
 For evaluation tasks that require training, a shallow downstream
 model will be learned with no fine-tuning of participant models.
 
-For some kinds of tasks, we will use only embedding distance (i.e., no learning).
+For some kinds of tasks, we will use only pairwise embedding distance (i.e., no learning).
+We will use unnormalized l1.
 
 <p></p>
 ## Open Tasks
@@ -129,7 +137,7 @@ detection of possibly overlapping office sounds.  Evaluation will
 be performed using onset F-measure, as per the original DCASE
 evaluation.
 
-* **[NSynth](https://magenta.tensorflow.org/datasets/nsynth) Pitch Detection**: Scene based multiclass prediction<br />
+* **[NSynth](https://magenta.tensorflow.org/datasets/nsynth): Pitch Detection** Scene based multiclass prediction<br />
 Multiclass categorization of a single note into one of 88 pitches, 
 and 12 chromas (pitch classes). Evaluated using pitch accuracy and chroma
 accuracy, as per [CREPE](https://arxiv.org/abs/1802.06182).
@@ -147,9 +155,9 @@ special emphasis on low-resource and/or underrepresented domains.
 ## Rules
 
 A primary goal of this challenge is to encourage the development
-of easy-to-use, freely-available general-purpose audio representation
-models. If you have any questions about the rules, please post on
-the
+of freely-available general-purpose audio representation models.
+If you have any questions or concerns about the rules, we are happy
+to help you.  Please post on the
 [forum](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/) or
 [email us](mailto:deep-at-neuralaudio.ai) privately.
 
@@ -157,64 +165,59 @@ the
 **Freely-available:**
 * You must release your code as a pip3-installable package under an Apache-2.0  or
     compatible (BSD, MIT, etc) license.
-* Your model weights must be released under a Creative Commons Attribution 4.0
-    International License, or compatible license.
+* Your model weights must be released under a [Creative Commons Attribution 4.0
+    International
+    License](https://creativecommons.org/licenses/by/4.0/legalcode), or
+    compatible license.
 * You are welcome to use whatever training data you like, provided you adhere to all other
     competition rules, and:
-  * It is documented in your final written submission.
   * Any existing data marked as test may not be used for training.
 
 <p></p>
 **Easy-to-use:**
 * Your code must be written in `Python >= 3.6` and use `PyTorch >= 1.7` or
-    `Tensorflow >= 2.0`. Notable marks will be given to models that work
-    nearly identically for both libraries.
-* Your model must be able to return a tensor (either in GPU or CPU
-    memory) for up to 20 minutes of audio without excedding 16GB of GPU memory.
-    This includes both model weights and embedding size. This rule
-    applies both to timestamp embeddings and scene embeddings (see
-    below). This may place constraints on the size of the embedding
-    output.
+    `Tensorflow >= 2.0`.
+* Your model must be able to return embeddings (either in GPU or
+    CPU memory) for up to 20 minutes of audio without excedding
+    16GB of GPU memory. This memory constraint includes both model
+    weights and embedding size.
 
 <p></p>
 **Common format:**
 * Your code must follow a [common API](#common-api), described in
 detail in the section below.
-* Your model must accept audio of arbitrary length,
-    as a native tensor (perhaps already on CUDA) in either
-    PyTorch or TensorFlow.
+* Your model must accept audio of arbitrary length under 20 minutes,
+    as a tensor.
 * Your model must work with audio at one of the following four samples rates: 
-    `[16000Hz, 22050Hz, 44100Hz, 48000Hz]`. Your model must expose which
+    `[16000Hz, 22050Hz, 44100Hz, 48000Hz]`.
+    * Your model must expose which
     sample rate it expects as input as a class attribute (see API details below), 
     however it is not expected to resample audio internally. 
-    We will resample audio to all four sample rates for all tasks. (We will use
+    * To avoid costly in-model resampling, we will *a priori* resample
+    audio to all four sample rates for all tasks. (We will use
     ffmpeg---robust, cross platform, good format support, etc.---as
     the main command line tool for resampling, but with high quality
     [resampling from
     sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
 
-* Your API must produce embeddings in two varieties:
-    * **Timestamp-based embeddings**: return embeddings at regular intervals
-        centered at timestamps.
-        You may select the time interval (hop-size) between adjacent
+* Your API must be able to produce two kinds of embeddings (described [below](#common-api)):
+    * **Timestamp-based embeddings**: return time-centered embeddings
+        at regular intervals.
+    	You may select the time interval (hop-size) between adjacent
     	embeddings, but we suggest that it is `<= 50ms` to handle
-    	an onset tolerance of `50ms` for music transcription
-    	tasks.
+    	an onset tolerance of `50ms` for music transcription evaluation.
     * **Scene embeddings**: return a single embedding for a entire audio clip.
 
 <p></p>
 **Sharing:**
-* You will be provided with a dev-kit including several tasks, relavent datasets and a script for performing evaluation.
-* This dev-kit will also include a baseline embedding model in a standardized API (see below).
-* You are encouraged to submit new evaluation tasks to the dev kit github, particularly
-    those that are of high-societal impact.
-* Participants that submit new evaluation tasks to the dev-kit
-    during the development period will be highlighted in the summary paper.
+* We will provide you with a dev-kit including the data for the
+open tasks, and a script for performing evaluation.
+* This dev-kit will also include a baseline embedding model in a
+standardized API (see below).
 
 <p></p>
 ## Common API
-Your submission must implement the following functions required for
-evaluation:
+Your submission must implement the following API:
 
 <hr />
 ```python
@@ -232,27 +235,28 @@ A `Model` (pytorch or tensorflow 2.x) class instance must have the
 following attributes:
   * `sample_rate`: Audio sample rate that your model expects. Must be one of
         `[16000, 22050, 44100, 48000]`.
-  * [[[[[[[TODO: look at this. ]]]]]]]]`embedding_size: Dict[str, int]`: The dimensionality of the
-      embedding returned by your model. This should be a dictionary
-      with the follow keys: `timestamp`, `scene`. You are free to
-      select any `embedding_size` that you like, and have separate
-      embedding sizes for timestamp embeddings and scene embeddings,
-      but please consider the memory required to run your model.
+  * `scene_embedding_size: int`: The dimensionality of the
+      embedding returned from `get_scene_embeddings`.
+
+  * `timestamp_embedding_size: int`: The dimensionality of the
+      embedding returned from `get_timestamp_embeddings`.
+      If you wish, this can be identical to `scene_embedding_size`.
 <hr />
 
 ```python
 get_timestamp_embeddings(
     audio: Tensor,
     model: Model,
-    tolerance: Optional[Int],
 ) -> Tuple[Tensor, Tensor]
 ```
 This function must return embeddings at regular intervals centered
-at timestamps. The model must also return the corresponding timestamps, in seconds.
-You are free to select the time interval between adjacent embeddings (hop-size). 
-We suggest that it is `<= 50ms` to handle a temporal tolerance of `50ms` 
-for music transcription tasks. You may add `hop_size` as an optional argument, but a default value
-must be provided as it will be used for all evaluation tasks.
+at timestamps. The model must also return the corresponding timestamps,
+in milliseconds. You are free to select the time interval between
+adjacent embeddings (hop-size).  We suggest that it is `<= 50ms`
+to handle a temporal tolerance of `50ms` for music transcription
+tasks. You are welcome to extend the API with an optional hop-size,
+however please note that in HEAR 2021 we will use your default value
+for all evaluation tasks.
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1,
     1]`.  All sounds in a batch will be padded/trimmed to the same length. 
@@ -270,8 +274,8 @@ must be provided as it will be used for all evaluation tasks.
     constant hop size (< 50 ms suggested) for all timestamp-based
     predictions. -->
   * **Returns:**
-    * embedding: A `float32` `Tensor` with shape (`n_sounds, n_timestamp, model.embedding_size['timestamp'])`.
-    * timestamps: `Tensor`. Centered timestamps in seconds corresponding
+    * embedding: A `float32` `Tensor` with shape (`n_sounds, n_timestamp, model.timestamp_embedding_size`).
+    * timestamps: `Tensor`. Centered timestamps in milliseconds corresponding
         to each embedding in the output.
 
 <hr />
@@ -294,7 +298,7 @@ embeddings returned from `get_timestamp_embeddings`.
     All sounds in a batch will be padded/trimmed to the same length.
   * `model`: Loaded `Model`.
   * **Returns:**
-    * embedding: A `float32` `Tensor` with shape (`n_sounds, model.embedding_size['scene'])`.
+    * embedding: A `float32` `Tensor` with shape (`n_sounds, model.scene_embedding_size`).
 
 <!-- <hr />
 
@@ -314,19 +318,15 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
     already.
 <hr /> -->
 
-<p></p>
-## Submissions
-**Submissions are now open!** [Submit your
-entry](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
-prior to July 15th 2021 AoE to be included in the first leaderboard
-update. We will be holding monthly leaderboard updates up until the
-final submission deadline of October 15th 2021.
+<hr>
 
-***A note about pip installable packages.*** The organizers of the HEAR 2021 challenge feel strongly about 
-general purpose models that are easy to access and easy to use. As such, we have fairly strict 
-requirements for a pip installable package. We realize that this may pose a challenge to some entrants. 
-If this criterion poses an issue for you, the HEAR team would be glad to help. Please reach out to us by
-[e-mail](mailto:deep-at-neuralaudio.ai).
+***A note about pip installable packages.*** The organizers of the
+HEAR 2021 challenge feel strongly about general purpose models that
+are easy to access and easy to use. As such, we have fairly strict
+requirements for a pip installable package. We realize that this
+may pose a challenge to some entrants.  If this criterion poses an
+issue for you, the HEAR team would be glad to help. Please reach
+out to us by [e-mail](mailto:deep-at-neuralaudio.ai).
 
 Code must hosted in a publicly facing GitHub repository. We will
 clone your repository and install it using a 
@@ -342,8 +342,8 @@ Make sure that your submission follows the [common API](#common-api)
 specified above.
 
 If you have any questions or are concerned about hosting your
-submission publicly, please do not hesitate to contact competition
-organizers at deep-at-neuralaudio.ai
+submission publicly, please do not hesitate to [contact competition
+organizers](mailto:deep-at-neuralaudio.ai).
 
 <p></p>
 ## Sponsors
