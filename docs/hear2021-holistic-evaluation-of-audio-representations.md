@@ -48,7 +48,7 @@ Embeddings will also be evaluated on diverse secret tasks, many of which
 are low-resource.
 
 <p></p>
-### News
+### News + Announcements
 
   * **June 29** -
     For detailed announcements, by see this [link](). In short:
@@ -59,7 +59,6 @@ are low-resource.
     [here](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=send_form).
 
 <p></p>
-## Announcements + Updates
 
 We will be making announcements in several places:
 * Our [HEAR
