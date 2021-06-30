@@ -113,10 +113,13 @@ Evaluation tasks with downstream learning:
 entire audio clip.
 * Timestamp-based: Temporal classification / tagging (e.g. transcription
 and sound event detection).
+
 For evaluation tasks that require training, a shallow downstream
 model will be learned with no fine-tuning of participant models.
 
-For the following kinds of tasks, we will use only embedding distance (no learning):
+For the following kinds of tasks, we will use only embedding distance
+(no learning):
+
 * Ranking tasks.
 * Just-noticeable-difference (JND) tasks.
 
