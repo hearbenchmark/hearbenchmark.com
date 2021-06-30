@@ -104,7 +104,7 @@ speech, and ethnomusicology.
 Evaluation tasks with downstream learning:
 * Scene-based: Classification/multi-classification/tagging of an
 entire audio clip.
-* Event-based: Temporal classification / tagging (e.g. transcription
+* Timestamp-based: Temporal classification / tagging (e.g. transcription
 and sound event detection).
 
 For the following kinds of tasks, we will use only embedding distance (no learning):
@@ -179,13 +179,19 @@ the
 * Your code must be written in `Python >= 3.6` and use `PyTorch >= 1.7` or
     `Tensorflow >= 2.0`. Notable marks will be given to models that work
     nearly identically for both libraries.
-* Your model must be able to work on an 8GB GPU machine.
+* Your model must be able to return a tensor (either in GPU or CPU
+    memory) for 20sec of audio, not excedding 16GB of GPU memory.
+    This includes both model weights and embedding size. This rule
+    applies both to timestamp embeddings and scene embeddings (see
+    below).
 
 <p></p>
 **Common format:**
-* Your code must follow a [common API](#common-api), described in detail in the section below.
-* Your model must accept audio time series data of arbitrary length, as both a
-    native tensor (perhaps already on CUDA) in either PyTorch or TensorFlow.
+* Your code must follow a [common API](#common-api), described in
+detail in the section below.
+* Your model must accept audio time series data of arbitrary length,
+    as both a native tensor (perhaps already on CUDA) in either
+    PyTorch or TensorFlow.
 * Your model must work with audio at a specific sample rate. You
     may select from one of the four following sample rates: `[16000Hz,
     22050Hz, 44100Hz, 48000Hz]`.  Your model must expose which
@@ -197,11 +203,13 @@ the
     sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
 
 * Your API must expose two different functions for producing embeddings:
-    * **Framewise embeddings**: return embeddings at regular intervals centered at timestamps.
+    * **Event-based embeddings**: return embeddings at regular intervals
+        centered at timestamps.
         You may select the time interval (hop-size) between adjacent
     	embeddings, but we suggest one that is `<= 50ms` to handle
     	an onset tolerance of `50ms` for music transcription
     	tasks.
+        Fram
     * **Scene embeddings**: return a single embedding for a given audio clip.
 
 <p></p>
@@ -237,17 +245,16 @@ The returned `Model` must have the following attributes:
         `[16000, 22050, 44100, 48000]`.
   * `embedding_size`: The dimensionality of the embedding returned
       by your model. If your model returns different embedding sizes
-      for framewise vs. scene embeddings this should be a dictionary
-      with the follow keys: `framewise`, `scene`. You are free to select
+      for timestamp vs. scene embeddings this should be a dictionary
+      with the follow keys: `timestamp`, `scene`. You are free to select
       any `embedding_size` that you like, but please consider the memory
       required to run your model.
 <hr />
 
 ```python
-get_framewise_embedding(
+get_timestamp_embeddings(
     audio: Tensor,
     model: Any,
-    batch_size: Optional[int]=None,
 ) -> Tuple[Tensor, Tensor]
 ```
 This function must return embeddings at regular intervals centered
@@ -266,21 +273,17 @@ must be provided and will be used for all evaluation tasks.
     function added later.
   * `model`: Loaded model, in PyTorch or Tensorflow 2.x. This
      should be moved to the device the audio tensor is on.
-  * `batch_size`: The participants are responsible for estimating the `batch_size` that
-    will achieve high-throughput while maintaining appropriate memory constraints.
-    However, `batch_size` is a useful feature for end-users to be able to toggle.
   * **Returns:**
-    * embedding: A `float32` `Tensor` with shape (`n_sounds, n_frames, embedding_size)`.
+    * embedding: A `float32` `Tensor` with shape (`n_sounds, n_timestamp, embedding_size)`.
     * timestamps: `Tensor`. Centered timestamps in seconds corresponding
         to each embedding in the output.
 
 <hr />
 
 ```python
-get_scene_embedding(
+get_scene_embeddings(
     audio: Tensor,
     model: Any,
-    batch_size: Optional[int]=None,
 ) -> Tensor
 ```
 This function must return a single embedding for each audio clip.
@@ -288,8 +291,8 @@ This function will be called to produce embeddings used for evaluation
 tasks such as classification that look at an entire audio clip.
 Participants are free to implement summarization of the temporal
 aspects of audio into a single embedding in whatever way they wish.
-A simple approach would be to take the average of all framewise
-embeddings returned for `get_framewise_embedding`
+A simple approach would be to take the average of all timestamp
+embeddings returned from `get_timestamp_embeddings`
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
     moved to the same device as the model. We are making the simplifying assumption
@@ -299,9 +302,6 @@ embeddings returned for `get_framewise_embedding`
     function added later.
   * `model`: Loaded model, in PyTorch or Tensorflow 2.x. This
      should be moved to the device the audio tensor is on.
-  * `batch_size`: The participants are responsible for estimating the `batch_size` that
-    will achieve high-throughput while maintaining appropriate memory constraints.
-    However, `batch_size` is a useful feature for end-users to be able to toggle.
   * **Returns:**
     * embedding: A `float32` `Tensor` with shape (`n_sounds, embedding_size)`.
 
@@ -310,8 +310,8 @@ embeddings returned for `get_framewise_embedding`
 ```python
 pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
 ```
-  * `emb1`: `Tensor` of shape `(n_samples1, n_frames, emb_dimension)`
-  * `emb2`: `Tensor` of shape `(n_samples2, n_frames, emb_dimension)`
+  * `emb1`: `Tensor` of shape `(n_samples1, emb_dimension)`
+  * `emb2`: `Tensor` of shape `(n_samples2, emb_dimension)`
   * **Returns:** Pairwise distance tensor `(n_samples1, n_samples2)`
   * *Note*:
     * This method is optional. If this method is not defined, we will use unnormalized
