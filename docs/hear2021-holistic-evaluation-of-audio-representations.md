@@ -300,7 +300,7 @@ This function will be called to produce embeddings used for evaluation
 tasks such as classification that look at an entire audio clip.
 Participants are free to implement summarization of the temporal
 aspects of audio into a single embedding in whatever way they wish.
-A simple approach would be to take the average of all timestamp
+A baseline approach would be to take the mean of all timestamp
 embeddings returned from `get_timestamp_embeddings`
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`.
