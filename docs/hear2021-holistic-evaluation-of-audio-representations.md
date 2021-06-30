@@ -239,7 +239,12 @@ load_model(model_file_path: Str) -> Model
   * **Returns:**
     * `Model` - TensorFlow or PyTorch Module object
 
-The returned `Model` must have the following attributes:
+<hr />
+```python
+Model
+```
+A `Model` (pytorch or tensorflow 2.x) class instance must have the
+following attributes:
   * `sample_rate`: Audio sample rate that your model expects. Must be one of
         `[16000, 22050, 44100, 48000]`.
   * `embedding_size`: The dimensionality of the embedding returned
@@ -253,7 +258,7 @@ The returned `Model` must have the following attributes:
 ```python
 get_timestamp_embeddings(
     audio: Tensor,
-    model: Any,
+    model: Model,
     tolerance: Optional[Int],
 ) -> Tuple[Tensor, Tensor]
 ```
@@ -271,7 +276,7 @@ must be provided and will be used for all evaluation tasks.
     preclude people from using the API for corpora of variable-length
     sounds; merely we don’t implement that as a core feature. It
     could be a wrapper function added later.
-  * `model`: Loaded model, in PyTorch or Tensorflow 2.x.
+  * `model`: Loaded `Model`.
   * `tolerance`: (Optional) Tolerance of the event detection, in
     milliseconds. For sound event detection, this is typically
     200ms. For music transcription, this is typically 50ms.
@@ -288,7 +293,7 @@ must be provided and will be used for all evaluation tasks.
 ```python
 get_scene_embeddings(
     audio: Tensor,
-    model: Any,
+    model: Model,
 ) -> Tensor
 ```
 This function must return a single embedding for each audio clip.
@@ -305,7 +310,7 @@ embeddings returned from `get_timestamp_embeddings`
     doesn’t preclude people from using the API for corpora of
     variable-length sounds; merely we don’t implement that as a
     core feature. It could be a wrapper function added later.
-  * `model`: Loaded model, in PyTorch or Tensorflow 2.x.
+  * `model`: Loaded `Model`.
   * **Returns:**
     * embedding: A `float32` `Tensor` with shape (`n_sounds, embedding_size)`.
 
