@@ -33,19 +33,20 @@ abstract: >
 
 ## Introduction
 
-The HEAR 2021 NeurIPS challenge invites you to create an audio embedding
-that is as holistic as the human ear, i.e., one that performs well across
-a variety of everyday domains. The core of the challenge builds off of
-three diverse and approachable open tasks: **word classification**, **pitch
-detection**, and **sound event detection**. Each is relatively simple on its own.
-Our twist is asking you to solve them all at once.
+The HEAR 2021 NeurIPS challenge invites you to create an audio
+embedding that is as holistic as the human ear, i.e., one that
+performs well across a variety of everyday domains. The core of the
+challenge builds off of three diverse and approachable open tasks:
+**word classification**, **pitch detection**, and **sound event
+detection**. Each is relatively simple on its own.  Our twist is
+asking you to solve them all at once.
 
-Teams will develop an embedding of arbitrary size to be fed into a generic
-predictor by our evaluation algorithm. This predictor will be shallowly
-trained for each team and each task. See details below.
+Teams will develop an embedding of arbitrary size to be fed into a
+generic predictor by our evaluation algorithm. This predictor will
+be shallowly trained for each team and each task. See details below.
 
-Embeddings will also be evaluated on diverse secret tasks, many of which
-are low-resource.
+Embeddings will also be evaluated on diverse secret tasks, many of
+which are low-resource.
 
 <p></p>
 ## News + Announcements
@@ -89,10 +90,11 @@ this challenge.
 <p></p>
 ## Evaluation
 
-We adopt the principles proposed by
-[Groyal *et. al* (2019)](https://arxiv.org/pdf/1905.01235.pdf) for evaluating
-the quality of a learned representation: a good representation should (1) transfer to
-a wide range of different tasks, and, (2) transfer with limited supervision and fine-tuning.
+We adopt the principles proposed by [Groyal *et. al*
+(2019)](https://arxiv.org/pdf/1905.01235.pdf) for evaluating the
+quality of a learned representation: a good representation should
+(1) transfer to a wide range of different tasks, and, (2) transfer
+with limited supervision and fine-tuning.
 
 <p></p>
 ### 1) Wide Range of Tasks
@@ -104,8 +106,10 @@ humanity, such as low-resource speech, environmental safety, clinical
 speech, and ethnomusicology.
 
 Evaluation tasks with downstream learning:
-* Classification/multi-classification/tagging of an entire audio scene.
-* Temporal classification / tagging (e.g. transcription and sound event detection).
+* Scene-based: Classification/multi-classification/tagging of an
+entire audio clip.
+* Event-based: Temporal classification / tagging (e.g. transcription
+and sound event detection).
 
 For the following kinds of tasks, we will use only embedding distance (no learning):
 * Ranking tasks.
@@ -122,15 +126,18 @@ model will be learned with no fine-tuning of participant models.
 All embeddings will be tested on the following three tasks, in addition to
 held-out secret tasks.
 
-* **[Google Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands)**<br />
-Classification of ten known spoken commands, with additional
+* **[Google Speech
+Commands](https://www.tensorflow.org/datasets/catalog/speech_commands)**<br
+/> Classification of ten known spoken commands, with additional
 categories for silence and unknown commands. Evaluation is top-one
 error as per [Warden (2018)](https://arxiv.org/abs/1804.03209).
 
-* **[DCASE 2016](http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio): Sound event detection in synthetic audio**<br />
-Time-based event detection of possibly overlapping office sounds.
-Evaluation will be performed using onset F-measure, as per the
-original DCASE evaluation.
+* **[DCASE
+2016](http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio):
+Sound event detection in synthetic audio**<br /> Time-based event
+detection of possibly overlapping office sounds.  Evaluation will
+be performed using onset F-measure, as per the original DCASE
+evaluation.
 
 * **[NSynth](https://magenta.tensorflow.org/datasets/nsynth) Pitch Detection**<br />
 Multiclass categorization of a single note into one of 88 pitch
@@ -183,13 +190,16 @@ the
 * Your code must follow a [common API](#common-api), described in detail in the section below.
 * Your model must accept audio time series data of arbitrary length, as both a
     native tensor (perhaps already on CUDA) in either PyTorch or TensorFlow.
-* Your model must work with audio at a specific sample rate. You may select from one
-    of the four following sample rates: `[16000Hz, 22050Hz, 44100Hz, 48000Hz]`.
-    Your model must expose which sample rate it expects as input. We will resample
-    audio to that sample rate prior to input to your model. (We will use ffmpeg---robust,
-    cross platform, good format support, etc.---as the main command line tool for
-    resampling, but with high quality
-    [resampling from sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
+* Your model must work with audio at a specific sample rate. You
+    may select from one of the four following sample rates: `[16000Hz,
+    22050Hz, 44100Hz, 48000Hz]`.  Your model must expose which
+    sample rate it expects as input. We will resample audio to that
+    sample rate prior to input to your model. (We will use
+    ffmpeg---robust, cross platform, good format support, etc.---as
+    the main command line tool for resampling, but with high quality
+    [resampling from
+    sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
+
 * Your API must expose two different functions for producing embeddings:
     * **Framewise embeddings**: return embeddings at regular intervals centered at timestamps.
         You may select the time interval (hop-size) between adjacent
@@ -205,12 +215,14 @@ the
 * This dev-kit will include a standardized API, including performing resampling.
 * You are encouraged to submit new evaluation tasks to the dev kit github, particularly
     those that are of high-societal impact.
-* Participants that submit new evaluation tasks to the dev-kit during the development
-    period, to aid other teams, will be highlighted in the summary paper.
+* Participants that submit new evaluation tasks to the dev-kit
+    during the development period, to aid other teams, will be
+    highlighted in the summary paper.
 
 <p></p>
 ## Common API
-Your submission must implement the following functions required for evaluation:
+Your submission must implement the following functions required for
+evaluation:
 
 <hr />
 ```python
@@ -221,16 +233,18 @@ load_model(model_file_path: Str, device: str=“cpu”) -> Model
     participant which device to use. If `“cpu”`, the CPU should be used
     (Multi-GPU support is not required).
   * **Returns:**
-    * `Model` - TensorFlow or PyTorch Module object already loaded on the correct device
+    * `Model` - TensorFlow or PyTorch Module object already loaded
+    on the correct device
 
 The returned `Model` must have the following attributes:
   * `sample_rate`: Audio sample rate that your model expects. Must be one of
         `[16000, 22050, 44100, 48000]`.
-  * `embedding_size`: The dimensionality of the embedding returned by your model. If your
-        model returns different embedding sizes for framewise vs. scene embeddings this
-        should be a dictionary with the follow keys: `framewise`, `scene`. You are free
-        to select any `embedding_size` that you like, but please consider the memory
-        required to run your model.
+  * `embedding_size`: The dimensionality of the embedding returned
+      by your model. If your model returns different embedding sizes
+      for framewise vs. scene embeddings this should be a dictionary
+      with the follow keys: `framewise`, `scene`. You are free to select
+      any `embedding_size` that you like, but please consider the memory
+      required to run your model.
 <hr />
 
 ```python
@@ -240,12 +254,13 @@ get_framewise_embedding(
     batch_size: Optional[int]=None,
 ) -> Tuple[Tensor, Tensor]
 ```
-This function must return embeddings at regular intervals centered at timestamps. The
-corresponding timestamps in seconds must also be returned. You are free to select the time
-interval (hop-size) between adjacent embeddings. We suggest one that is `<= 50ms`
-to handle a temporal tolerance of `+/- 50ms` for music transcription tasks. `hop_size`
-may be added as an optional argument, but a default must be provided and will be used for all
-evaluation tasks.
+This function must return embeddings at regular intervals centered
+at timestamps. The corresponding timestamps in seconds must also
+be returned. You are free to select the time interval (hop-size)
+between adjacent embeddings. We suggest one that is `<= 50ms` to
+handle a temporal tolerance of `+/- 50ms` for music transcription
+tasks. `hop_size` may be added as an optional argument, but a default
+must be provided and will be used for all evaluation tasks.
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
     moved to the same device as the model. We are making the simplifying assumption
@@ -272,12 +287,13 @@ get_scene_embedding(
     batch_size: Optional[int]=None,
 ) -> Tensor
 ```
-This function must return a single embedding for each audio
-clip. This function will be called to produce embeddings used for evaluation tasks such
-as classification that look at an entire audio clip. Participants are free to implement
-summarization of the temporal aspects of audio into a single embedding in whatever way
-they wish. A simple approach would be to take the average of all framewise embeddings
-returned for `get_framewise_embedding`
+This function must return a single embedding for each audio clip.
+This function will be called to produce embeddings used for evaluation
+tasks such as classification that look at an entire audio clip.
+Participants are free to implement summarization of the temporal
+aspects of audio into a single embedding in whatever way they wish.
+A simple approach would be to take the average of all framewise
+embeddings returned for `get_framewise_embedding`
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
     moved to the same device as the model. We are making the simplifying assumption
@@ -313,40 +329,48 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
 
 <p></p>
 ## Submissions
-**Submissions are now open!** Submit your entry prior to July 15th 21' AoE to be included in the
-first leaderboard update. We will be holding monthly leaderboard updates up until
-the final submission deadline of October 15th 21'.
+**Submissions are now open!** Submit your entry prior to July 15th
+21' AoE to be included in the first leaderboard update. We will be
+holding monthly leaderboard updates up until the final submission
+deadline of October 15th 21'.
 
-Code must hosted in a publicly facing GitHub repository. We will clone your repository
-and install it using `pip3 install .`. Your package does not need to be uploaded to
-PyPI. Your model weights must also be available to download at a publicly accessible
-URL. Please include a README on your GitHub repository that contains additional important
-information for running your submission including the CUDA and cuDNN versions.
+Code must hosted in a publicly facing GitHub repository. We will
+clone your repository and install it using `pip3 install .`. Your
+package does not need to be uploaded to PyPI. Your model weights
+must also be available to download at a publicly accessible URL.
+Please include a README on your GitHub repository that contains
+additional important information for running your submission including
+the CUDA and cuDNN versions.
 
-Make sure that your submission follows the [common API](#common-api) specified above.
+Make sure that your submission follows the [common API](#common-api)
+specified above.
 
-If you have any questions or are concerned about hosting your submission publicly,
-please do not hesitate to contact competition organizers at deep-at-neuralaudio.ai
+If you have any questions or are concerned about hosting your
+submission publicly, please do not hesitate to contact competition
+organizers at deep-at-neuralaudio.ai
 
 [**Submission Form**](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
 
 <p></p>
 ## Sponsors
-We are proud to announce that HEAR 2021 is sponsored by Google and that all competition
-evaluations will be performed on Google Cloud Platform.
+We are proud to announce that HEAR 2021 is sponsored by Google and
+that all competition evaluations will be performed on Google Cloud
+Platform.
 
 <p></p>
 ## Low Resource Participants
-For low-resource participants, *please reach out!* We are pleased to announce that we
-are accepting applications for Google Cloud Platform credit awards.
+For low-resource participants, *please reach out!* We are pleased
+to announce that we are accepting applications for Google Cloud
+Platform credit awards.
 
 <p></p>
 ## Organizing Team
-Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller and
-Christian James Steinmetz and Colin Malloy and George Tzanetakis and Gissel Velarde
-and Kirk McNally and Max Henry and Nicolas Pinto and Yonatan Bisk and Gyanendra Das
-and Humair Raj Khan and Camille Noufi and Dorien Herremans and Jesse Engel and
-Justin Salamon and Philippe Esling and Pranay Manocha and Shinji Watanabe and Zeyu Jin
+Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller
+and Christian James Steinmetz and Colin Malloy and George Tzanetakis
+and Gissel Velarde and Kirk McNally and Max Henry and Nicolas Pinto
+and Yonatan Bisk and Gyanendra Das and Humair Raj Khan and Camille
+Noufi and Dorien Herremans and Jesse Engel and Justin Salamon and
+Philippe Esling and Pranay Manocha and Shinji Watanabe and Zeyu Jin
 
 You can learn more about the committee [here](hear2021-committee-members).
 
