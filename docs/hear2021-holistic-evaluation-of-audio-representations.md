@@ -183,7 +183,8 @@ the
     memory) for 20sec of audio, not excedding 16GB of GPU memory.
     This includes both model weights and embedding size. This rule
     applies both to timestamp embeddings and scene embeddings (see
-    below).
+    below). This may place constraints on the size of the embedding
+    output.
 
 <p></p>
 **Common format:**
@@ -203,13 +204,12 @@ detail in the section below.
     sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
 
 * Your API must expose two different functions for producing embeddings:
-    * **Event-based embeddings**: return embeddings at regular intervals
+    * **Timestamp-based embeddings**: return embeddings at regular intervals
         centered at timestamps.
         You may select the time interval (hop-size) between adjacent
     	embeddings, but we suggest one that is `<= 50ms` to handle
     	an onset tolerance of `50ms` for music transcription
     	tasks.
-        Fram
     * **Scene embeddings**: return a single embedding for a given audio clip.
 
 <p></p>
@@ -255,6 +255,7 @@ The returned `Model` must have the following attributes:
 get_timestamp_embeddings(
     audio: Tensor,
     model: Any,
+    tolerance: Optional[Int],
 ) -> Tuple[Tensor, Tensor]
 ```
 This function must return embeddings at regular intervals centered
@@ -265,14 +266,21 @@ handle a temporal tolerance of `+/- 50ms` for music transcription
 tasks. `hop_size` may be added as an optional argument, but a default
 must be provided and will be used for all evaluation tasks.
 
-  * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
-    moved to the same device as the model. We are making the simplifying assumption
-    that for every task, all sounds will be padded/trimmed to the same length.
-    This doesn’t preclude people from using the API for corpora of variable-length
-    sounds; merely we don’t implement that as a core feature. It could be a wrapper
-    function added later.
+  * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1,
+    1]`. This should be moved to the same device as the model. We
+    are making the simplifying assumption that for every task, all
+    sounds will be padded/trimmed to the same length.  This doesn’t
+    preclude people from using the API for corpora of variable-length
+    sounds; merely we don’t implement that as a core feature. It
+    could be a wrapper function added later.
   * `model`: Loaded model, in PyTorch or Tensorflow 2.x. This
      should be moved to the device the audio tensor is on.
+  * `tolerance`: (Optional) Tolerance of the event detection, in
+    milliseconds. For sound event detection, this is typically
+    200ms. For music transcription, this is typically 50ms.
+    Participants can disregard this optional parameter and use a
+    contact hop size (< 50 ms suggested) for all timestamp-based
+    predictions.
   * **Returns:**
     * embedding: A `float32` `Tensor` with shape (`n_sounds, n_timestamp, embedding_size)`.
     * timestamps: `Tensor`. Centered timestamps in seconds corresponding
