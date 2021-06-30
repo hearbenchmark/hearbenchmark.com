@@ -5,28 +5,20 @@ subtitle: Holistic Evaluation of Audio Representations
 author: Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller and Christian James Steinmetz and Colin Malloy and George Tzanetakis and Gissel Velarde and Kirk McNally and Max Henry and Nicolas Pinto and Yonatan Bisk and Gyanendra Das and Humair Raj Khan and Camille Noufi and Dorien Herremans and Jesse Engel and Justin Salamon and Philippe Esling and Pranay Manocha and Shinji Watanabe and Zeyu Jin
 #date: 2021-06-29
 abstract: >
-  Humans can infer a wide range of properties from a perceived
-  sound, such as information about the source (e.g. what generated
-  the sound?), the information the sound
-  conveys (this is a word that means X, this is a musical note in
-  scale Y), and how it compares to other sounds (these two sounds
-  come/don't come from the same source and are/aren't identical).
-  Can any one learned representation do the same?
-  <br><br>
   The aim of this challenge is to develop a general-purpose audio
   representation that provides a strong basis for learning in a
   wide variety of tasks and scenarios. HEAR 2021 challenges participants
   with the following questions: Is it possible to develop a single
-  representation that models all psychoacoustic phenomena, both on
-  short and long timescales? What approach best generalizes to a
+  representation that models psychoacoustic phenomena like relative 
+  loudness and pitch? What approach best generalizes to a
   wide range of downstream audio tasks without fine-tuning? What
   audio representation allows researchers to formulate and solve
   novel and societally-valuable problems in simple, repeatable ways?
   <br><br>
   HEAR 2021 will evaluate audio representations using a benchmark suite
   across a variety of domains, including speech, environmental
-  sound, medical audio, and music. In the spirit of shared exchange,
-  all participants must submit an audio embedding model following
+  sound, and music. In the spirit of shared exchange, all 
+  participants must submit an audio embedding model following
   a common API that is general-purpose, open-source, and freely
   available to use.
 ---
@@ -104,9 +96,8 @@ with limited supervision and fine-tuning.
 HEAR 2021 benchmarks span multiple audio domains: speech,
 environmental sound, and music, with tasks that involve short and
 long time spans. In addition to well-known baselines, we have
-endeavoured to find evaluation tasks that particularly benefit
-humanity, such as low-resource speech, environmental safety, clinical
-speech, and ethnomusicology.
+endeavoured to find low-resource evaluation tasks that particularly benefit
+humanity.
 
 Evaluation tasks with downstream learning:
 * Scene-based: Classification/multi-classification/tagging of an
@@ -117,11 +108,7 @@ and sound event detection).
 For evaluation tasks that require training, a shallow downstream
 model will be learned with no fine-tuning of participant models.
 
-For the following kinds of tasks, we will use only embedding distance
-(no learning):
-
-* Ranking tasks.
-* Just-noticeable-difference (JND) tasks.
+For some kinds of tasks, we will use only embedding distance (i.e., no learning).
 
 <p></p>
 ## Open Tasks
@@ -131,7 +118,7 @@ held-out secret tasks.
 
 * **[Google Speech
 Commands](https://www.tensorflow.org/datasets/catalog/speech_commands): Scene based multilabel classification**<br
-/> Classification of ten known spoken commands, with additional
+/> Classification of known spoken commands, with additional
 categories for silence and unknown commands. Evaluation is top-one
 error as per [Warden (2018)](https://arxiv.org/abs/1804.03209).
 
@@ -143,8 +130,8 @@ be performed using onset F-measure, as per the original DCASE
 evaluation.
 
 * **[NSynth](https://magenta.tensorflow.org/datasets/nsynth) Pitch Detection**: Scene based multiclass prediction<br />
-Multiclass categorization of a single note into one of 88 pitch
-classes, and 12 chromas. Evaluated using pitch accuracy and chroma
+Multiclass categorization of a single note into one of 88 pitches, 
+and 12 chromas (pitch classes). Evaluated using pitch accuracy and chroma
 accuracy, as per [CREPE](https://arxiv.org/abs/1802.06182).
 
 Evaluation code, including the evaluation predictor models and training scripts, will
@@ -172,7 +159,7 @@ the
     compatible (BSD, MIT, etc) license.
 * Your model weights must be released under a Creative Commons Attribution 4.0
     International License, or compatible license.
-* You are welcome to use whatever training data like, provided you adhere to all other
+* You are welcome to use whatever training data you like, provided you adhere to all other
     competition rules, and:
   * It is documented in your final written submission.
   * Any existing data marked as test may not be used for training.
@@ -183,7 +170,7 @@ the
     `Tensorflow >= 2.0`. Notable marks will be given to models that work
     nearly identically for both libraries.
 * Your model must be able to return a tensor (either in GPU or CPU
-    memory) for 20sec of audio, not excedding 16GB of GPU memory.
+    memory) for up to 20 minutes of audio without excedding 16GB of GPU memory.
     This includes both model weights and embedding size. This rule
     applies both to timestamp embeddings and scene embeddings (see
     below). This may place constraints on the size of the embedding
@@ -193,38 +180,36 @@ the
 **Common format:**
 * Your code must follow a [common API](#common-api), described in
 detail in the section below.
-* Your model must accept audio time series data of arbitrary length,
-    as both a native tensor (perhaps already on CUDA) in either
+* Your model must accept audio of arbitrary length,
+    as a native tensor (perhaps already on CUDA) in either
     PyTorch or TensorFlow.
-* Your model must work with audio at a specific sample rate. You
-    may select from one of the four following sample rates: `[16000Hz,
-    22050Hz, 44100Hz, 48000Hz]`.  Your model must expose which
-    sample rate it expects as input. We will resample audio to that
-    sample rate prior to input to your model. (We will use
+* Your model must work with audio at one of the following four samples rates: 
+    `[16000Hz, 22050Hz, 44100Hz, 48000Hz]`. Your model must expose which
+    sample rate it expects as input as a class attribute (see API details below), 
+    however it is not expected to resample audio internally. 
+    We will resample audio to all four sample rates for all tasks. (We will use
     ffmpeg---robust, cross platform, good format support, etc.---as
     the main command line tool for resampling, but with high quality
     [resampling from
     sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
 
-* Your API must expose two different functions for producing embeddings:
+* Your API must produce embeddings in two varieties:
     * **Timestamp-based embeddings**: return embeddings at regular intervals
         centered at timestamps.
         You may select the time interval (hop-size) between adjacent
-    	embeddings, but we suggest one that is `<= 50ms` to handle
+    	embeddings, but we suggest that it is `<= 50ms` to handle
     	an onset tolerance of `50ms` for music transcription
     	tasks.
     * **Scene embeddings**: return a single embedding for a entire audio clip.
 
 <p></p>
 **Sharing:**
-* You will be provided with a dev-kit with several datasets, multi-modal training,
-    baseline, and evaluation.
-* This dev-kit will include a standardized API, including performing resampling.
+* You will be provided with a dev-kit including several tasks, relavent datasets and a script for performing evaluation.
+* This dev-kit will also include a baseline embedding model in a standardized API (see below).
 * You are encouraged to submit new evaluation tasks to the dev kit github, particularly
     those that are of high-societal impact.
 * Participants that submit new evaluation tasks to the dev-kit
-    during the development period, to aid other teams, will be
-    highlighted in the summary paper.
+    during the development period will be highlighted in the summary paper.
 
 <p></p>
 ## Common API
@@ -247,7 +232,7 @@ A `Model` (pytorch or tensorflow 2.x) class instance must have the
 following attributes:
   * `sample_rate`: Audio sample rate that your model expects. Must be one of
         `[16000, 22050, 44100, 48000]`.
-  * `embedding_size: Dict[str, int]`: The dimensionality of the
+  * [[[[[[[TODO: look at this. ]]]]]]]]`embedding_size: Dict[str, int]`: The dimensionality of the
       embedding returned by your model. This should be a dictionary
       with the follow keys: `timestamp`, `scene`. You are free to
       select any `embedding_size` that you like, and have separate
@@ -263,26 +248,27 @@ get_timestamp_embeddings(
 ) -> Tuple[Tensor, Tensor]
 ```
 This function must return embeddings at regular intervals centered
-at timestamps. The corresponding timestamps in seconds must also
-be returned. You are free to select the time interval (hop-size)
-between adjacent embeddings. We suggest one that is `<= 50ms` to
-handle a temporal tolerance of `50ms` for music transcription
-tasks. `hop_size` may be added as an optional argument, but a default
-must be provided and will be used for all evaluation tasks.
+at timestamps. The model must also return the corresponding timestamps, in seconds.
+You are free to select the time interval between adjacent embeddings (hop-size). 
+We suggest that it is `<= 50ms` to handle a temporal tolerance of `50ms` 
+for music transcription tasks. You may add `hop_size` as an optional argument, but a default value
+must be provided as it will be used for all evaluation tasks.
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1,
-    1]`.  We are making the simplifying assumption that for every task, all
-    sounds will be padded/trimmed to the same length.  This doesn’t
+    1]`.  All sounds in a batch will be padded/trimmed to the same length. 
+    <!-- This doesn’t
     preclude people from using the API for corpora of variable-length
     sounds; merely we don’t implement that as a core feature. It
-    could be a wrapper function added later.
+    could be a wrapper function added later. -->
   * `model`: Loaded `Model`.
-  * `tolerance`: (Optional) Tolerance of the event detection, in
-    milliseconds. For sound event detection, this is typically
-    200ms. For music transcription, this is typically 50ms.
+<!--   * `tolerance`: (Optional) Tolerance of the event detection, in
+    milliseconds. Teams may choose to vary their internal hop-size 
+    as a function of evaluation timing tolerance. For sound event detection, 
+    this is typically 200ms (i.e., onsets that are identified within 
+    200ms are considered to be hits). For music transcription, this is typically 50ms.
     Participants can disregard this optional parameter and use a
     constant hop size (< 50 ms suggested) for all timestamp-based
-    predictions.
+    predictions. -->
   * **Returns:**
     * embedding: A `float32` `Tensor` with shape (`n_sounds, n_timestamp, model.embedding_size['timestamp'])`.
     * timestamps: `Tensor`. Centered timestamps in seconds corresponding
@@ -296,25 +282,21 @@ get_scene_embeddings(
     model: Model,
 ) -> Tensor
 ```
-This function must return a single embedding for each audio clip.
-This function will be called to produce embeddings used for evaluation
+This function returns a single embedding for each audio clip.
+It will be called to produce embeddings used for evaluation
 tasks such as classification that look at an entire audio clip.
 Participants are free to implement summarization of the temporal
 aspects of audio into a single embedding in whatever way they wish.
 A baseline approach would be to take the mean of all timestamp
-embeddings returned from `get_timestamp_embeddings`
+embeddings returned from `get_timestamp_embeddings`.
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`.
-    We are making the simplifying assumption that for every task,
-    all sounds will be padded/trimmed to the same length.  This
-    doesn’t preclude people from using the API for corpora of
-    variable-length sounds; merely we don’t implement that as a
-    core feature. It could be a wrapper function added later.
+    All sounds in a batch will be padded/trimmed to the same length.
   * `model`: Loaded `Model`.
   * **Returns:**
     * embedding: A `float32` `Tensor` with shape (`n_sounds, model.embedding_size['scene'])`.
 
-<hr />
+<!-- <hr />
 
 ```python
 pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
@@ -323,14 +305,14 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
   * `emb2`: `Tensor` of shape `(n_samples2, emb_dimension)`
   * **Returns:** Pairwise distance tensor `(n_samples1, n_samples2)`
   * *Note*:
-    * This method is optional. If this method is not defined, we will use unnormalized
+    * If this method is not defined, we will use unnormalized
     l1. But you are welcome to override this implement it if you would like to define a
     different distance metric for your embeddings.
     * If you really want to use a divergence and not a distance, and have a
     compelling argument for why, please contact us.
     * You can assume that all input embeddings will have been converted to floats
     already.
-<hr />
+<hr /> -->
 
 <p></p>
 ## Submissions
@@ -339,6 +321,12 @@ entry](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho
 prior to July 15th 2021 AoE to be included in the first leaderboard
 update. We will be holding monthly leaderboard updates up until the
 final submission deadline of October 15th 2021.
+
+***A note about pip installable packages.*** The organizers of the HEAR 2021 challenge feel strongly about 
+general purpose models that are easy to access and easy to use. As such, we have fairly strict 
+requirements for a pip installable package. We realize that this may pose a challenge to some entrants. 
+If this criterion poses an issue for you, the HEAR team would be glad to help. Please reach out to us by
+[e-mail](mailto:deep-at-neuralaudio.ai).
 
 Code must hosted in a publicly facing GitHub repository. We will
 clone your repository and install it using a 
