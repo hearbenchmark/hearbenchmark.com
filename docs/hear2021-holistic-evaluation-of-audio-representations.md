@@ -340,7 +340,7 @@ final submission deadline of October 15th 2021.
 Code must hosted in a publicly facing GitHub repository. We will
 clone your repository and install it using a 
 [local source tree pip install](https://packaging.python.org/tutorials/installing-packages/#installing-from-a-local-src-tree)
-i.e., `python3 - m pip install <repo-path>`. Your
+i.e., `python3 -m pip install <repo-path>`. Your
 package does not need to be uploaded to PyPI. Your model weights
 must also be available to download at a publicly accessible URL.
 Please include a README on your GitHub repository that contains
