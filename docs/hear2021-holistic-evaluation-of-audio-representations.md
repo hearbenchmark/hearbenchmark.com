@@ -17,11 +17,11 @@ abstract: >
   representation that provides a strong basis for learning in a
   wide variety of tasks and scenarios. HEAR 2021 challenges participants
   with the following questions: Is it possible to develop a single
-  representation that models all psychoacoustic phenomena? What
-  approach best generalizes to a wide range of downstream audio
-  tasks without fine-tuning? What audio representation allows
-  researchers to formulate and solve novel and societally-valuable
-  problems in simple, repeatable ways?
+  representation that models all psychoacoustic phenomena, both on
+  short and long timescales? What approach best generalizes to a
+  wide range of downstream audio tasks without fine-tuning? What
+  audio representation allows researchers to formulate and solve
+  novel and societally-valuable problems in simple, repeatable ways?
   <br><br>
   HEAR 2021 will evaluate audio representations using a benchmark suite
   across a variety of domains, including speech, environmental
