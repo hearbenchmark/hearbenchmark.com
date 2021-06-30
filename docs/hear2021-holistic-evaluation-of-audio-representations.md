@@ -50,10 +50,15 @@ and each task.
   * **2021-06-29** -
     * There will be a journal special issue for strong HEAR 2021
     participants.
-    * The API has been simplified and clarified. For a detailed set of updates, please see this [link](https://github.com/neuralaudio/neuralaudio.github.io/pull/10/).
+    * The API has been simplified and clarified. For a detailed set
+    of updates, please see this
+    [link](https://github.com/neuralaudio/neuralaudio.github.io/pull/10/).
     * Three open tasks have been announced.
     * The first leaderbord is *ready for submission*. Please submit
     [here](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=send_form).
+    * Google Cloud Platform has generously donated compute resources
+    for our leaderboard. Low resource participants, please reach
+    out for GPU sponsorship!
 
 <p></p>
 
@@ -230,15 +235,11 @@ evaluation:
 
 <hr />
 ```python
-load_model(model_file_path: Str, device: str=“cpu”) -> Model
+load_model(model_file_path: Str) -> Model
 ```
   * `model_file_path`: Load model checkpoint from this file path.
-  * `device`: For inference on machines with multiple GPUs, this instructs the
-    participant which device to use. If `“cpu”`, the CPU should be used
-    (Multi-GPU support is not required).
   * **Returns:**
-    * `Model` - TensorFlow or PyTorch Module object already loaded
-    on the correct device
+    * `Model` - TensorFlow or PyTorch Module object
 
 The returned `Model` must have the following attributes:
   * `sample_rate`: Audio sample rate that your model expects. Must be one of
@@ -267,14 +268,12 @@ tasks. `hop_size` may be added as an optional argument, but a default
 must be provided and will be used for all evaluation tasks.
 
   * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1,
-    1]`. This should be moved to the same device as the model. We
-    are making the simplifying assumption that for every task, all
+    1]`.  We are making the simplifying assumption that for every task, all
     sounds will be padded/trimmed to the same length.  This doesn’t
     preclude people from using the API for corpora of variable-length
     sounds; merely we don’t implement that as a core feature. It
     could be a wrapper function added later.
-  * `model`: Loaded model, in PyTorch or Tensorflow 2.x. This
-     should be moved to the device the audio tensor is on.
+  * `model`: Loaded model, in PyTorch or Tensorflow 2.x.
   * `tolerance`: (Optional) Tolerance of the event detection, in
     milliseconds. For sound event detection, this is typically
     200ms. For music transcription, this is typically 50ms.
@@ -302,14 +301,13 @@ aspects of audio into a single embedding in whatever way they wish.
 A simple approach would be to take the average of all timestamp
 embeddings returned from `get_timestamp_embeddings`
 
-  * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`. This should be
-    moved to the same device as the model. We are making the simplifying assumption
-    that for every task, all sounds will be padded/trimmed to the same length.
-    This doesn’t preclude people from using the API for corpora of variable-length
-    sounds; merely we don’t implement that as a core feature. It could be a wrapper
-    function added later.
-  * `model`: Loaded model, in PyTorch or Tensorflow 2.x. This
-     should be moved to the device the audio tensor is on.
+  * `audio`: `n_sounds x n_samples` of mono audio in the range `[-1, 1]`.
+    We are making the simplifying assumption that for every task,
+    all sounds will be padded/trimmed to the same length.  This
+    doesn’t preclude people from using the API for corpora of
+    variable-length sounds; merely we don’t implement that as a
+    core feature. It could be a wrapper function added later.
+  * `model`: Loaded model, in PyTorch or Tensorflow 2.x.
   * **Returns:**
     * embedding: A `float32` `Tensor` with shape (`n_sounds, embedding_size)`.
 
