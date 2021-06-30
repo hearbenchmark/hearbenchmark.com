@@ -193,9 +193,10 @@ the
     [resampling from sox](https://trac.ffmpeg.org/wiki/FFmpeg%20and%20the%20SoX%20Resampler)).
 * Your API must expose two different functions for producing embeddings:
     * **Framewise embeddings**: return embeddings at regular intervals centered at timestamps.
-        You may select the time interval (hop-size) between adjacent embeddings, but we
-        suggest one that is `<= 50ms` to handle a temporal tolerance of `+/- 50ms` for
-        music transcription tasks.
+        You may select the time interval (hop-size) between adjacent
+    	embeddings, but we suggest one that is `<= 50ms` to handle
+    	an onset tolerance of `50ms` for music transcription
+    	tasks.
     * **Scene embeddings**: return a single embedding for a given audio clip.
 
 <p></p>
