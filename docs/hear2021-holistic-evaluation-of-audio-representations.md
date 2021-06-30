@@ -33,22 +33,24 @@ abstract: >
 
 ## Introduction
 
-The HEAR 2021 challenge invites you to create an audio embedding that is as holistic
-as the human ear, i.e., one that performs well across a variety of everyday domains.
-The challenge starts with three diverse and approachable open tasks, but also includes
-a variety of held-out secret tasks. The three open tasks are: **word classification**,
-**pitch detection**, and **sound event detection**. Each is relatively simple on its own.
-Our twist is asking you to solve them all at once.
+The HEAR 2021 challenge invites you to create an audio embedding
+that is as holistic as the human ear, i.e., one that performs well
+across a variety of everyday domains.  The challenge starts with
+three diverse and approachable open tasks, but also includes a
+variety of held-out secret tasks. The three open tasks are: **word
+classification**, **pitch detection**, and **sound event detection**.
+Each is relatively simple on its own.  Our twist is asking you to
+solve them all at once.
 
-Teams will develop an embedding of arbitrary size to be fed into a generic predictor
-by our evaluation algorithm. This predictor will be shallowly trained for each team
-and each task.
+Teams will develop an embedding of arbitrary size to be fed into a
+generic predictor by our evaluation algorithm. This predictor will
+be shallowly trained for each team and each task.
 
 <p></p>
 ## News and Announcements
 
   * **2021-06-29** -
-    * There will be a journal special issue for strong HEAR 2021
+    * There will be a journal special issue for invited HEAR 2021
     participants.
     * The API has been simplified and clarified. For a detailed set
     of updates, please see this
