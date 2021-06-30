@@ -79,7 +79,7 @@ this challenge.
 | Date            |                                                             |
 |-----------------|-------------------------------------------------------------|
 | 2021-05-10      | Competition begins.                                         |
-| 2021-07-15 AoE  | Submissions deadline for inclusion in July leaderboard.     |
+| 2021-07-15 AoE  | Submission deadline for inclusion in July leaderboard.     |
 | 2021-07-30      | Leaderboard updated.                                        |
 | 2021-08-15 AoE  | Submission deadline for inclusion in August leaderboard.    |
 | 2021-08-30      | Leaderboard updated.                                        |
@@ -94,7 +94,7 @@ this challenge.
 ## Evaluation
 
 We adopt the principles proposed by [Groyal *et. al*
-(2019)](https://arxiv.org/pdf/1905.01235.pdf) for evaluating the
+(2019)](https://arxiv.org/abs/1905.01235) for evaluating the
 quality of a learned representation: a good representation should
 (1) transfer to a wide range of different tasks, and, (2) transfer
 with limited supervision and fine-tuning.
