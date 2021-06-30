@@ -247,12 +247,11 @@ A `Model` (pytorch or tensorflow 2.x) class instance must have the
 following attributes:
   * `sample_rate`: Audio sample rate that your model expects. Must be one of
         `[16000, 22050, 44100, 48000]`.
-  * `embedding_size`: The dimensionality of the embedding returned
-      by your model. If your model returns different embedding sizes
-      for timestamp vs. scene embeddings this should be a dictionary
-      with the follow keys: `timestamp`, `scene`. You are free to select
-      any `embedding_size` that you like, but please consider the memory
-      required to run your model.
+  * `embedding_size: Dict[str, int]`: The dimensionality of the
+      embedding returned by your model. This should be a dictionary
+      with the follow keys: `timestamp`, `scene`. You are free to
+      select any `embedding_size` that you like, but please consider
+      the memory required to run your model.
 <hr />
 
 ```python
