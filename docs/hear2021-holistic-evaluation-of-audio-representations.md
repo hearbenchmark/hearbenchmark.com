@@ -7,13 +7,12 @@ author: Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller an
 abstract: >
   The aim of this challenge is to develop a general-purpose audio
   representation that provides a strong basis for learning in a
-  wide variety of tasks and scenarios. HEAR 2021 challenges participants
-  with the following questions: Is it possible to develop a single
-  representation that models psychoacoustic phenomena like relative 
-  loudness and pitch? What approach best generalizes to a
-  wide range of downstream audio tasks without fine-tuning? What
-  audio representation allows researchers to formulate and solve
-  novel and societally-valuable problems in simple, repeatable ways?
+  wide variety of tasks and scenarios. The HEAR 2021 challenge
+  invites you to create an audio embedding that is as holistic as
+  the human ear, i.e., one that performs well across a variety of
+  everyday domains:
+  What approach best generalizes to a
+  wide range of downstream audio tasks without fine-tuning?
   <br><br>
   HEAR 2021 will evaluate audio representations using a benchmark suite
   across a variety of domains, including speech, environmental
@@ -50,7 +49,7 @@ be shallowly trained for each team and each task.
 ## News and Announcements
 
   * **2021-06-29** -
-    * There will be a journal special issue for invited HEAR 2021
+    * There will be a special journal issue for invited HEAR 2021
     participants.
     * The API has been simplified and clarified. For a detailed set
     of updates, please see this
