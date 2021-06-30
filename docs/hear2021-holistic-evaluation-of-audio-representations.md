@@ -48,6 +48,29 @@ Embeddings will also be evaluated on diverse secret tasks, many of which
 are low-resource.
 
 <p></p>
+### News
+
+  * **June 29** -
+    For detailed announcements, by see this [link](). In short:
+    * There will be a journal special issue for strong HEAR 2021
+    participants.
+    * The API has been simplified and clarified.
+    * The first leaderbord is *open*. Please submit
+    [here](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=send_form).
+
+<p></p>
+## Announcements + Updates
+
+We will be making announcements in several places:
+* Our [HEAR
+2021](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/)
+category in the Neural Audio AI [forum](https://discuss.neuralaudio.ai/).
+The forum also provides a place to discuss audio ML research beyond
+this challenge.
+* Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
+* Our [twitter](https://twitter.com/neuralaudio) account.
+
+<p></p>
 ## Timeline
 
 | Date            |                                                             |
@@ -64,30 +87,6 @@ are low-resource.
 | Oct 16 '21      | Secret evaluation datasets and code are released.           |
 | Nov 15 '21      | Final results announced.                                    |
 | Dec 6 '21       | NeurIPS Conference begins.                                  |
-
-An accompanying NeurIPS workshop is being planned, with exact dates to be announced. HEAR will
-be accepting proposals for competitors to present during a special session, more details
-will be provided soon.
-
-<p></p>
-## Announcements
-
-Look forward to the following announcements: starter-kit, sandbox,
-leaderboard, etc. We will be making announcements in several places:
-* Our [HEAR
-2021](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/)
-category in the Neural Audio AI [forum](https://discuss.neuralaudio.ai/).
-The forum also provides a place to discuss audio ML research beyond
-this challenge.
-* Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
-* Our [twitter](https://twitter.com/neuralaudio) account.
-
-<p></p>
-### Updates
-
-  * **June 29** - competition document updated to include the announcement of open
-    tasks and updates to the rules and API specification. Leaderboard timeline
-    updated and competition submissions opened.
 
 <p></p>
 ## Evaluation
