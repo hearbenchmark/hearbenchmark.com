@@ -217,7 +217,7 @@ detail in the section below.
     	embeddings, but we suggest one that is `<= 50ms` to handle
     	an onset tolerance of `50ms` for music transcription
     	tasks.
-    * **Scene embeddings**: return a single embedding for a given audio clip.
+    * **Scene embeddings**: return a single embedding for a entire audio clip.
 
 <p></p>
 **Sharing:**
