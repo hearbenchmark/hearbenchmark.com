@@ -265,7 +265,7 @@ This function must return embeddings at regular intervals centered
 at timestamps. The corresponding timestamps in seconds must also
 be returned. You are free to select the time interval (hop-size)
 between adjacent embeddings. We suggest one that is `<= 50ms` to
-handle a temporal tolerance of `<= 50ms` for music transcription
+handle a temporal tolerance of `50ms` for music transcription
 tasks. `hop_size` may be added as an optional argument, but a default
 must be provided and will be used for all evaluation tasks.
 
