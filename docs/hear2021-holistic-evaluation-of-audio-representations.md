@@ -52,18 +52,17 @@ are low-resource.
 
 | Date            |                                                             |
 |-----------------|-------------------------------------------------------------|
-| May 10 '21      | Competition begins.                                         |
-| Jul 15 '21 AoE  | Submissions deadline for inclusion in July leaderboard.     |
-| Jul 30 '21      | Leaderboard updated.                                        |
-| Aug 15 '21 AoE  | Submission deadline for inclusion in August leaderboard.    |
-| Aug 30 '21      | Leaderboard updated.                                        |
-| Sep 15 '21 AoE  | Submission deadline for inclusion in September leaderboard. |
-| Sep 30 '21      | Leaderboard updated.                                        |
-| Early Oct '21   | (tentative) Presentation proposal deadline for workshop.    |
-| Oct 15 '21 AoE  | Deadline for final submissions.                             |
-| Oct 16 '21      | Secret evaluation datasets and code are released.           |
-| Nov 15 '21      | Final results announced.                                    |
-| Dec 6 '21       | NeurIPS Conference begins.                                  |
+| 2021-05-10      | Competition begins.                                         |
+| 2021-07-15 AoE  | Submissions deadline for inclusion in July leaderboard.     |
+| 2021-07-30      | Leaderboard updated.                                        |
+| 2021-08-15 AoE  | Submission deadline for inclusion in August leaderboard.    |
+| 2021-08-30      | Leaderboard updated.                                        |
+| 2021-09-15 AoE  | Submission deadline for inclusion in September leaderboard. |
+| 2021-09-30      | Leaderboard updated.                                        |
+| 2021-10-15 AoE  | Deadline for final submissions.                             |
+| 2021-10-16      | Secret evaluation datasets and code are released.           |
+| 2021-11-15      | Final results announced.                                    |
+| 2021-12-06      | NeurIPS Conference begins.                                  |
 
 An accompanying NeurIPS workshop is being planned, with exact dates to be announced. HEAR will
 be accepting proposals for competitors to present during a special session, more details
