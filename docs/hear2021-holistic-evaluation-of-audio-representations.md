@@ -250,8 +250,9 @@ following attributes:
   * `embedding_size: Dict[str, int]`: The dimensionality of the
       embedding returned by your model. This should be a dictionary
       with the follow keys: `timestamp`, `scene`. You are free to
-      select any `embedding_size` that you like, but please consider
-      the memory required to run your model.
+      select any `embedding_size` that you like, and have separate
+      embedding sizes for timestamp embeddings and scene embeddings,
+      but please consider the memory required to run your model.
 <hr />
 
 ```python
