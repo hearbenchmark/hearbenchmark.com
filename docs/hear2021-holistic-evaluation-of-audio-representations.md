@@ -45,7 +45,7 @@ by our evaluation algorithm. This predictor will be shallowly trained for each t
 and each task.
 
 <p></p>
-## News + Announcements
+## News and Announcements
 
   * **2021-06-29** -
     * There will be a journal special issue for strong HEAR 2021
