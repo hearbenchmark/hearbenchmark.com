@@ -7,7 +7,7 @@ author: Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller an
 abstract: >
   Humans can infer a wide range of properties from a perceived
   sound, such as information about the source (e.g. what generated
-  the sound? where is it coming from?), the information the sound
+  the sound?), the information the sound
   conveys (this is a word that means X, this is a musical note in
   scale Y), and how it compares to other sounds (these two sounds
   come/don't come from the same source and are/aren't identical).
