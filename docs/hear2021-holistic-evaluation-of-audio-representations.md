@@ -55,7 +55,7 @@ be shallowly trained for each team and each task.
     * The API has been simplified and clarified. For a detailed set
     of updates, please see this
     [link](https://github.com/neuralaudio/neuralaudio.github.io/pull/10/).
-    * Three open tasks have been announced.
+    * Three [open tasks](#open-tasks) have been announced.
     * The first leaderbord is *ready for submission*. Please submit
     [here](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=send_form).
     * Google Cloud Platform has generously donated compute resources
