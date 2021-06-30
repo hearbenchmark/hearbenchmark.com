@@ -331,10 +331,11 @@ pairwise_distance(emb1: Tensor, emb2: Tensor) -> Tensor
 
 <p></p>
 ## Submissions
-**Submissions are now open!** Submit your entry prior to July 15th
-2021 AoE to be included in the first leaderboard update. We will be
-holding monthly leaderboard updates up until the final submission
-deadline of October 15th 2021.
+**Submissions are now open!** [Submit your
+entry](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
+prior to July 15th 2021 AoE to be included in the first leaderboard
+update. We will be holding monthly leaderboard updates up until the
+final submission deadline of October 15th 2021.
 
 Code must hosted in a publicly facing GitHub repository. We will
 clone your repository and install it using a 
@@ -352,8 +353,6 @@ specified above.
 If you have any questions or are concerned about hosting your
 submission publicly, please do not hesitate to contact competition
 organizers at deep-at-neuralaudio.ai
-
-[**Submission Form**](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
 
 <p></p>
 ## Sponsors
