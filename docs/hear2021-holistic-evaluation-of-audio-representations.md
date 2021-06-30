@@ -49,17 +49,15 @@ be shallowly trained for each team and each task.
 ## News and Announcements
 
   * **2021-06-29** -
-    * There will be a special journal issue for invited HEAR 2021
-    participants.
+    * All three [open tasks](#open-tasks) have been announced.
     * The API has been simplified and clarified. For a detailed set
-    of updates, please see this
-    [link](https://github.com/neuralaudio/neuralaudio.github.io/pull/10/).
-    * Three [open tasks](#open-tasks) have been announced.
-    * The first leaderbord is *ready for submission*. Please submit
-    [here](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=send_form).
+    of updates, please see find the specific
+    [changelog](https://github.com/neuralaudio/neuralaudio.github.io/pull/10/).
     * Google Cloud Platform has generously donated compute resources
     for our leaderboard. Low resource participants, please reach
     out for GPU sponsorship!
+    * The first leaderbord is *ready for submission*. Please submit
+    [here](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=send_form).
 
 <p></p>
 
