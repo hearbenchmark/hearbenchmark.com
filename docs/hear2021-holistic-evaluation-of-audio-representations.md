@@ -20,6 +20,9 @@ abstract: >
   participants must submit an audio embedding model following
   a common API that is general-purpose, open-source, and freely
   available to use.
+  <br><br>
+  PMLR will publish a HEAR special issue. All participants are
+  invited to submit.
 ---
 
 ## Submissions
@@ -48,6 +51,10 @@ be shallowly trained for each team and each task.
 <p></p>
 ## News and Announcements
 
+  * **2021-07-16** -
+    * PMLR will host a HEAR special issue, submission deadline
+    January 31st, 2022.
+    * Some clarifications to the NSynth task are added.
   * **2021-06-29** -
     * All three [open tasks](#open-tasks) have been announced.
     * The API has been simplified and clarified. For a detailed set
@@ -86,6 +93,7 @@ this challenge.
 | 2021-10-16      | Secret evaluation datasets and code are released.           |
 | 2021-11-15      | Final results announced.                                    |
 | 2021-12-06      | NeurIPS Conference begins.                                  |
+| 2022-01-31      | PMLR submissions due.                                       |
 
 <p></p>
 ## Evaluation
@@ -112,7 +120,8 @@ entire audio clip.
 For evaluation tasks that require training, a shallow downstream
 model will be learned with no fine-tuning of participant models.
 
-For some kinds of tasks, we will use only pairwise embedding distance (i.e., no learning).
+For some kinds of tasks, we will use only pairwise embedding distance
+(i.e., no learning).
 We will use unnormalized l1.
 
 <p></p>
@@ -139,8 +148,9 @@ Multiclass categorization of a single note into one of 88 pitches,
 and 12 chromas (pitch classes). Evaluated using pitch accuracy and chroma
 accuracy, as per [CREPE](https://arxiv.org/abs/1802.06182).
 
-Evaluation code, including the evaluation predictor models and training scripts, will
-be released in the coming weeks for each of these open tasks.
+Evaluation code, including the evaluation predictor models and
+training scripts, will be released in the coming weeks for each of
+these open tasks.
 
 <p></p>
 ## Secret Tasks
@@ -154,7 +164,7 @@ special emphasis on low-resource and/or underrepresented domains.
 A primary goal of this challenge is to encourage the development
 of freely-available general-purpose audio representation models.
 If you have any questions or concerns about the rules, we are happy
-to help you.  Please post on the
+to help you. Please post on the
 [forum](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/) or
 [email us](mailto:deep-at-neuralaudio.ai) privately.
 
