@@ -143,10 +143,11 @@ detection of possibly overlapping office sounds.  Evaluation will
 be performed using onset F-measure, as per the original DCASE
 evaluation.
 
-* **[NSynth](https://magenta.tensorflow.org/datasets/nsynth): Pitch Detection** Scene based multiclass prediction<br />
-Multiclass categorization of a single note into one of 88 pitches of a standard MIDI piano.
-  Evaluated using pitch accuracy and chroma accuracy,
-  as per [CREPE](https://arxiv.org/abs/1802.06182).
+* **[NSynth](https://magenta.tensorflow.org/datasets/nsynth): Pitch
+Detection** Scene based multiclass prediction<br />
+Multiclass categorization of a single note into one of 88 pitches
+of a standard MIDI piano. Evaluated using pitch accuracy and chroma
+accuracy, as per [CREPE](https://arxiv.org/abs/1802.06182).
 
 Evaluation code, including the evaluation predictor models and
 training scripts, will be released in the coming weeks for each of
@@ -376,6 +377,8 @@ Philippe Esling and Pranay Manocha and Shinji Watanabe and Zeyu Jin
 You can learn more about the committee [here](hear2021-committee-members).
 
 ## PMLR Journal Editors
+Joseph Turian and Björn W. Schuller and Dorien Herremans and Katrin
+Kirchhoff and Paola Garcia Perera and Philippe Esling.
 
 You can learn more about the journal editors [here](pmlr-hear-journal-editors).
 

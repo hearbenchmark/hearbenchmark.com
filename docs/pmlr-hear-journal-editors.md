@@ -45,13 +45,17 @@ Language Interpretation Lab. She has previously served on the
 editorial boards of Speech Communication and Computer, Speech, and
 Language, and was a member of the IEEE Speech Technical Committee.
 
-**Katrin Kirchhoff** is a Director of Applied Science at Amazon Web
-Services, where she heads several teams in speech and audio processing.
-Previously she was a Research Professor at the University of
-Washington, Seattle, where she co-founded the Signal, Speech and
-Language Interpretation Lab. She has previously served on the
-editorial boards of Speech Communication and Computer, Speech, and
-Language, and was a member of the IEEE Speech Technical Committee.
+**Paola Garcia Perera** joined Johns Hopkins University as an
+assistant research scientist after extensive research experience
+in academia and industry. She led a team of 20+ researchers from
+four of the best laboratories worldwide in far-field speech diarization
+and speaker recognition, under the auspices of the JHU summer
+workshop 2019 in Montreal, Canada. She was a Marie Curie researcher
+for the Iris project during 2015, exploring assistive technology
+for children with autism in Zaragoza, Spain. Recently, she has been
+working on children’s speech; including child speech recognition
+and diarization in day-long recordings. She is also part of the JHU
+Chime5, Chime6, SRE18, SRE19 and DIHARD III teams.
 
 **Philippe Esling** is an associate professor and researcher in
 machine learning and artificial intelligence applied to music at
