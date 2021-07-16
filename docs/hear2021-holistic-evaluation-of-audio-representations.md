@@ -365,7 +365,7 @@ to announce that we are accepting applications for Google Cloud
 Platform credit awards.
 
 <p></p>
-## Organizing Team
+## NeurIPS Challenge Organizing Team
 Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller
 and Christian James Steinmetz and Colin Malloy and George Tzanetakis
 and Gissel Velarde and Kirk McNally and Max Henry and Nicolas Pinto
@@ -374,6 +374,10 @@ Noufi and Dorien Herremans and Jesse Engel and Justin Salamon and
 Philippe Esling and Pranay Manocha and Shinji Watanabe and Zeyu Jin
 
 You can learn more about the committee [here](hear2021-committee-members).
+
+## PMLR Journal Editors
+
+You can learn more about the journal editors [here](pmlr-hear-journal-editors).
 
 <p></p>
 ## Questions?
