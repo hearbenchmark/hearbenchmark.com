@@ -4,14 +4,14 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     colorator (1.1.0)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.9)
     em-websocket (0.5.2)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
-    ffi (1.15.0)
-    ffi (1.15.0-x64-mingw32)
+    ffi (1.15.3)
+    ffi (1.15.3-x64-mingw32)
     forwardable-extended (2.6.0)
     http_parser.rb (0.6.0)
     i18n (1.8.10)
@@ -59,7 +59,7 @@ GEM
       ffi (~> 1.0)
     rexml (3.2.5)
     rouge (3.26.0)
-    rubyzip (2.3.0)
+    rubyzip (2.3.2)
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -77,18 +77,19 @@ GEM
     webrick (1.7.0)
 
 PLATFORMS
+  ruby
   universal-darwin-20
   x64-mingw32
   x86_64-linux
 
 DEPENDENCIES
   jekyll (~> 4.2.0)
-  jekyll-feed (~> 0.12)
-  jekyll-remote-theme
+  jekyll-feed (~> 0.15, >= 0.15.1)
+  jekyll-remote-theme (>= 0.4.3)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.2.17
+   2.1.4
