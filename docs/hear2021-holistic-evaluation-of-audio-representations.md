@@ -54,7 +54,9 @@ be shallowly trained for each team and each task.
   * **2021-07-16** -
     * PMLR will host a HEAR special issue, submission deadline
     January 31st, 2022.
-    * Some clarifications to the NSynth task are added.
+    * Some clarifications to the NSynth task are added. See the specific
+      [changelog](https://github.com/neuralaudio/neuralaudio.github.io/pull/15)
+      for a detailed list of updates.
   * **2021-06-29** -
     * All three [open tasks](#open-tasks) have been announced.
     * The API has been simplified and clarified. For a detailed set
