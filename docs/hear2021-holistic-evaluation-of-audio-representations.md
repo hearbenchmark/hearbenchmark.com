@@ -211,9 +211,9 @@ detail in the section below.
 * Your API must be able to produce two kinds of embeddings (described [below](#common-api)):
     * **Timestamp-based embeddings**: return time-centered embeddings
         at regular intervals.
-    	You may select the time interval (hop-size) between adjacent
-    	embeddings, but we suggest that it is `<= 50ms` to handle
-    	an onset tolerance of `50ms` for music transcription evaluation.
+        You may select the time interval (hop-size) between adjacent
+        embeddings, but we suggest that it is `<= 50ms` to handle
+        an onset tolerance of `50ms` for music transcription evaluation.
     * **Scene embeddings**: return a single embedding for a entire audio clip.
 
 <p></p>
@@ -282,8 +282,10 @@ for all evaluation tasks.
     constant hop size (< 50 ms suggested) for all timestamp-based
     predictions. -->
   * **Returns:**
-    * embedding: A `float32` `Tensor` with shape (`n_sounds, n_timestamp, model.timestamp_embedding_size`).
-    * timestamps: `Tensor`. Centered timestamps in milliseconds corresponding
+    * embedding: A `float32` `Tensor` with shape (`n_sounds,
+        n_timestamps, model.timestamp_embedding_size`).
+    * timestamps: A `float32` `Tensor` with shape (`n_sounds,
+        n_timestamps). Centered timestamps in milliseconds corresponding
         to each embedding in the output.
 
 <hr />
