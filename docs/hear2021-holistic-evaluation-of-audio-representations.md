@@ -69,6 +69,7 @@ be shallowly trained for each team and each task.
     * Release of the [HEAR Baseline model](https://github.com/neuralaudio/hear-baseline)
     * Release a validator tool for participants to check their submissions follow the
     [common API](#common-api): [HEAR Validator](https://github.com/neuralaudio/hear-validator)
+    * `Tensor` return types of `get_timestamp_embeddings` are clarified.
   * **2021-07-16** -
     * PMLR will host a HEAR special issue, submission deadline
     January 31st, 2022.
