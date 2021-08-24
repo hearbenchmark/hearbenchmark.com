@@ -27,11 +27,23 @@ abstract: >
 
 ## Submissions
 **Submissions are now open!** [Submit your
-entry](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
-prior to July 15th 2021 AoE to be included in the first leaderboard
-update. We will be holding monthly leaderboard updates up until the
-final submission deadline of October 15th 2021.
-<p></p>
+entry](https://forms.gle/Bz9n7e3LNSK6X4mt7).
+
+The final submission deadline is **October 31st 2021**. For the
+remainder of the competition we will be switching to a rolling
+leaderboard. You can submit as often as you would like and, we will
+post your results within two weeks of receiving them.
+
+To validate your entry follows the [common API](#common-api) prior
+to submission, please run your entry with the [HEAR
+Validator](https://github.com/neuralaudio/hear-validator).  Please
+post on the [discussion
+board](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/5) if
+you have any questions or difficulties.
+
+We also provide a [baseline](https://github.com/neuralaudio/hear-baseline)
+using the HEAR API, for example purposes.
+
 
 ## Introduction
 
@@ -50,7 +62,14 @@ be shallowly trained for each team and each task.
 
 <p></p>
 ## News and Announcements
-
+  * **2021-08-24** -
+    * The final submission deadline is **October 31st 2021**.
+    * Leaderboard will now be a rolling update and you can [submit
+    multiple versions](https://forms.gle/Bz9n7e3LNSK6X4mt7).
+    * Release of the [HEAR Baseline model](https://github.com/neuralaudio/hear-baseline)
+    * Release a validator tool for participants to check their submissions follow the
+    [common API](#common-api): [HEAR Validator](https://github.com/neuralaudio/hear-validator)
+    * `Tensor` return types of `get_timestamp_embeddings` are clarified.
   * **2021-07-16** -
     * PMLR will host a HEAR special issue, submission deadline
     January 31st, 2022.
@@ -85,15 +104,9 @@ this challenge.
 | Date            |                                                             |
 |-----------------|-------------------------------------------------------------|
 | 2021-05-10      | Competition begins.                                         |
-| 2021-07-15 AoE  | Submission deadline for inclusion in July leaderboard.     |
 | 2021-07-30      | Leaderboard updated.                                        |
-| 2021-08-15 AoE  | Submission deadline for inclusion in August leaderboard.    |
 | 2021-08-30      | Leaderboard updated.                                        |
-| 2021-09-15 AoE  | Submission deadline for inclusion in September leaderboard. |
-| 2021-09-30      | Leaderboard updated.                                        |
-| 2021-10-15 AoE  | Deadline for final submissions.                             |
-| 2021-10-16      | Secret evaluation datasets and code are released.           |
-| 2021-11-15      | Final results announced.                                    |
+| 2021-10-31 AoE  | Deadline for final submissions.                             |
 | 2021-12-06      | NeurIPS Conference begins.                                  |
 | 2022-01-31      | PMLR submissions due.                                       |
 
@@ -213,9 +226,9 @@ detail in the section below.
 * Your API must be able to produce two kinds of embeddings (described [below](#common-api)):
     * **Timestamp-based embeddings**: return time-centered embeddings
         at regular intervals.
-    	You may select the time interval (hop-size) between adjacent
-    	embeddings, but we suggest that it is `<= 50ms` to handle
-    	an onset tolerance of `50ms` for music transcription evaluation.
+        You may select the time interval (hop-size) between adjacent
+        embeddings, but we suggest that it is `<= 50ms` to handle
+        an onset tolerance of `50ms` for music transcription evaluation.
     * **Scene embeddings**: return a single embedding for a entire audio clip.
 
 <p></p>
@@ -284,8 +297,10 @@ for all evaluation tasks.
     constant hop size (< 50 ms suggested) for all timestamp-based
     predictions. -->
   * **Returns:**
-    * embedding: A `float32` `Tensor` with shape (`n_sounds, n_timestamp, model.timestamp_embedding_size`).
-    * timestamps: `Tensor`. Centered timestamps in milliseconds corresponding
+    * embedding: A `float32` `Tensor` with shape (`n_sounds,
+        n_timestamps, model.timestamp_embedding_size`).
+    * timestamps: A `float32` `Tensor` with shape (`n_sounds,
+        n_timestamps). Centered timestamps in milliseconds corresponding
         to each embedding in the output.
 
 <hr />
@@ -349,7 +364,9 @@ additional important information for running your submission including
 the CUDA and cuDNN versions.
 
 Make sure that your submission follows the [common API](#common-api)
-specified above.
+specified above. To help with this, we have developed a tool for participants that
+validates a submission against the API:
+[hear-validator](https://github.com/neuralaudio/hear-validator).
 
 If you have any questions or are concerned about hosting your
 submission publicly, please do not hesitate to [contact competition
