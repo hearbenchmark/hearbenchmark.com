@@ -27,12 +27,12 @@ abstract: >
 
 ## Submissions
 **Submissions are now open!** [Submit your
-entry](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link).
+entry](https://forms.gle/Bz9n7e3LNSK6X4mt7).
 
-The final submission deadline is October 31st 2021. For the remainder of the competition 
-we will be switching to a rolling leaderboard. You can submit as often as you would like
-and, we will post your results within two weeks of receiving them.
-<p></p>
+The final submission deadline is **October 31st 2021**. For the
+remainder of the competition we will be switching to a rolling
+leaderboard. You can submit as often as you would like and, we will
+post your results within two weeks of receiving them.
 
 To validate your entry prior to submission please run your entry with the
 [HEAR Validator](https://github.com/neuralaudio/hear-validator)
