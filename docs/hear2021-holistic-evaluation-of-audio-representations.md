@@ -27,11 +27,15 @@ abstract: >
 
 ## Submissions
 **Submissions are now open!** [Submit your
-entry](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link)
-prior to July 15th 2021 AoE to be included in the first leaderboard
-update. We will be holding monthly leaderboard updates up until the
-final submission deadline of October 15th 2021.
+entry](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=sf_link).
+
+The final submission deadline is October 31st 2021. For the remainder of the competition 
+we will be switching to a rolling leaderboard. You can submit as often as you would like
+and, we will post your results within two weeks of receiving them.
 <p></p>
+
+To validate your entry prior to submission please run your entry with the
+[HEAR Validator](https://github.com/neuralaudio/hear-validator)
 
 ## Introduction
 
@@ -50,7 +54,10 @@ be shallowly trained for each team and each task.
 
 <p></p>
 ## News and Announcements
-
+  * **2021-08-24** -
+    * Release of the [HEAR Baseline model](https://github.com/neuralaudio/hear-baseline)
+    * Release a validator tool for participants to check their submissions follow the
+    [common API](#common-api): [HEAR Validator](https://github.com/neuralaudio/hear-validator)
   * **2021-07-16** -
     * PMLR will host a HEAR special issue, submission deadline
     January 31st, 2022.
@@ -349,7 +356,9 @@ additional important information for running your submission including
 the CUDA and cuDNN versions.
 
 Make sure that your submission follows the [common API](#common-api)
-specified above.
+specified above. To help with this, we have developed a tool for participants that
+validates a submission against the API:
+[hear-validator](https://github.com/neuralaudio/hear-validator).
 
 If you have any questions or are concerned about hosting your
 submission publicly, please do not hesitate to [contact competition
