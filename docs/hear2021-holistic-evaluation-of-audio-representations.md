@@ -65,7 +65,7 @@ be shallowly trained for each team and each task.
   * **2021-08-24** -
     * The final submission deadline is **October 31st 2021**.
     * Leaderboard will now be a rolling update and you can [submit
-    multiple versions][https://forms.gle/Bz9n7e3LNSK6X4mt7].
+    multiple versions](https://forms.gle/Bz9n7e3LNSK6X4mt7).
     * Release of the [HEAR Baseline model](https://github.com/neuralaudio/hear-baseline)
     * Release a validator tool for participants to check their submissions follow the
     [common API](#common-api): [HEAR Validator](https://github.com/neuralaudio/hear-validator)
