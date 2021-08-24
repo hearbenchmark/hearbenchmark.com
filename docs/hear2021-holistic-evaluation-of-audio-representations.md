@@ -34,8 +34,16 @@ remainder of the competition we will be switching to a rolling
 leaderboard. You can submit as often as you would like and, we will
 post your results within two weeks of receiving them.
 
-To validate your entry prior to submission please run your entry with the
-[HEAR Validator](https://github.com/neuralaudio/hear-validator)
+To validate your entry follows the [common API](#common-api) prior
+to submission, please run your entry with the [HEAR
+Validator](https://github.com/neuralaudio/hear-validator).  Please
+post on the [discussion
+board](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/5) if
+you have any questions or difficulties.
+
+We also provide a [baseline](https://github.com/neuralaudio/hear-baseline)
+using the HEAR API, for example purposes.
+
 
 ## Introduction
 
@@ -55,6 +63,9 @@ be shallowly trained for each team and each task.
 <p></p>
 ## News and Announcements
   * **2021-08-24** -
+    * The final submission deadline is **October 31st 2021**.
+    * Leaderboard will now be a rolling update and you can [submit
+    multiple versions][https://forms.gle/Bz9n7e3LNSK6X4mt7].
     * Release of the [HEAR Baseline model](https://github.com/neuralaudio/hear-baseline)
     * Release a validator tool for participants to check their submissions follow the
     [common API](#common-api): [HEAR Validator](https://github.com/neuralaudio/hear-validator)
@@ -90,15 +101,9 @@ this challenge.
 | Date            |                                                             |
 |-----------------|-------------------------------------------------------------|
 | 2021-05-10      | Competition begins.                                         |
-| 2021-07-15 AoE  | Submission deadline for inclusion in July leaderboard.     |
 | 2021-07-30      | Leaderboard updated.                                        |
-| 2021-08-15 AoE  | Submission deadline for inclusion in August leaderboard.    |
 | 2021-08-30      | Leaderboard updated.                                        |
-| 2021-09-15 AoE  | Submission deadline for inclusion in September leaderboard. |
-| 2021-09-30      | Leaderboard updated.                                        |
-| 2021-10-15 AoE  | Deadline for final submissions.                             |
-| 2021-10-16      | Secret evaluation datasets and code are released.           |
-| 2021-11-15      | Final results announced.                                    |
+| 2021-10-31 AoE  | Deadline for final submissions.                             |
 | 2021-12-06      | NeurIPS Conference begins.                                  |
 | 2022-01-31      | PMLR submissions due.                                       |
 
