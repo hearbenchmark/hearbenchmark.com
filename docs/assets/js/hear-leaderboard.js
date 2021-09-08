@@ -52,7 +52,7 @@ $(document).ready(function() {
         topHeader.append(`<th class="cell-border-left" colspan="${task.metrics.length}">${task.name}</th>`);
     }
 
-    // Lower header -- contains all the tasks
+    // Lower header -- contains all the metrics
     let lowerHeader = $('<tr></tr>');
     lowerHeader.append('<th>Team Name</th>');
     lowerHeader.append('<th>Code</th>');
