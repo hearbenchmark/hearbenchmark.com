@@ -15,7 +15,7 @@ const tasks = [
         name: "DCASE 2016 Office Sounds",
         metrics: [
             "Event FMS",
-            "Segment ER"
+            "Segment Error Rate"
         ],
     },
     {
