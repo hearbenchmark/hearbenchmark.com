@@ -1,0 +1,27 @@
+.dataTables_scroll {
+    border: 2px solid #ddd;
+}
+
+th, td, .cell-center {
+    text-align: center;
+}
+
+.cell-left {
+    text-align: left;
+}
+
+.cell-border-right {
+    border-right: 2px solid #ddd;
+}
+
+.cell-border-left {
+    border-left: 2px solid #ddd;
+}
+
+.dataTables_scrollBody {
+    border-bottom: none !important;
+}
+
+table.dataTable thead td {
+    border-bottom: 2px solid #ddd !important;
+}
