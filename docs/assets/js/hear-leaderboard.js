@@ -72,7 +72,7 @@ $(document).ready(function() {
         "searching": false,
         "paging": false,
         "info": false,
-        "order": [[2, 'asc' ]]
+        "order": [[2, 'desc' ]]
         // "scrollX": true,
         // "columnDefs": [
         //     {
