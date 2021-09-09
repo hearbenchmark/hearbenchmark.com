@@ -3,6 +3,13 @@
  * Leaderboard Datatable
  */
 
+// https://www.sitepoint.com/jquery-output-array-random-order/
+function shuffleArray(arr)
+{
+  for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
+  return arr;
+}
+
 // Metrics will become the nested headers of the table
 const tasks = [
     {
@@ -51,37 +58,17 @@ const scores = [
 
 $(document).ready(function() {
     console.log("HEAR Leaderboard");
-    let table = $('#hear2021-leaderboard');
 
-    // let header = $('<thead></thead>');
-    //
-    // // Upper header -- contains all the task names
-    // let topHeader = $('<tr></tr>');
-    // topHeader.append('<th rowspan="2" class="cell-border-right">Rank</th>');
-    // topHeader.append('<th colspan="2">Submission</th>');
-    // for (const task of tasks) {
-    //     topHeader.append(`<th class="cell-border-left" colspan="${task.metrics.length}">${task.name}</th>`);
-    // }
-    //
-    // // Lower header -- contains all the metrics
-    // let lowerHeader = $('<tr></tr>');
-    // lowerHeader.append('<th>Team Name</th>');
-    // lowerHeader.append('<th>Code</th>');
-    //
-    // for (const task of tasks) {
-    //     for (let i = 0; i < task.metrics.length; i++) {
-    //         let thClass = i === 0 ? "cell-border-left" : "";
-    //         lowerHeader.append(`<th class="${thClass}">${task.metrics[i]}</th>`);
-    //     }
-    // }
-    //
-    // // Add the headers to the DOM
-    // header.append(topHeader);
-    // header.append(lowerHeader);
-    // table.append(header);
+    // Shuffle the order of all the tasks
+    let tasks = $('.leaderboard-task');
+    tasks.detach();
+    tasks = shuffleArray(tasks);
+    $('#tasks-wrapper').append(tasks);
+
+    let tables = $('.hear2021-leaderboard');
 
     // Initialize the table
-    let t = table.DataTable({
+    let t = tables.DataTable({
         "searching": false,
         "paging": false,
         "info": false

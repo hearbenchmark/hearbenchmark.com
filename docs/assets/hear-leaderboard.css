@@ -28,4 +28,10 @@ table.dataTable thead td {
 
 .leaderboard-task {
     font-size: 23px;
+    padding-bottom: 25px;
+}
+
+.divider-line {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
