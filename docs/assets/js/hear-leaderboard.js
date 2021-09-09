@@ -71,7 +71,8 @@ $(document).ready(function() {
     let t = tables.DataTable({
         "searching": false,
         "paging": false,
-        "info": false
+        "info": false,
+        "order": [[2, 'asc' ]]
         // "scrollX": true,
         // "columnDefs": [
         //     {
