@@ -7,12 +7,14 @@
 const tasks = [
     {
         name: "Google Speech Commands",
+        table_id: 0,
         metrics: [
             "Top-1 Accuracy"
         ],
     },
     {
         name: "DCASE 2016 Office Sounds",
+        table_id: 1,
         metrics: [
             "Event FMS",
             "Segment Error Rate"
@@ -20,6 +22,15 @@ const tasks = [
     },
     {
         name: "NSynth Pitch",
+        table_id: 2,
+        metrics: [
+            "Pitch Accuracy",
+            "Chroma Accuracy"
+        ]
+    },
+    {
+        name: "NSynth Pitch - 50hrs",
+        table_id: 2,
         metrics: [
             "Pitch Accuracy",
             "Chroma Accuracy"
@@ -42,59 +53,58 @@ $(document).ready(function() {
     console.log("HEAR Leaderboard");
     let table = $('#hear2021-leaderboard');
 
-    let header = $('<thead></thead>');
-
-    // Upper header -- contains all the task names
-    let topHeader = $('<tr></tr>');
-    topHeader.append('<th rowspan="2" class="cell-border-right">Rank</th>');
-    topHeader.append('<th colspan="2">Submission</th>');
-    for (const task of tasks) {
-        topHeader.append(`<th class="cell-border-left" colspan="${task.metrics.length}">${task.name}</th>`);
-    }
-
-    // Lower header -- contains all the metrics
-    let lowerHeader = $('<tr></tr>');
-    lowerHeader.append('<th>Team Name</th>');
-    lowerHeader.append('<th>Code</th>');
-
-    for (const task of tasks) {
-        for (let i = 0; i < task.metrics.length; i++) {
-            let thClass = i === 0 ? "cell-border-left" : "";
-            lowerHeader.append(`<th class="${thClass}">${task.metrics[i]}</th>`);
-        }
-    }
-
-    // Add the headers to the DOM
-    header.append(topHeader);
-    header.append(lowerHeader);
-    table.append(header);
+    // let header = $('<thead></thead>');
+    //
+    // // Upper header -- contains all the task names
+    // let topHeader = $('<tr></tr>');
+    // topHeader.append('<th rowspan="2" class="cell-border-right">Rank</th>');
+    // topHeader.append('<th colspan="2">Submission</th>');
+    // for (const task of tasks) {
+    //     topHeader.append(`<th class="cell-border-left" colspan="${task.metrics.length}">${task.name}</th>`);
+    // }
+    //
+    // // Lower header -- contains all the metrics
+    // let lowerHeader = $('<tr></tr>');
+    // lowerHeader.append('<th>Team Name</th>');
+    // lowerHeader.append('<th>Code</th>');
+    //
+    // for (const task of tasks) {
+    //     for (let i = 0; i < task.metrics.length; i++) {
+    //         let thClass = i === 0 ? "cell-border-left" : "";
+    //         lowerHeader.append(`<th class="${thClass}">${task.metrics[i]}</th>`);
+    //     }
+    // }
+    //
+    // // Add the headers to the DOM
+    // header.append(topHeader);
+    // header.append(lowerHeader);
+    // table.append(header);
 
     // Initialize the table
     let t = table.DataTable({
         "searching": false,
         "paging": false,
-        "scrollX": true,
-        data: scores,
-        "columnDefs": [
-            {
-                "searchable": false,
-                "orderable": false,
-                "targets": [0]
-            },
-            // Left align text in the submission cells
-            {
-                "className": "cell-left",
-                "targets": [1,2]
-            }
-            ],
-        "order": [[3, 'asc' ]]
+        "info": false
+        // "scrollX": true,
+        // "columnDefs": [
+        //     {
+        //         "searchable": false,
+        //         "orderable": false,
+        //         "targets": [0]
+        //     },
+        //     // Left align text in the submission cells
+        //     {
+        //         "className": "cell-left",
+        //         "targets": [0]
+        //     }
+        //     ]
     });
 
     // Create the unsorted rank on the side
-    t.on( 'order.dt search.dt', function () {
-        console.log("here");
-        t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-            cell.innerHTML = i+1;
-        } );
-    }).draw();
+    // t.on( 'order.dt search.dt', function () {
+    //     console.log("here");
+    //     t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+    //         cell.innerHTML = i+1;
+    //     } );
+    // }).draw();
 } );

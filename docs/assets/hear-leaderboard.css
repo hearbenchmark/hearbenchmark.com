@@ -25,3 +25,7 @@ th, td, .cell-center {
 table.dataTable thead td {
     border-bottom: 2px solid #ddd !important;
 }
+
+.leaderboard-task {
+    font-size: 23px;
+}

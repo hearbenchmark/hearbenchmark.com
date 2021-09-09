@@ -6,4 +6,4 @@ subtitle: Leaderboard
 date: 2021-09-06
 ---
 
-Add some table notes here
+Introduction content
