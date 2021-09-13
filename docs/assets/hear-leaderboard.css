@@ -1,3 +1,7 @@
+body {
+    overflow-x: scroll;
+}
+
 .dataTables_scroll {
     border: 2px solid #ddd;
 }
