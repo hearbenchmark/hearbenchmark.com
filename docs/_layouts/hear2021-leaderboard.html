@@ -120,11 +120,12 @@ layout: default
                 <p>Adapted from <a
                 href="http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio">DCASE
                    2016, Task 2</a> office sound event detection. Our
-                evaluation uses a different 60/20/20 train/val/test split,
+                evaluation uses different splits,
                 so the numbers cannot be directly compared
-                to previous results. Segments were postprocessed
-                using 250 ms median filtering and at each
-                validation step, the a minimum event duration
+                to previously published results.</p>
+                <p>Postprocessing: Segments were postprocessed
+                using 250 ms median filtering. At each
+                validation step, a minimum event duration
                 of 125 or 250 ms was chosen to maximize
                 onset-only event-based F-measure (with 200ms
                 tolerance). Scores were computed using <a
