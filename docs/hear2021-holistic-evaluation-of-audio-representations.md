@@ -62,6 +62,12 @@ be shallowly trained for each team and each task.
 
 <p></p>
 ## News and Announcements
+  * **2021-09-13** -
+    * Our [leaderboard](https://neuralaudio.ai/hear2021-leaderboard.html)
+    is live, and will be updated with secret tasks and early
+    submissions.
+    * Open tasks and downstream evaluation code have been
+    [released](https://github.com/neuralaudio/hear-eval-kit/).
   * **2021-08-24** -
     * The final submission deadline is **October 31st 2021**.
     * Leaderboard will now be a rolling update and you can [submit
