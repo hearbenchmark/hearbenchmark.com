@@ -1,0 +1,261 @@
+---
+layout: default
+---
+<article>
+    <div class="Margins">
+        <div class="center">
+            <div style="padding-top: 50px; padding-bottom: 50px;">
+                <img src="/assets/img/hear-header-sponsor.jpg">
+            </div>
+            <h1 class="LatexTitle">
+                {{ page.title }}
+                {%- if page.subtitle -%}
+                    <br/> {{ page.subtitle }}
+                {%- endif -%}
+            </h1>
+            <!-- <p class="LatexName">{{ page.author }}</p> -->
+            <p class="LatexDate">
+                {{ page.date | date: '%B %-d, %Y' }}
+            </p>
+            {%- if page.abstract -%}
+            <div class="AbstractMargins">
+                <h3 class="LatexAbstract">
+                    Abstract
+                </h3>
+                <p class="LatexAbstractText">{{page.abstract}}</p>
+            </div>
+            {%- endif -%}
+
+        </div>
+
+        <div class="divider"></div>
+
+        <p>We show test scores on the open tasks.
+        Evaluation was
+        run using <a
+        href="https://github.com/neuralaudio/hear-eval-kit/">heareval
+        2021.0.3</a>. Secret task evaluations are forthcoming.  We
+	    currently show one submitted early entrant, and two HEAR
+    	baselines:
+        <a
+        href="https://github.com/neuralaudio/hear-baseline/blob/main/hearbaseline/torchcrepe.py">torchcrepe</a>
+        and <a
+        href="https://github.com/neuralaudio/hear-baseline/blob/main/hearbaseline/wav2vec2.py">wav2vec2</a>.
+        Task order is randomized upon page load.
+        </p>
+
+        <p>Downstream evaluation on each task involves two
+        steps: a) computing audio
+        embeddings and b) learning a shallow fully-connected
+        predictor. The downstream predictor was chosen to optimize
+        validation scores on the task's objective, measured on the
+        validation set.
+        Early stopping with a patience of 20 was used.
+        Validation scores were computed every 3 training epochs
+        (except for DCASE, where validation scores were computed
+        every 10 epochs).</p>
+
+        <p>
+        Before the creation of the leaderboard, several models and
+        tasks were used to refine the grid and discard hyperparametere
+        choices that were unfavorable.
+        Randomized grid search was used for model selection, and
+        the same 8 random grid points were used for all models.
+        Model selection varied the number of hidden layers (1 or
+        2), learning rate (3.2e-3 to 1e-4), and weight initiazation
+        (Xavier uniform or normal).
+        </p>
+
+        <p>
+        For more details, question, training logs, etc, don't
+        hesitate to <a
+        href="https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge">post</a>
+        on the discussion board or <a href="mailto:deep at neuralaudio
+        dot ai">email us</a>.
+
+        </p>
+
+        <hr class="divider-line"/>
+
+        <div id="tasks-wrapper">
+            <div class="leaderboard-task">
+                <table class="display cell-border hear2021-leaderboard">
+                    <thead>
+                        <tr>
+                            <th rowspan="2"></th>
+                            <th rowspan="2"></th>
+                            <th colspan="2">DCASE 2016 Task 2</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2">HEAR 2021 partitions</th>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Submission</th>
+                            <th>Event Onset FMS</th>
+                            <th>Segment Error Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MARL + Soundsensing</td>
+                            <td></td>
+                            <td>0.864</td>
+                            <td>0.153</td>
+                        </tr>
+                        <tr>
+                            <td>HEAR</td>
+                            <td>torchcrepe</td>
+                            <td>0.629</td>
+                            <td>0.338</td>
+                        </tr>
+                        <tr>
+                            <td>HEAR</td>
+                            <td>naive wav2vec2</td>
+                            <td>0.805</td>
+                            <td>0.160</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Adapted from <a
+                href="http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio">DCASE
+                   2016, Task 2</a> office sound event detection. Our
+                evaluation uses different splits,
+                so the numbers cannot be directly compared
+                to previously published results.</p>
+                <p>Postprocessing: Segments were postprocessed
+                using 250 ms median filtering. At each
+                validation step, a minimum event duration
+                of 125 or 250 ms was chosen to maximize
+                onset-only event-based F-measure (with 200ms
+                tolerance). Scores were computed using <a
+                href="https://tut-arg.github.io/sed_eval/">sed_eval</a>.</p>
+                <hr class="divider-line"/>
+            </div>
+
+            <div class="leaderboard-task">
+                <table class="display cell-border hear2021-leaderboard">
+                    <thead>
+                        <tr>
+                            <th rowspan="2"></th>
+                            <th rowspan="2"></th>
+                            <th colspan="2">Google Speech Commands</th>
+                        </tr>
+                        <tr>
+                            <th>5hrs</th>
+                            <th>Full</th>
+                        </tr>
+                        <tr>
+                            <th>Team Name</th>
+                            <th>Submission</th>
+                            <th>Top-1 Accuracy</th>
+                            <th>Top-1 Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HEAR</td>
+                            <td>naive wav2vec2</td>
+                            <td>0.835</td>
+                            <td>0.881</td>
+                        </tr>
+                        <tr>
+                            <td>MARL + Soundsensing</td>
+                            <td></td>
+                            <td>0.651</td>
+                            <td>0.740</td>
+                        </tr>
+                        <tr>
+                            <td>HEAR</td>
+                            <td>torchcrepe</td>
+                            <td>0.161</td>
+                            <td>0.207</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><a
+                href="https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html">Speech
+                commands classification</a>. 5h or full audio used
+                for training and validation.</p>
+                <hr class="divider-line"/>
+            </div>
+
+            <div class="leaderboard-task">
+                <table class="display cell-border hear2021-leaderboard">
+                    <thead>
+                        <tr>
+                            <th rowspan="2"></th>
+                            <th rowspan="2"></th>
+                            <th colspan="4">NSynth Pitch</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2">5hrs</th>
+                            <th colspan="2">50hrs</th>
+                        </tr>
+                        <tr>
+                            <th>Team Name</th>
+                            <th>Submission</th>
+                            <th>Pitch Acc</th>
+                            <th>Chroma Acc</th>
+                            <th>Pitch Acc</th>
+                            <th>Chroma Acc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HEAR</td>
+                            <td>torchcrepe</td>
+                            <td>0.860</td>
+                            <td>0.926</td>
+                            <td>0.900</td>
+                            <td>0.956</td>
+                        </tr>
+                        <tr>
+                            <td>MARL + Soundsensing</td>
+                            <td></td>
+                            <td>0.562</td>
+                            <td>0.598</td>
+                            <td>0.748</td>
+                            <td>0.794</td>
+                        </tr>
+                        <tr>
+                            <td>HEAR</td>
+                            <td>naive wav2vec2</td>
+                            <td>0.420</td>
+                            <td>0.456</td>
+                            <td>0.666</td>
+                            <td>0.714</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Pitch and chroma classification of <a
+                href="https://magenta.tensorflow.org/datasets/nsynth">nsynth
+                sounds</a>. 5h or 50h audio used for training and
+                validation.</p>
+                <hr class="divider-line"/>
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+<!-- Regular Datatables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+
+<!-- Bootstrap Datatables (Uncomment to try this style and comment out imports above)
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap4.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap4.min.js"></script>
+-->
+
+<!-- Custom CSS & JS -->
+<link rel="stylesheet" href="{{ "/assets/hear2021.css" | prepend: site.baseurl | prepend: site.url }}">
+<link rel="stylesheet" href="{{ "/assets/hear-leaderboard.css" | prepend: site.baseurl | prepend: site.url }}">
+<script src="{{ "/assets/js/hear-leaderboard.js" | prepend: site.baseurl | prepend: site.url }}"></script>
