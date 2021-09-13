@@ -66,6 +66,7 @@ $(document).ready(function() {
     $('#tasks-wrapper').append(tasks);
 
     let tables = $('.hear2021-leaderboard');
+    tables.addClass("compact");
 
     // Initialize the table
     let t = tables.DataTable({
