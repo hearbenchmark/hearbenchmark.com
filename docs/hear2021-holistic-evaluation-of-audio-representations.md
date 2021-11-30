@@ -25,9 +25,19 @@ abstract: >
   invited to submit.
 ---
 
+## NeurIPS 2021 Conference
+We will be sharing the results of the HEAR 2021 evaluation live at NeurIPS 2021
+on December 7th from 19:05-19:25 GMT during the 
+[Competition Track Day 1 Session](https://neurips.cc/Conferences/2021/Schedule?showEvent=21954).
+
+Following this presentation we will be hosting a breakout Zoom session. During this
+session invited participants will share their submissions in a 5-minute
+lightning talk format. This will be followed by an open question and discussion period.
+
+For more information please see [HEAR @ NeurIPS 2021](/hear2021-neurips-conference).
+
 ## Submissions
-**Submissions are now open!** [Submit your
-entry](https://forms.gle/Bz9n7e3LNSK6X4mt7).
+Submissions are closed.
 
 The final submission deadline is **October 31st 2021**. For the
 remainder of the competition we will be switching to a rolling
@@ -62,6 +72,9 @@ be shallowly trained for each team and each task.
 
 <p></p>
 ## News and Announcements
+  * **2021-11-29** -
+    * We will be presenting live at the NeurIPS conference. See 
+    [HEAR @ NeurIPS 2021](/hear2021-neurips-conference) for more information.
   * **2021-09-13** -
     * Our [leaderboard](https://neuralaudio.ai/hear2021-leaderboard.html)
     is live, and will be updated with secret tasks and early
