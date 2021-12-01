@@ -1,0 +1,252 @@
+---
+layout: default
+---
+<article>
+    <div class="Margins">
+        <div class="center">
+            <div style="padding-top: 50px; padding-bottom: 50px;">
+                <img src="/assets/img/hear-header-sponsor.jpg">
+            </div>
+            <h1 class="LatexTitle">
+                {{ page.title }}
+                {%- if page.subtitle -%}
+                    <br/> {{ page.subtitle }}
+                {%- endif -%}
+            </h1>
+            <!-- <p class="LatexName">{{ page.author }}</p> -->
+            <p class="LatexDate">
+                {{ page.date | date: '%B %-d, %Y' }}
+            </p>
+            {%- if page.abstract -%}
+            <div class="AbstractMargins">
+                <h3 class="LatexAbstract">
+                    Abstract
+                </h3>
+                <p class="LatexAbstractText">{{page.abstract}}</p>
+            </div>
+            {%- endif -%}
+
+        </div>
+
+        <div class="divider"></div>
+
+        {{ content }}
+
+        <hr class="divider-line"/>
+
+        <div>
+            <p>
+                <b>Open Tasks:</b>
+            </p>
+            <div id="open-task-toc"></div>
+            <p>
+                <b>Secret Tasks:</b>
+            </p>
+            <div id="secret-task-toc"></div>
+        </div>
+
+        <hr class="divider-line"/>
+
+        <div id="tasks-wrapper">
+
+            <!-- DCASE -->
+            <div id="dcase2016_task2-hear2021-full" class="leaderboard-task">
+                <h3 class="task-title open-task">DCASE 2016 Task 2</h3>
+                {% include html_result_tables/dcase2016_task2-hear2021-full.html %}
+                <p>Adapted from <a
+                href="http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio">DCASE
+                   2016, Task 2</a> office sound event detection. Our
+                evaluation uses different splits,
+                so the numbers cannot be directly compared
+                to previously published results.</p>
+                <p>Postprocessing: Segments were postprocessed
+                using 250 ms median filtering. At each
+                validation step, a minimum event duration
+                of 125 or 250 ms was chosen to maximize
+                onset-only event-based F-measure (with 200ms
+                tolerance). Scores were computed using <a
+                href="https://tut-arg.github.io/sed_eval/">sed_eval</a>.</p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- NSynth Pitch 5h -->
+            <div id="nsynth_pitch-v2.2.3-5h" class="leaderboard-task">
+                <h3 class="task-title open-task">NSynth Pitch 5h</h3>
+                {% include html_result_tables/nsynth_pitch-v2.2.3-5h.html %}
+                <p>Pitch and chroma classification of <a
+                href="https://magenta.tensorflow.org/datasets/nsynth">nsynth
+                sounds</a>. 5h or 50h audio used for training and
+                validation.</p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- NSynth Pitch 50h -->
+            <div id="nsynth_pitch-v2.2.3-50h" class="leaderboard-task">
+                <h3 class="task-title open-task">NSynth Pitch 50h</h3>
+                {% include html_result_tables/nsynth_pitch-v2.2.3-5h.html %}
+                <p>Pitch and chroma classification of <a
+                href="https://magenta.tensorflow.org/datasets/nsynth">nsynth
+                sounds</a>. 5h or 50h audio used for training and
+                validation.</p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- Speech Commands 5hr -->
+            <div id="speech_commands-v0.0.2-5h" class="leaderboard-task">
+                <h3 class="task-title open-task">Speech Commands 5h</h3>
+                {% include html_result_tables/speech_commands-v0.0.2-5h.html %}
+                <p><a
+                href="https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html">Speech
+                commands classification</a>. 5h or full audio used
+                for training and validation.</p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- Speech Commands Full -->
+            <div id="speech_commands-v0.0.2-full" class="leaderboard-task">
+                <h3 class="task-title open-task">Speech Commands Full</h3>
+                {% include html_result_tables/speech_commands-v0.0.2-full.html %}
+                <p><a
+                href="https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html">Speech
+                commands classification</a>. 5h or full audio used
+                for training and validation.</p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- Beehive states fold0 -->
+            <div id="beehive_states_fold0-v2-5h" class="leaderboard-task">
+                <h3 class="task-title secret-task">Beehive States Fold 0</h3>
+                {% include html_result_tables/beehive_states_fold0-v2-5h.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- Beehive states fold0 -->
+            <div id="beehive_states_fold1-v2-5h" class="leaderboard-task">
+                <h3 class="task-title secret-task">Beehive States Fold 1</h3>
+                {% include html_result_tables/beehive_states_fold1-v2-5h.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- Beijing Opera -->
+            <div id="beijing_opera-v1.0-hear2021-full" class="leaderboard-task">
+                <h3 class="task-title secret-task">Beijing Opera Percussion</h3>
+                {% include html_result_tables/beijing_opera-v1.0-hear2021-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- CREMA-D -->
+            <div id="tfds_crema_d-1.0.0-full.html" class="leaderboard-task">
+                <h3 class="task-title secret-task">CREMA-D</h3>
+                {% include html_result_tables/tfds_crema_d-1.0.0-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- ESC50 5hr -->
+            <div id="esc50-v2.0.0-5h" class="leaderboard-task">
+                <h3 class="task-title secret-task">ESC50 5hr</h3>
+                {% include html_result_tables/esc50-v2.0.0-5h.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- ESC50 Full -->
+            <div id="esc50-v2.0.0-full" class="leaderboard-task">
+                <h3 class="task-title secret-task">ESC50 Full</h3>
+                {% include html_result_tables/esc50-v2.0.0-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- FSD50k Full -->
+            <div id="fsd50k-v1.0-full" class="leaderboard-task">
+                <h3 class="task-title secret-task">FSD50k Full</h3>
+                {% include html_result_tables/fsd50k-v1.0-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- Gunshot Triangulation -->
+            <div id="gunshot_triangulation-v1.0-full" class="leaderboard-task">
+                <h3 class="task-title secret-task">Gunshot Triangulation</h3>
+                {% include html_result_tables/gunshot_triangulation-v1.0-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- GTZAN -->
+            <div id="tfds_gtzan-1.0.0-full" class="leaderboard-task">
+                <h3 class="task-title secret-task">GTZAN Genre</h3>
+                {% include html_result_tables/tfds_gtzan-1.0.0-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- GTZAN Music - Speech -->
+            <div id="tfds_gtzan_music_speech-1.0.0-full" class="leaderboard-task">
+                <h3 class="task-title secret-task">GTZAN Music/Speech </h3>
+                {% include html_result_tables/tfds_gtzan_music_speech-1.0.0-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- Libricount -->
+            <div id="libricount-v1.0.0-hear2021-full" class="leaderboard-task">
+                <h3 class="task-title secret-task">LibriCount</h3>
+                {% include html_result_tables/libricount-v1.0.0-hear2021-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- Mridingam Stroke -->
+            <div id="mridangam_stroke-v1.5-full" class="leaderboard-task">
+                <h3 class="task-title secret-task">Mridingham Stroke</h3>
+                {% include html_result_tables/mridangam_stroke-v1.5-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- Mridingam Tonic -->
+            <div id="mridangam_tonic-v1.5-full" class="leaderboard-task">
+                <h3 class="task-title secret-task">Mridingham Tonic</h3>
+                {% include html_result_tables/mridangam_tonic-v1.5-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+            <!-- Vox Lingua Top10 -->
+            <div id="vox_lingua_top10-hear2021-full" class="leaderboard-task">
+                <h3 class="task-title secret-task">Vox Lingua Top 10</h3>
+                {% include html_result_tables/vox_lingua_top10-hear2021-full.html %}
+                <p></p>
+                <hr class="divider-line"/>
+            </div>
+
+        </div>
+
+    </div>
+</article>
+
+
+<!-- Regular Datatables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+
+<!-- Bootstrap Datatables (Uncomment to try this style and comment out imports above)
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap4.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap4.min.js"></script>
+-->
+
+<!-- Custom CSS & JS -->
+<link rel="stylesheet" href="{{ "/assets/hear2021.css" | prepend: site.baseurl | prepend: site.url }}">
+<link rel="stylesheet" href="{{ "/assets/hear-leaderboard.css" | prepend: site.baseurl | prepend: site.url }}">
+<script src="{{ "/assets/js/hear-results.js" | prepend: site.baseurl | prepend: site.url }}"></script>
