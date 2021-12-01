@@ -148,11 +148,11 @@ layout: default
                 </div>
 
                 <div id="beehive_states_fold0-v2-5h" class="subtask">
-                    <h3>5 Hour Dataset - Fold 0</h3>
+                    <h3>HEAR 2021 - 5 Hour Dataset - Fold 0</h3>
                     {% include html_result_tables/beehive_states_fold0-v2-5h.html %}
                 </div>
                 <div id="beehive_states_fold1-v2-5h" class="subtask">
-                    <h3>5 Hour Dataset - Fold 1</h3>
+                    <h3>HEAR 2021 - 5 Hour Dataset - Fold 1</h3>
                     {% include html_result_tables/beehive_states_fold1-v2-5h.html %}
                 </div>
                 <div id="beehive_states_fold0-v2-full" class="subtask">
@@ -167,15 +167,33 @@ layout: default
 
             <!-- Beijing Opera -->
             <div id="beijing_opera-v1.0-hear2021-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">Beijing Opera Percussion</h2>
-                <div class="task-description"></div>
+                <h2 class="task-title secret-task">Beijing Opera Percussion - HEAR 2021</h2>
+                <div class="task-description">
+                    <p>This is a novel audio classification task developed using the
+                    <a href="https://zenodo.org/record/1285212#.YafyDvHMJpQ">Beijing
+                        Opera Percussion Instrument Dataset</a>. The Beijing Opera
+                    uses six main percussion instruments that can be classified into
+                    four main categories: Bangu, Naobo, Daluo, and Xiaoluo.</p>
+                    <p>Scores are averaged over 5-folds.</p>
+                </div>
                 {% include html_result_tables/beijing_opera-v1.0-hear2021-full.html %}
             </div>
 
             <!-- CREMA-D -->
             <div id="tfds_crema_d-1.0.0-full.html" class="leaderboard-task">
                 <h2 class="task-title secret-task">CREMA-D</h2>
-                <div class="task-description"></div>
+                <div class="task-description">
+                    <p><a href="https://github.com/CheyneyComputerScience/CREMA-D">CREMA-D</a>
+                        is a dataset for emotion recognition. The original dataset
+                    contains audiovisual data of actors reciting sentences with one of
+                    six different emotions (Anger, Disgust, Fear, Happy, Neutral and Sad).
+                    For HEAR 2021 we only use the audio recordings.</p>
+                    </p>
+                    <p>We use the <a href="https://www.tensorflow.org/datasets/catalog/crema_d">
+                    TensorFlow Dataset</a> version of this dataset, however compute our
+                        scores over our own 5-fold split.
+                    </p>
+                </div>
                 {% include html_result_tables/tfds_crema_d-1.0.0-full.html %}
             </div>
 
