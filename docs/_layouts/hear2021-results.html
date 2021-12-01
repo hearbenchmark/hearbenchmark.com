@@ -199,11 +199,20 @@ layout: default
 
             <!-- ESC50 5hr -->
             <div id="esc50" class="leaderboard-task">
-                <h2 class="task-title secret-task">ESC-50 5hr</h2>
-                <div class="task-description"></div>
+                <h2 class="task-title secret-task">ESC-50</h2>
+                <div class="task-description">
+                    <p>This is a multiclass classification task on environmental sounds.
+                        The <a href="https://github.com/karoldvl/ESC-50">ESC-50</a> dataset is a
+                        collection of 2000 environmental sounds organized into 50
+                        classes.</p>
+                    <p>Results are averaged over five folds, which are predefined in the
+                    original dataset.</p>
+                    <p>In additional to the full dataset, we also include a smaller 5
+                    hour version for HEAR 2021.</p>
+                </div>
 
                 <div id="esc50-v2.0.0-5h" class="subtask">
-                    <h3>5 Hour Dataset</h3>
+                    <h3>5 Hour Dataset - HEAR 2021</h3>
                     {% include html_result_tables/esc50-v2.0.0-5h.html %}
                 </div>
                 <div id="esc50-v2.0.0-full" class="subtask">
@@ -214,8 +223,16 @@ layout: default
 
             <!-- FSD50k Full -->
             <div id="fsd50k-v1.0-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">FSD50k Full</h2>
-                <div class="task-description"></div>
+                <h2 class="task-title secret-task">FSD50k</h2>
+                <div class="task-description">
+                    <p><a href="https://zenodo.org/record/4060432#.YagAX_HMJpQ">FSD50K</a>
+                        is a multilabel task. The dataset contains a large collection of
+                        human-labeled sound events from the <a href="https://freesound.org/">
+                            website</a>. Each sound event is labeled using classes from
+                        the <a href="https://research.google.com/audioset/ontology/index.html">
+                            AudioSet Ontology</a>, which consists of 200 classes.
+                    </p>
+                </div>
                 {% include html_result_tables/fsd50k-v1.0-full.html %}
             </div>
 
