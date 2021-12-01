@@ -238,8 +238,22 @@ layout: default
 
             <!-- Gunshot Triangulation -->
             <div id="gunshot_triangulation-v1.0-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">Gunshot Triangulation</h2>
-                <div class="task-description"></div>
+                <h2 class="task-title secret-task">Gunshot Triangulation - HEAR 2021</h2>
+                <div class="task-description">
+                    <p>The gunshot triangulation task is a novel multiclass classification
+                    task that utilizes the dataset:
+                        <a href="https://zenodo.org/record/3997406#.YagCO_HMJpR">
+                            Gunshots recorded in an open field using iPod Touch devices
+                        </a>. This dataset consists of 22 shots from 7 different firearms.
+                        Each shot is recorded using four different iPod Touches located
+                        at different distances from the shooter. The goal of this
+                        task is to classify audio by the iPod Touch that recorded it.
+                    </p>
+                    <p>
+                        The dataset was split into 7 different folds where each firearm
+                        belonged to only one fold. Results are averaged over each fold.
+                    </p>
+                </div>
                 {% include html_result_tables/gunshot_triangulation-v1.0-full.html %}
             </div>
 
