@@ -260,14 +260,38 @@ layout: default
             <!-- GTZAN -->
             <div id="tfds_gtzan-1.0.0-full" class="leaderboard-task">
                 <h2 class="task-title secret-task">GTZAN Genre</h2>
-                <div class="task-description"></div>
+                <div class="task-description">
+                    <p>
+                        This is a multiclass classification task. The
+                        <a href="http://marsyas.info/downloads/datasets.html#gtzan-genre-collection">
+                            GTZAN Genre Collection</a> is a dataset of 1000 audio tracks
+                        (each 30 seconds in duration) that are categorized into
+                        ten genres (100 tracks per genre).
+                    </p>
+                    <p>
+                        We use the <a href="https://www.tensorflow.org/datasets/catalog/gtzan">
+                        TensorFlow Dataset</a> version of this dataset. The dataset was split
+                        into 10 folds and results were averaged over each of these folds.
+                    </p>
+                </div>
                 {% include html_result_tables/tfds_gtzan-1.0.0-full.html %}
             </div>
 
             <!-- GTZAN Music - Speech -->
             <div id="tfds_gtzan_music_speech-1.0.0-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">GTZAN Music/Speech </h2>
-                <div class="task-description"></div>
+                <h2 class="task-title secret-task">GTZAN Music Speech </h2>
+                <div class="task-description">
+                    <p><a href="http://marsyas.info/downloads/datasets.html#music-speech">
+                        GTZAN Music Speech</a> is a binary classification task. The goal
+                    is to distinguish between music and speech. The dataset consists of
+                    120 tracks (each 30 seconds in duration) and each class (music/speech)
+                    has 60 examples.</p>
+                    <p>
+                        We use the <a href="https://www.tensorflow.org/datasets/catalog/gtzan_music_speech">
+                        TensorFlow Dataset</a> version of this dataset. The dataset was split
+                        into 10 folds and results were averaged over each of these folds.
+                    </p>
+                </div>
                 {% include html_result_tables/tfds_gtzan_music_speech-1.0.0-full.html %}
             </div>
 
