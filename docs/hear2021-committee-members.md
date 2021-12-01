@@ -163,6 +163,15 @@ music generation, data mining for music classification (hit prediction)
 and novel applications at the intersection of machine learning/optimization
 and music.
 
+**Eduardo Fonseca** is a PhD candidate at the Music Technology Group of 
+Universitat Pompeu Fabra, under the supervision of Dr. Xavier Serra.
+His research focuses on audio dataset creation and learning algorithms
+for sound event recognition, including learning with noisy labels and
+self-supervision. His work received one of the best paper awards at
+WASPAA21. He has interned at Google Research twice and has been actively
+involved in the DCASE community as Challenge Task organizer and Technical
+Program Co-Chair.
+
 **Jesse Engel** is lead research scientist on Magenta, a research
 team within Google Brain exploring the role of machine learning in
 creative applications. He did his Bachelors, and Ph.D., at UC
