@@ -30,7 +30,21 @@ layout: default
 
         <div class="divider"></div>
 
-        {{ content }}
+        <p>We show test scores on open and secret tasks.</p>
+
+        <p>Downstream evaluation on each task involves two
+        steps: a) computing audio
+        embeddings and b) learning a shallow fully-connected
+        predictor. The downstream predictor was chosen to optimize
+        validation scores on the task's objective, measured on the
+        validation set.</p>
+
+        <p>
+        For more details, question, training logs, etc, don't
+        hesitate to <a
+        href="https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge">post</a>
+        on the discussion board or <a href="mailto:deep at neuralaudio
+        dot ai">email us</a>.</p>
 
         <hr class="divider-line"/>
 
@@ -83,7 +97,7 @@ layout: default
             <!-- NSynth Pitch 50h -->
             <div id="nsynth_pitch-v2.2.3-50h" class="leaderboard-task">
                 <h3 class="task-title open-task">NSynth Pitch 50h</h3>
-                {% include html_result_tables/nsynth_pitch-v2.2.3-5h.html %}
+                {% include html_result_tables/nsynth_pitch-v2.2.3-50h.html %}
                 <p>Pitch and chroma classification of <a
                 href="https://magenta.tensorflow.org/datasets/nsynth">nsynth
                 sounds</a>. 5h or 50h audio used for training and
