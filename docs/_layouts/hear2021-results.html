@@ -70,193 +70,178 @@ layout: default
 
             <!-- DCASE -->
             <div id="dcase2016_task2-hear2021-full" class="leaderboard-task">
-                <h3 class="task-title open-task">DCASE 2016 Task 2</h3>
+                <h2 class="task-title open-task">DCASE 2016 Task 2</h2>
+                <div class="task-description">
+                    <p>
+                        Adapted from <a
+                        href="http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio">DCASE
+                        2016, Task 2</a> office sound event detection. Our
+                        evaluation uses different splits,
+                        so the numbers cannot be directly compared
+                        to previously published results.</p>
+                        <p>Postprocessing: Segments were postprocessed
+                        using 250 ms median filtering. At each
+                        validation step, a minimum event duration
+                        of 125 or 250 ms was chosen to maximize
+                        onset-only event-based F-measure (with 200ms
+                        tolerance). Scores were computed using <a
+                                    href="https://tut-arg.github.io/sed_eval/">sed_eval</a>.
+                    </p>
+                </div>
                 {% include html_result_tables/dcase2016_task2-hear2021-full.html %}
-                <p>Adapted from <a
-                href="http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio">DCASE
-                   2016, Task 2</a> office sound event detection. Our
-                evaluation uses different splits,
-                so the numbers cannot be directly compared
-                to previously published results.</p>
-                <p>Postprocessing: Segments were postprocessed
-                using 250 ms median filtering. At each
-                validation step, a minimum event duration
-                of 125 or 250 ms was chosen to maximize
-                onset-only event-based F-measure (with 200ms
-                tolerance). Scores were computed using <a
-                href="https://tut-arg.github.io/sed_eval/">sed_eval</a>.</p>
-                <hr class="divider-line"/>
             </div>
 
             <!-- NSynth Pitch 5h -->
-            <div id="nsynth_pitch-v2.2.3-5h" class="leaderboard-task">
-                <h3 class="task-title open-task">NSynth Pitch 5h</h3>
-                {% include html_result_tables/nsynth_pitch-v2.2.3-5h.html %}
-                <p>Pitch and chroma classification of <a
-                href="https://magenta.tensorflow.org/datasets/nsynth">nsynth
-                sounds</a>. 5h or 50h audio used for training and
-                validation.</p>
-                <hr class="divider-line"/>
-            </div>
-
-            <!-- NSynth Pitch 50h -->
-            <div id="nsynth_pitch-v2.2.3-50h" class="leaderboard-task">
-                <h3 class="task-title open-task">NSynth Pitch 50h</h3>
-                {% include html_result_tables/nsynth_pitch-v2.2.3-50h.html %}
-                <p>Pitch and chroma classification of <a
-                href="https://magenta.tensorflow.org/datasets/nsynth">nsynth
-                sounds</a>. 5h or 50h audio used for training and
-                validation.</p>
-                <hr class="divider-line"/>
+            <div id="nsynth_pitch" class="leaderboard-task">
+                <h2 class="task-title open-task">NSynth Pitch</h2>
+                <div class="task-description">
+                    <p>Pitch and chroma classification of <a
+                    href="https://magenta.tensorflow.org/datasets/nsynth">nsynth
+                    sounds</a>.</p>
+                </div>
+                <div id="nsynth_pitch-v2.2.3-5h" class="subtask">
+                    <h3>5 Hour Dataset</h3>
+                    {% include html_result_tables/nsynth_pitch-v2.2.3-5h.html %}
+                </div>
+                <div id="nsynth_pitch-v2.2.3-50h" class="subtask">
+                    <h3>50 Hour Dataset</h3>
+                    {% include html_result_tables/nsynth_pitch-v2.2.3-50h.html %}
+                </div>
             </div>
 
             <!-- Speech Commands 5hr -->
-            <div id="speech_commands-v0.0.2-5h" class="leaderboard-task">
-                <h3 class="task-title open-task">Speech Commands 5h</h3>
-                {% include html_result_tables/speech_commands-v0.0.2-5h.html %}
-                <p><a
-                href="https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html">Speech
-                commands classification</a>. 5h or full audio used
-                for training and validation.</p>
-                <hr class="divider-line"/>
+            <div id="speech_commands" class="leaderboard-task">
+                <h2 class="task-title open-task">Speech Commands</h2>
+                <div class="task-description">
+                    <p><a href="https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html">Speech
+                    commands classification</a>. In this task only 5 hours of audio was used
+                    for training and validation.
+                    </p>
+                </div>
+                <div id="speech_commands-v0.0.2-5h" class="subtask">
+                    <h3>5 Hour Dataset</h3>
+                    {% include html_result_tables/speech_commands-v0.0.2-5h.html %}
+                </div>
+                <div id="speech_commands-v0.0.2-full" class="subtask">
+                    <h3>Full Dataset</h3>
+                    {% include html_result_tables/speech_commands-v0.0.2-full.html %}
+                </div>
+
             </div>
 
-            <!-- Speech Commands Full -->
-            <div id="speech_commands-v0.0.2-full" class="leaderboard-task">
-                <h3 class="task-title open-task">Speech Commands Full</h3>
-                {% include html_result_tables/speech_commands-v0.0.2-full.html %}
-                <p><a
-                href="https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html">Speech
-                commands classification</a>. 5h or full audio used
-                for training and validation.</p>
-                <hr class="divider-line"/>
-            </div>
+            <!-- Beehive states -->
+            <div id="beehive_states" class="leaderboard-task">
+                <h2 class="task-title secret-task">Beehive States</h2>
+                <div class="task-description"></div>
 
-            <!-- Beehive states fold0 5h-->
-            <div id="beehive_states_fold0-v2-5h" class="leaderboard-task">
-                <h3 class="task-title secret-task">Beehive States Fold 0 5h</h3>
-                {% include html_result_tables/beehive_states_fold0-v2-5h.html %}
-                <p></p>
-                <hr class="divider-line"/>
-            </div>
-
-            <!-- Beehive states fold0 Full -->
-            <div id="beehive_states_fold0-v2-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">Beehive States Fold 0 Full</h3>
-                {% include html_result_tables/beehive_states_fold0-v2-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
-            </div>
-
-            <!-- Beehive states fold0 5h -->
-            <div id="beehive_states_fold1-v2-5h" class="leaderboard-task">
-                <h3 class="task-title secret-task">Beehive States Fold 1 5h</h3>
-                {% include html_result_tables/beehive_states_fold1-v2-5h.html %}
-                <p></p>
-                <hr class="divider-line"/>
-            </div>
-
-            <!-- Beehive states fold0 Full -->
-            <div id="beehive_states_fold1-v2-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">Beehive States Fold 1 Full</h3>
-                {% include html_result_tables/beehive_states_fold1-v2-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
+                <div id="beehive_states_fold0-v2-5h" class="subtask">
+                    <h3>5 Hour Dataset - Fold 0</h3>
+                    {% include html_result_tables/beehive_states_fold0-v2-5h.html %}
+                </div>
+                <div id="beehive_states_fold1-v2-5h" class="subtask">
+                    <h3>5 Hour Dataset - Fold 1</h3>
+                    {% include html_result_tables/beehive_states_fold1-v2-5h.html %}
+                </div>
+                <div id="beehive_states_fold0-v2-full" class="subtask">
+                    <h3>Full Dataset - Fold 0</h3>
+                    {% include html_result_tables/beehive_states_fold0-v2-full.html %}
+                </div>
+                <div id="beehive_states_fold1-v2-full" class="subtask">
+                    <h3>Full Dataset - Fold 1</h3>
+                    {% include html_result_tables/beehive_states_fold1-v2-full.html %}
+                </div>
             </div>
 
             <!-- Beijing Opera -->
             <div id="beijing_opera-v1.0-hear2021-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">Beijing Opera Percussion</h3>
-                {% include html_result_tables/beehive_states_fold1-v2-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
+                <h2 class="task-title secret-task">Beijing Opera Percussion</h2>
+                <div class="task-description"></div>
+                {% include html_result_tables/beijing_opera-v1.0-hear2021-full.html %}
             </div>
 
             <!-- CREMA-D -->
             <div id="tfds_crema_d-1.0.0-full.html" class="leaderboard-task">
-                <h3 class="task-title secret-task">CREMA-D</h3>
+                <h2 class="task-title secret-task">CREMA-D</h2>
+                <div class="task-description"></div>
                 {% include html_result_tables/tfds_crema_d-1.0.0-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
             </div>
 
             <!-- ESC50 5hr -->
-            <div id="esc50-v2.0.0-5h" class="leaderboard-task">
-                <h3 class="task-title secret-task">ESC50 5hr</h3>
-                {% include html_result_tables/esc50-v2.0.0-5h.html %}
-                <p></p>
-                <hr class="divider-line"/>
-            </div>
+            <div id="esc50" class="leaderboard-task">
+                <h2 class="task-title secret-task">ESC-50 5hr</h2>
+                <div class="task-description"></div>
 
-            <!-- ESC50 Full -->
-            <div id="esc50-v2.0.0-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">ESC50 Full</h3>
-                {% include html_result_tables/esc50-v2.0.0-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
+                <div id="esc50-v2.0.0-5h" class="subtask">
+                    <h3>5 Hour Dataset</h3>
+                    {% include html_result_tables/esc50-v2.0.0-5h.html %}
+                </div>
+                <div id="esc50-v2.0.0-full" class="subtask">
+                    <h3>Full Dataset</h3>
+                    {% include html_result_tables/beehive_states_fold1-v2-5h.html %}
+                </div>
             </div>
 
             <!-- FSD50k Full -->
             <div id="fsd50k-v1.0-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">FSD50k Full</h3>
+                <h2 class="task-title secret-task">FSD50k Full</h2>
+                <div class="task-description"></div>
                 {% include html_result_tables/fsd50k-v1.0-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
             </div>
 
             <!-- Gunshot Triangulation -->
             <div id="gunshot_triangulation-v1.0-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">Gunshot Triangulation</h3>
+                <h2 class="task-title secret-task">Gunshot Triangulation</h2>
+                <div class="task-description"></div>
                 {% include html_result_tables/gunshot_triangulation-v1.0-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
             </div>
 
             <!-- GTZAN -->
             <div id="tfds_gtzan-1.0.0-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">GTZAN Genre</h3>
+                <h2 class="task-title secret-task">GTZAN Genre</h2>
+                <div class="task-description"></div>
                 {% include html_result_tables/tfds_gtzan-1.0.0-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
             </div>
 
             <!-- GTZAN Music - Speech -->
             <div id="tfds_gtzan_music_speech-1.0.0-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">GTZAN Music/Speech </h3>
+                <h2 class="task-title secret-task">GTZAN Music/Speech </h2>
+                <div class="task-description"></div>
                 {% include html_result_tables/tfds_gtzan_music_speech-1.0.0-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
             </div>
 
             <!-- Libricount -->
             <div id="libricount-v1.0.0-hear2021-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">LibriCount</h3>
+                <h2 class="task-title secret-task">LibriCount</h2>
+                <div class="task-description"></div>
                 {% include html_result_tables/libricount-v1.0.0-hear2021-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
             </div>
 
             <!-- Mridingam Stroke -->
             <div id="mridangam_stroke-v1.5-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">Mridingham Stroke</h3>
+                <h2 class="task-title secret-task">Mridingham Stroke</h2>
+                <div class="task-description"></div>
                 {% include html_result_tables/mridangam_stroke-v1.5-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
             </div>
 
             <!-- Mridingam Tonic -->
             <div id="mridangam_tonic-v1.5-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">Mridingham Tonic</h3>
+                <h2 class="task-title secret-task">Mridingham Tonic</h2>
+                <div class="task-description"></div>
                 {% include html_result_tables/mridangam_tonic-v1.5-full.html %}
-                <p></p>
-                <hr class="divider-line"/>
+            </div>
+
+            <!-- Vocal Imitations -->
+            <div id="vocal_imitation-v1.1.3-full" class="leaderboard-task">
+                <h2 class="task-title secret-task">Vocal Imitations</h2>
+                <div class="task-description"></div>
+                {% include html_result_tables/vocal_imitation-v1.1.3-full.html %}
             </div>
 
             <!-- Vox Lingua Top10 -->
             <div id="vox_lingua_top10-hear2021-full" class="leaderboard-task">
-                <h3 class="task-title secret-task">Vox Lingua Top 10</h3>
+                <h2 class="task-title secret-task">Vox Lingua Top 10</h2>
+                <div class="task-description"></div>
                 {% include html_result_tables/vox_lingua_top10-hear2021-full.html %}
-                <p></p>
             </div>
         </div>
 

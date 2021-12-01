@@ -13,7 +13,7 @@ $(document).ready(function() {
     let secret_task_toc = $('#secret-task-toc');
 
     tasks.each(function() {
-        let task = $(this).find("h3");
+        let task = $(this).find("h2");
         let item = $("<li><a href='#" + $(this)[0].id + "'>" +  task[0].innerHTML + "</a></li>")
         if (task.hasClass("open-task")) {
             open_task_toc.append(item);
