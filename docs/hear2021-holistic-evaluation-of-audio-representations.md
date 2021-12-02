@@ -2,7 +2,7 @@
 layout: hear2021
 title: HEAR 2021 NeurIPS Challenge
 subtitle: Holistic Evaluation of Audio Representations
-author: Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller and Christian James Steinmetz and Colin Malloy and George Tzanetakis and Gissel Velarde and Kirk McNally and Max Henry and Nicolas Pinto and Yonatan Bisk and Gyanendra Das and Humair Raj Khan and Camille Noufi and Dorien Herremans and Jesse Engel and Justin Salamon and Philippe Esling and Pranay Manocha and Shinji Watanabe and Zeyu Jin
+author: Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller and Christian James Steinmetz and Colin Malloy and George Tzanetakis and Gissel Velarde and Kirk McNally and Max Henry and Nicolas Pinto and Yonatan Bisk and Gyanendra Das and Humair Raj Khan and Camille Noufi and Dorien Herremans and Eduardo Fonseca and Jesse Engel and Justin Salamon and Philippe Esling and Pranay Manocha and Shinji Watanabe and Zeyu Jin
 #date: 2021-06-29
 abstract: >
   The aim of this challenge is to develop a general-purpose audio
@@ -25,9 +25,19 @@ abstract: >
   invited to submit.
 ---
 
+## NeurIPS 2021 Conference
+We will be sharing the results of the HEAR 2021 evaluation live at NeurIPS 2021
+on December 7th from 19:05-19:25 GMT during the 
+[Competition Track Day 1 Session](https://neurips.cc/Conferences/2021/Schedule?showEvent=21954).
+
+Following this presentation we will be hosting a breakout Zoom session. During this
+session invited participants will share their submissions in a 5-minute
+lightning talk format. This will be followed by an open question and discussion period.
+
+For more information please see [HEAR @ NeurIPS 2021](/hear2021-neurips-conference).
+
 ## Submissions
-**Submissions are now open!** [Submit your
-entry](https://forms.gle/Bz9n7e3LNSK6X4mt7).
+Submissions are closed.
 
 The final submission deadline is **October 31st 2021**. For the
 remainder of the competition we will be switching to a rolling
@@ -62,6 +72,10 @@ be shallowly trained for each team and each task.
 
 <p></p>
 ## News and Announcements
+  * **2021-11-29** -
+    * We will be presenting live at the NeurIPS conference. See 
+    [HEAR @ NeurIPS 2021](/hear2021-neurips-conference) for more information.
+    * Eduardo Fonseca has been added to the steering committee.
   * **2021-09-13** -
     * Our [leaderboard](https://neuralaudio.ai/hear2021-leaderboard.html)
     is live, and will be updated with secret tasks and early
