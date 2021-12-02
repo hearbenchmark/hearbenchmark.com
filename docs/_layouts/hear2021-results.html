@@ -297,23 +297,50 @@ layout: default
 
             <!-- Libricount -->
             <div id="libricount-v1.0.0-hear2021-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">LibriCount</h2>
-                <div class="task-description"></div>
+                <h2 class="task-title secret-task">LibriCount - HEAR 2021</h2>
+                <div class="task-description">
+                    <p>
+                        LibriCount is a multiclass speaker count identification task. We
+                        created this task using <a href="https://zenodo.org/record/1216072#.YagHavHMJpT">
+                        LibriCount, a dataset for speaker count estimation</a>. The dataset
+                        contains audio that is simulated cocktail party environment with 0 to 10
+                        speakers. The goal of this task is to estimate how many speakers
+                        are present in each of the recordings.
+                    </p>
+                    <p>
+                        We created a 5-fold split for this dataset and results are averaged
+                        over each fold.
+                    </p>
+                </div>
                 {% include html_result_tables/libricount-v1.0.0-hear2021-full.html %}
             </div>
 
             <!-- Mridingam Stroke -->
-            <div id="mridangam_stroke-v1.5-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">Mridingham Stroke</h2>
-                <div class="task-description"></div>
-                {% include html_result_tables/mridangam_stroke-v1.5-full.html %}
-            </div>
+            <div id="mridangam_stroke" class="leaderboard-task">
+                <h2 class="task-title secret-task">Mridingham Stroke and Tonic</h2>
+                <div class="task-description">
+                    <p>We used the <a href="https://zenodo.org/record/4068196">
+                        Mridangam Stroke Dataset</a> for two distinct multiclass
+                    classification tasks: Stroke classification and Tonic classification.
+                        The Mridingam is a pitched percussion instrument used in carnatic
+                        music, a sub-genre of Indian classical music. The dataset comprises
+                        10 different strokes played on Mridingams with 6 different tonics.
+                    </p>
+                    <p>
+                        For each of the two tasks (stroke and tonic), we created a
+                        5-fold split for training/testing and averaged results over each
+                        fold.
+                    </p>
+                </div>
 
-            <!-- Mridingam Tonic -->
-            <div id="mridangam_tonic-v1.5-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">Mridingham Tonic</h2>
-                <div class="task-description"></div>
-                {% include html_result_tables/mridangam_tonic-v1.5-full.html %}
+                <div id="mridangam_stroke-v1.5-full" class="subtask">
+                    <h3>Mridingham Stroke</h3>
+                    {% include html_result_tables/mridangam_stroke-v1.5-full.html %}
+                </div>
+                <div id="mridangam_tonic-v1.5-full" class="subtask">
+                    <h3>Mridingham Tonic</h3>
+                    {% include html_result_tables/mridangam_tonic-v1.5-full.html %}
+                </div>
             </div>
 
             <!-- Vocal Imitations -->
