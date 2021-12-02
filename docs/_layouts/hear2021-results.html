@@ -64,6 +64,14 @@ layout: default
             <div id="secret-task-toc"></div>
         </div>
 
+        <div class="error-note" style="padding-top: 20px;">
+            <i>Note:</i> we were unable to run some models on some of the tasks, these
+            cases are denoted with by -ERR in place of the score. There were a number of
+            reasons for these errors including models exceeding GPU mem limits during
+            embedding, exceeding 20 GPU hrs to compute embedding for a task, or an
+            exception was thrown during embeddings.
+        </div>
+
         <hr class="divider-line"/>
 
         <div id="tasks-wrapper">
@@ -171,7 +179,7 @@ layout: default
 
             <!-- Beijing Opera -->
             <div id="beijing_opera-v1.0-hear2021-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">Beijing Opera Percussion - HEAR 2021</h2>
+                <h2 class="task-title secret-task">Beijing Opera Percussion</h2>
                 <div class="task-description">
                     <p>This is a novel audio classification task developed using the
                     <a href="https://zenodo.org/record/1285212#.YafyDvHMJpQ">Beijing
@@ -216,7 +224,7 @@ layout: default
                 </div>
 
                 <div id="esc50-v2.0.0-5h" class="subtask">
-                    <h3>5 Hour Dataset - HEAR 2021</h3>
+                    <h3>5 Hour Dataset</h3>
                     {% include html_result_tables/esc50-v2.0.0-5h.html %}
                 </div>
                 <div id="esc50-v2.0.0-full" class="subtask">
@@ -242,7 +250,7 @@ layout: default
 
             <!-- Gunshot Triangulation -->
             <div id="gunshot_triangulation-v1.0-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">Gunshot Triangulation - HEAR 2021</h2>
+                <h2 class="task-title secret-task">Gunshot Triangulation</h2>
                 <div class="task-description">
                     <p>The gunshot triangulation task is a novel multiclass classification
                     task that utilizes the dataset:
@@ -283,7 +291,7 @@ layout: default
 
             <!-- GTZAN Music - Speech -->
             <div id="tfds_gtzan_music_speech-1.0.0-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">GTZAN Music Speech </h2>
+                <h2 class="task-title secret-task">GTZAN Music Speech</h2>
                 <div class="task-description">
                     <p><a href="http://marsyas.info/downloads/datasets.html#music-speech">
                         GTZAN Music Speech</a> is a binary classification task. The goal
@@ -301,7 +309,7 @@ layout: default
 
             <!-- Libricount -->
             <div id="libricount-v1.0.0-hear2021-full" class="leaderboard-task">
-                <h2 class="task-title secret-task">LibriCount - HEAR 2021</h2>
+                <h2 class="task-title secret-task">LibriCount</h2>
                 <div class="task-description">
                     <p>
                         LibriCount is a multiclass speaker count identification task. We
