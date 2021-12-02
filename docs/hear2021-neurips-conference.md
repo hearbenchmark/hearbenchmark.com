@@ -24,11 +24,12 @@ The breakout session will start at 19:25 GMT and last for approximately one hour
 ### Breakout Schedule
 The current tentative team order for lightning talks is:
 
-1. Soundsensing / Soundsensing + MARL
+1. Soundsensing
 2. Descript / MARL
 3. CP-JKU 
-4. Toyz's Dog
+4. NTU-GURA
 5. CVSSP
 6. RedRice
+7. Logitech AI
 
 Lightning talks will be followed by a question period and open discussion.
