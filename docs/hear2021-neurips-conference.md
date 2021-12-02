@@ -24,7 +24,7 @@ The breakout session will start at 19:25 GMT and last for approximately one hour
 ### Breakout Schedule
 The current tentative team order for lightning talks is:
 
-1. Soundsensing
+1. MARL + Soundsensing
 2. Descript / MARL
 3. CP-JKU 
 4. NTU-GURA
