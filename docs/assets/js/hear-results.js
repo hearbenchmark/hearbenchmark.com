@@ -31,27 +31,16 @@ $(document).ready(function() {
         "searching": false,
         "paging": false,
         "info": false,
-        "order": [[2, 'desc' ]]
-        // "scrollX": true,
-        // "columnDefs": [
-        //     {
-        //         "searchable": false,
-        //         "orderable": false,
-        //         "targets": [0]
-        //     },
-        //     // Left align text in the submission cells
-        //     {
-        //         "className": "cell-left",
-        //         "targets": [0]
-        //     }
-        //     ]
+        "order": [[2, 'desc' ]],
+        "columnDefs": [
+            {
+                "targets": 0,
+                "className": "dt-left"
+            },
+            {
+                "targets": 1,
+                "className": "dt-left"
+            }
+        ]
     });
-
-    // Create the unsorted rank on the side
-    // t.on( 'order.dt search.dt', function () {
-    //     console.log("here");
-    //     t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-    //         cell.innerHTML = i+1;
-    //     } );
-    // }).draw();
 } );

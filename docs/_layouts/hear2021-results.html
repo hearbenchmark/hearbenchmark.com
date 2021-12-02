@@ -64,13 +64,13 @@ layout: default
             <div id="secret-task-toc"></div>
         </div>
 
-        <div class="error-note" style="padding-top: 20px;">
-            <i>Note:</i> we were unable to run some models on some of the tasks, these
-            cases are denoted with by -ERR in place of the score. There were a number of
-            reasons for these errors including models exceeding GPU mem limits during
-            embedding, exceeding 20 GPU hrs to compute embedding for a task, or an
-            exception was thrown during embeddings.
-        </div>
+<!--        <div class="error-note" style="padding-top: 20px;">-->
+<!--            <i>Note:</i> we were unable to run some models on some of the tasks, these-->
+<!--            cases are denoted with by -ERR in place of the score. There were a number of-->
+<!--            reasons for these errors including models exceeding GPU mem limits during-->
+<!--            embedding, exceeding 20 GPU hrs to compute embedding for a task, or an-->
+<!--            exception was thrown during embeddings.-->
+<!--        </div>-->
 
         <hr class="divider-line"/>
 
@@ -394,7 +394,21 @@ layout: default
                 {% include html_result_tables/vox_lingua_top10-hear2021-full.html %}
             </div>
         </div>
-
+        <hr class="divider-line"/>
+        <div id="error-description" class="error-notes" style="padding-bottom: 50px">
+            <p><b>Errors</b></p>
+            <p>We were unable to run some models on some of the tasks, these cases are
+                denoted with -ERR in place of the score, along with the type of error:</p>
+            <div>
+                <ol>
+                    <li>GPU memory was exceed on a V100 (>= 16GB) during embedding computation.</li>
+                    <li>GPU memory was exceed on an A100 (>= 40GB) during embedding computation.</li>
+                    <li>Embeddings took longer than 20 GPU hours to compute on an A100.</li>
+                    <li>Returned embeddings included a NaN value.</li>
+                    <li>Model threw an exception during embedding computation.</li>
+                </ol>
+            </div>
+        </div>
     </div>
 </article>
 
