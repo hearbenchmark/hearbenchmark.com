@@ -95,9 +95,17 @@ layout: default
             <div id="nsynth_pitch" class="leaderboard-task">
                 <h2 class="task-title open-task">NSynth Pitch</h2>
                 <div class="task-description">
-                    <p>Pitch and chroma classification of <a
-                    href="https://magenta.tensorflow.org/datasets/nsynth">nsynth
-                    sounds</a>.</p>
+                    <p>NSynth Pitch is a HEAR 2021 open task and is a multiclass
+                        classification problem. The goal of this task is to classify
+                        instrumental sounds from the
+                        <a href="https://magenta.tensorflow.org/datasets/nsynth">NSynth
+                    Dataset</a> into one of 88 pitches. Results for this task are measured
+                    by pitch accuracy as well as chroma accuracy. The chroma accuracy metric
+                    only considers the pitch class and disregards octave errors.</p>
+                    <p>
+                        For HEAR 2021 we created two versions of this dataset: a 5 hour
+                        and 50 hour version.
+                    </p>
                 </div>
                 <div id="nsynth_pitch-v2.2.3-5h" class="subtask">
                     <h3>5 Hour Dataset</h3>
@@ -113,9 +121,16 @@ layout: default
             <div id="speech_commands" class="leaderboard-task">
                 <h2 class="task-title open-task">Speech Commands</h2>
                 <div class="task-description">
-                    <p><a href="https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html">Speech
-                    commands classification</a>. In this task only 5 hours of audio was used
-                    for training and validation.
+                    <p>Classification of known spoken commands, with additional
+                        categories for silence and unknown commands. This task was
+                        described in <a href="https://arxiv.org/abs/1804.03209">Speech
+                            Commands: A Dataset for Limited-Vocabulary Speech Recognition
+                        </a>.
+                    </p>
+                    <p>
+                        For HEAR 2021 we use two versions of this dataset: a smaller version
+                        which comprises 5 hours of audio for training, and the full version
+                        of the original dataset.
                     </p>
                 </div>
                 <div id="speech_commands-v0.0.2-5h" class="subtask">
@@ -142,7 +157,7 @@ layout: default
                     was performed on each.</p>
                     <p>Additionally, this task has been split into two different sizes:
                     a 5hr version and a full dataset version.</p>
-                    <p>Adopted from: <a href="https://zenodo.org/record/2667806#.YafvMPHMJpQ">
+                    <p>From: <a href="https://zenodo.org/record/2667806#.YafvMPHMJpQ">
                         Audio-Based identification of Beehive states: The dataset
                     </a></p>
                 </div>
@@ -346,14 +361,39 @@ layout: default
             <!-- Vocal Imitations -->
             <div id="vocal_imitation-v1.1.3-full" class="leaderboard-task">
                 <h2 class="task-title secret-task">Vocal Imitations</h2>
-                <div class="task-description"></div>
+                <div class="task-description">
+                    <p>This is a multiclass classification task where the goal is to
+                        match a vocal imitation of a sound with the original sound
+                        that is being imitated. This task uses the dataset:
+                        <a href="https://zenodo.org/record/1340763">
+                            Vocal Imitation Set v1.1.3</a>: Thousands of vocal imitations
+                            of hundreds of sounds from the AudioSet ontology. This dataset
+                        compromises vocal imitations of 302 reference sounds.
+                    </p>
+                    <p>
+                        We created a 3-fold split for this task and averaged the results
+                        from each fold.
+                    </p>
+                </div>
                 {% include html_result_tables/vocal_imitation-v1.1.3-full.html %}
             </div>
 
             <!-- Vox Lingua Top10 -->
             <div id="vox_lingua_top10-hear2021-full" class="leaderboard-task">
                 <h2 class="task-title secret-task">Vox Lingua Top 10</h2>
-                <div class="task-description"></div>
+                <div class="task-description">
+                    <p>This is a novel multiclass classification task derived from the
+                        <a href="http://bark.phon.ioc.ee/voxlingua107/">
+                            VoxLingua107</a> dataset. The goal of the task is to identify
+                        the spoken language in an audio file. For HEAR 2021 we selected
+                        the top 10 most frequent languages from the development set, which
+                        resulted in just over 5 hours of audio.
+                    </p>
+                    <p>
+                        We created 5-fold splits for training/testing and averaged the
+                        results over each fold.
+                    </p>
+                </div>
                 {% include html_result_tables/vox_lingua_top10-hear2021-full.html %}
             </div>
         </div>
