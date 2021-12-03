@@ -73,7 +73,7 @@ layout: default
                         categories for silence and unknown commands. This task was
                         described in <a href="https://arxiv.org/abs/1804.03209">Speech
                             Commands: A Dataset for Limited-Vocabulary Speech Recognition
-                        </a>. We use the original dataset, as well as a 5-hour subset.
+                        </a>. As per the literature, we measure accuracy. We also provide scores for a 5-hour subset.
                     </p>
                 </div>
                 <div id="speech_commands-v0.0.2-full" class="subtask">
@@ -155,8 +155,8 @@ layout: default
                     <a href="https://zenodo.org/record/1285212#.YafyDvHMJpQ">Beijing
                         Opera Percussion Instrument Dataset</a>. The Beijing Opera
                     uses six main percussion instruments that can be classified into
-                    four main categories: Bangu, Naobo, Daluo, and Xiaoluo.</p>
-                    <p>Scores are averaged over 5-folds.</p>
+                    four main categories: Bangu, Naobo, Daluo, and Xiaoluo.
+                    Scores are averaged over 5-folds.</p>
                 </div>
                 {% include html_result_tables/beijing_opera-v1.0-hear2021-full.html %}
             </div>
@@ -170,7 +170,7 @@ layout: default
                     contains audiovisual data of actors reciting sentences with one of
                     six different emotions (Anger, Disgust, Fear, Happy, Neutral and Sad).
         		    For HEAR 2021 we only use the audio recordings.
-         		    We use 5-fold cross validation.</p>
+         		    As per the literature, we use 5-fold cross validation.</p>
                 </div>
                 {% include html_result_tables/tfds_crema_d-1.0.0-full.html %}
             </div>
@@ -183,7 +183,7 @@ layout: default
                         The <a href="https://github.com/karoldvl/ESC-50">ESC-50</a> dataset is a
                         collection of 2000 environmental sounds organized into 50
                         classes.
-         		        We use 5-fold cross validation. (The folds are predefined in the original dataset.)</p>
+         		        Scores are averaged over 5 folds. (The folds are predefined in the original dataset.)</p>
                 </div>
                 {% include html_result_tables/esc50-v2.0.0-full.html %}
             </div>
@@ -214,7 +214,7 @@ layout: default
                         </a>. This dataset consists of 22 shots from 7 different firearms.
                         Each shot is recorded using four different iPod Touches located
                         at different distances from the shooter. The goal of this
-                        task is to classify audio by the iPod Touch that recorded it.
+                        task is to classify audio by the iPod Touch that recorded it, i.e. classify the location of the microphone.
                     </p>
                     <p>
                         The dataset was split into 7 different folds where each firearm
@@ -234,11 +234,7 @@ layout: default
                             GTZAN Genre Collection</a> is a dataset of 1000 audio tracks
                         (each 30 seconds in duration) that are categorized into
                         ten genres (100 tracks per genre).
-                    </p>
-                    <p>
-                        We use the <a href="https://www.tensorflow.org/datasets/catalog/gtzan">
-                        TensorFlow Dataset</a> version of this dataset. The dataset was split
-                        into 10 folds and results were averaged over each of these folds.
+         		        As per the literature, scores are averaged over 10 folds.
                     </p>
                 </div>
                 {% include html_result_tables/tfds_gtzan-1.0.0-full.html %}
@@ -252,11 +248,8 @@ layout: default
                         GTZAN Music Speech</a> is a binary classification task. The goal
                     is to distinguish between music and speech. The dataset consists of
                     120 tracks (each 30 seconds in duration) and each class (music/speech)
-                    has 60 examples.</p>
-                    <p>
-                        We use the <a href="https://www.tensorflow.org/datasets/catalog/gtzan_music_speech">
-                        TensorFlow Dataset</a> version of this dataset. The dataset was split
-                        into 10 folds and results were averaged over each of these folds.
+                    has 60 examples.
+         		        As per the literature, scores are averaged over 10 folds.
                     </p>
                 </div>
                 {% include html_result_tables/tfds_gtzan_music_speech-1.0.0-full.html %}
@@ -273,10 +266,7 @@ layout: default
                         contains audio that is simulated cocktail party environment with 0 to 10
                         speakers. The goal of this task is to estimate how many speakers
                         are present in each of the recordings.
-                    </p>
-                    <p>
-                        We created a 5-fold split for this dataset and results are averaged
-                        over each fold.
+         		        Scores are averaged over 5 folds.
                     </p>
                 </div>
                 {% include html_result_tables/libricount-v1.0.0-hear2021-full.html %}
@@ -306,11 +296,7 @@ layout: default
                         The Mridingam is a pitched percussion instrument used in carnatic
                         music, a sub-genre of Indian classical music. The dataset comprises
                         10 different strokes played on Mridingams with 6 different tonics.
-                    </p>
-                    <p>
-                        For each of the two tasks (stroke and tonic), we created a
-                        5-fold split for training/testing and averaged results over each
-                        fold.
+                        For each of the two tasks (stroke and tonic), scores are averaged over 5 folds.
                     </p>
                 </div>
 
