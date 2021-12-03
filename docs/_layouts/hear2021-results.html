@@ -64,39 +64,41 @@ layout: default
             <div id="secret-task-toc"></div>
         </div>
 
-<!--        <div class="error-note" style="padding-top: 20px;">-->
-<!--            <i>Note:</i> we were unable to run some models on some of the tasks, these-->
-<!--            cases are denoted with by -ERR in place of the score. There were a number of-->
-<!--            reasons for these errors including models exceeding GPU mem limits during-->
-<!--            embedding, exceeding 20 GPU hrs to compute embedding for a task, or an-->
-<!--            exception was thrown during embeddings.-->
-<!--        </div>-->
+        <div class="error-note" style="padding-top: 20px;">
+            <i>Note:</i> we were unable to run some models on some of the tasks.
+            There were a number of reasons for these errors including models exceeding
+            GPU mem limits during embedding, exceeding 20 GPU hrs to compute
+            embedding for a task, or an exception was thrown during embedding computation.
+        </div>
 
         <hr class="divider-line"/>
 
         <div id="tasks-wrapper">
 
-            <!-- DCASE -->
-            <div id="dcase2016_task2-hear2021-full" class="leaderboard-task">
-                <h2 class="task-title open-task">DCASE 2016 Task 2</h2>
+            <!-- Speech Commands 5hr -->
+            <div id="speech_commands" class="leaderboard-task">
+                <h2 class="task-title open-task">Speech Commands</h2>
                 <div class="task-description">
+                    <p>Classification of known spoken commands, with additional
+                        categories for silence and unknown commands. This task was
+                        described in <a href="https://arxiv.org/abs/1804.03209">Speech
+                            Commands: A Dataset for Limited-Vocabulary Speech Recognition
+                        </a>.
+                    </p>
                     <p>
-                        Adapted from <a
-                        href="http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio">DCASE
-                        2016, Task 2</a> office sound event detection. Our
-                        evaluation uses different splits,
-                        so the numbers cannot be directly compared
-                        to previously published results.</p>
-                        <p>Postprocessing: Segments were postprocessed
-                        using 250 ms median filtering. At each
-                        validation step, a minimum event duration
-                        of 125 or 250 ms was chosen to maximize
-                        onset-only event-based F-measure (with 200ms
-                        tolerance). Scores were computed using <a
-                                    href="https://tut-arg.github.io/sed_eval/">sed_eval</a>.
+                        For HEAR 2021 we use two versions of this dataset: a smaller version
+                        which comprises 5 hours of audio for training, and the full version
+                        of the original dataset.
                     </p>
                 </div>
-                {% include html_result_tables/dcase2016_task2-hear2021-full.html %}
+                <div id="speech_commands-v0.0.2-5h" class="subtask">
+                    <h3>5 Hour Dataset</h3>
+                    {% include html_result_tables/speech_commands-v0.0.2-5h.html %}
+                </div>
+                <div id="speech_commands-v0.0.2-full" class="subtask">
+                    <h3>Full Dataset</h3>
+                    {% include html_result_tables/speech_commands-v0.0.2-full.html %}
+                </div>
             </div>
 
             <!-- NSynth Pitch 5h -->
@@ -125,31 +127,27 @@ layout: default
                 </div>
             </div>
 
-            <!-- Speech Commands 5hr -->
-            <div id="speech_commands" class="leaderboard-task">
-                <h2 class="task-title open-task">Speech Commands</h2>
+            <!-- DCASE -->
+            <div id="dcase2016_task2-hear2021-full" class="leaderboard-task">
+                <h2 class="task-title open-task">DCASE 2016 Task 2</h2>
                 <div class="task-description">
-                    <p>Classification of known spoken commands, with additional
-                        categories for silence and unknown commands. This task was
-                        described in <a href="https://arxiv.org/abs/1804.03209">Speech
-                            Commands: A Dataset for Limited-Vocabulary Speech Recognition
-                        </a>.
-                    </p>
                     <p>
-                        For HEAR 2021 we use two versions of this dataset: a smaller version
-                        which comprises 5 hours of audio for training, and the full version
-                        of the original dataset.
+                        Adapted from <a
+                        href="http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio">DCASE
+                        2016, Task 2</a> office sound event detection. Our
+                        evaluation uses different splits,
+                        so the numbers cannot be directly compared
+                        to previously published results.</p>
+                        <p>Postprocessing: Segments were postprocessed
+                        using 250 ms median filtering. At each
+                        validation step, a minimum event duration
+                        of 125 or 250 ms was chosen to maximize
+                        onset-only event-based F-measure (with 200ms
+                        tolerance). Scores were computed using <a
+                                    href="https://tut-arg.github.io/sed_eval/">sed_eval</a>.
                     </p>
                 </div>
-                <div id="speech_commands-v0.0.2-5h" class="subtask">
-                    <h3>5 Hour Dataset</h3>
-                    {% include html_result_tables/speech_commands-v0.0.2-5h.html %}
-                </div>
-                <div id="speech_commands-v0.0.2-full" class="subtask">
-                    <h3>Full Dataset</h3>
-                    {% include html_result_tables/speech_commands-v0.0.2-full.html %}
-                </div>
-
+                {% include html_result_tables/dcase2016_task2-hear2021-full.html %}
             </div>
 
             <!-- Beehive states -->
@@ -388,21 +386,21 @@ layout: default
                 {% include html_result_tables/vox_lingua_top10-hear2021-full.html %}
             </div>
         </div>
-        <hr class="divider-line"/>
-        <div id="error-description" class="error-notes" style="padding-bottom: 50px">
-            <p><b>Errors</b></p>
-            <p>We were unable to run some models on some of the tasks, these cases are
-                denoted with -ERR in place of the score, along with the type of error:</p>
-            <div>
-                <ol>
-                    <li>GPU memory was exceed on a V100 (>= 16GB) during embedding computation.</li>
-                    <li>GPU memory was exceed on an A100 (>= 40GB) during embedding computation.</li>
-                    <li>Embeddings took longer than 20 GPU hours to compute on an A100.</li>
-                    <li>Returned embeddings included a NaN value.</li>
-                    <li>Model threw an exception during embedding computation.</li>
-                </ol>
-            </div>
-        </div>
+<!--        <hr class="divider-line"/>-->
+<!--        <div id="error-description" class="error-notes" style="padding-bottom: 50px">-->
+<!--            <p><b>Errors</b></p>-->
+<!--            <p>We were unable to run some models on some of the tasks, these cases are-->
+<!--                denoted with -ERR in place of the score, along with the type of error:</p>-->
+<!--            <div>-->
+<!--                <ol>-->
+<!--                    <li>GPU memory was exceed on a V100 (>= 16GB) during embedding computation.</li>-->
+<!--                    <li>GPU memory was exceed on an A100 (>= 40GB) during embedding computation.</li>-->
+<!--                    <li>Embeddings took longer than 20 GPU hours to compute on an A100.</li>-->
+<!--                    <li>Returned embeddings included a NaN value.</li>-->
+<!--                    <li>Model threw an exception during embedding computation.</li>-->
+<!--                </ol>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </article>
 
