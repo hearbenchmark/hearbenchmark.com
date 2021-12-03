@@ -31,24 +31,21 @@ layout: default
         <div class="divider"></div>
 
         <p>
-            These are the final evaluation scores for HEAR 2021. All model submissions
-            have been evaluated on a set of open and secret task from a variety of
-            different audio domains including speech, music, and environmental sounds.
+            These are the final evaluation scores for HEAR 2021 [<a
+            href="https://docs.google.com/spreadsheets/d/1pxAG2L7mF-9AusMXirBWYVHn_Iw7qcYlucuWcPVImOo/edit?usp=sharing">CSV</a>].
+            Downstream evaluation on each task involves two
+            steps: a) computing audio
+            embeddings and b) learning a shallow fully-connected
+            predictor. The downstream predictor was chosen to optimize
+            validation scores on the task's objective, measured on the
+            validation set.
         </p>
-
-        <p>Downstream evaluation on each task involves two
-        steps: a) computing audio
-        embeddings and b) learning a shallow fully-connected
-        predictor. The downstream predictor was chosen to optimize
-        validation scores on the task's objective, measured on the
-        validation set.</p>
-
         <p>
-        For more details, question, training logs, etc, don't
-        hesitate to <a
-        href="https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge">post</a>
-        on the discussion board or <a href="mailto:deep at neuralaudio
-        dot ai">email us</a>.</p>
+    	    We used a V100 GPU for each open task and an A100
+        	GPU for each secret task. We do not publish scores
+    	    for submissions on tasks that exceeded 20 GPU-hours
+    	    on either downstream step or that exceeded GPU memory.
+        </p>
 
         <hr class="divider-line"/>
 
@@ -64,13 +61,6 @@ layout: default
             <div id="secret-task-toc"></div>
         </div>
 
-        <div class="error-note" style="padding-top: 20px;">
-            <i>Note:</i> we were unable to run some models on some of the tasks.
-            There were a number of reasons for these errors including models exceeding
-            GPU mem limits during embedding, exceeding 20 GPU hrs to compute
-            embedding for a task, or an exception was thrown during embedding computation.
-        </div>
-
         <hr class="divider-line"/>
 
         <div id="tasks-wrapper">
@@ -83,21 +73,16 @@ layout: default
                         categories for silence and unknown commands. This task was
                         described in <a href="https://arxiv.org/abs/1804.03209">Speech
                             Commands: A Dataset for Limited-Vocabulary Speech Recognition
-                        </a>.
+                        </a>. We use the original dataset, as well as a 5-hour subset.
                     </p>
-                    <p>
-                        For HEAR 2021 we use two versions of this dataset: a smaller version
-                        which comprises 5 hours of audio for training, and the full version
-                        of the original dataset.
-                    </p>
-                </div>
-                <div id="speech_commands-v0.0.2-5h" class="subtask">
-                    <h3>5 Hour Dataset</h3>
-                    {% include html_result_tables/speech_commands-v0.0.2-5h.html %}
                 </div>
                 <div id="speech_commands-v0.0.2-full" class="subtask">
-                    <h3>Full Dataset</h3>
+                    <h3>Speech Commands</h3>
                     {% include html_result_tables/speech_commands-v0.0.2-full.html %}
+                </div>
+                <div id="speech_commands-v0.0.2-5h" class="subtask">
+                    <h3>Speech Commands 5H</h3>
+                    {% include html_result_tables/speech_commands-v0.0.2-5h.html %}
                 </div>
             </div>
 
@@ -118,11 +103,11 @@ layout: default
                     </p>
                 </div>
                 <div id="nsynth_pitch-v2.2.3-5h" class="subtask">
-                    <h3>5 Hour Dataset</h3>
+                    <h3>NSynth Pitch 5h</h3>
                     {% include html_result_tables/nsynth_pitch-v2.2.3-5h.html %}
                 </div>
                 <div id="nsynth_pitch-v2.2.3-50h" class="subtask">
-                    <h3>50 Hour Dataset</h3>
+                    <h3>NSynth Pitch 50h</h3>
                     {% include html_result_tables/nsynth_pitch-v2.2.3-50h.html %}
                 </div>
             </div>
@@ -157,10 +142,7 @@ layout: default
                     <p>This is a binary classification task using audio recordings
                     of two beehives. The beehives are in one of two states: a Queen-less
                     beehive, where for some reason the Queen is missing, and a normal
-                    beehive.</p>
-                    <p>From: <a href="https://zenodo.org/record/2667806#.YafvMPHMJpQ">
-                        Audio-Based identification of Beehive states: The dataset
-                    </a></p>
+                    beehive. Some clips in this data set are 10 minutes long. (<a href="https://arxiv.org/abs/1811.06330">Nolasco et al. 2019</a>)</p>
                 </div>
                 {% include html_result_tables/beehive_states-v2-full.html %}
             </div>
@@ -187,12 +169,8 @@ layout: default
                         is a dataset for emotion recognition. The original dataset
                     contains audiovisual data of actors reciting sentences with one of
                     six different emotions (Anger, Disgust, Fear, Happy, Neutral and Sad).
-                    For HEAR 2021 we only use the audio recordings.</p>
-                    </p>
-                    <p>We use the <a href="https://www.tensorflow.org/datasets/catalog/crema_d">
-                    TensorFlow Dataset</a> version of this dataset, however compute our
-                        scores over our own 5-fold split.
-                    </p>
+        		    For HEAR 2021 we only use the audio recordings.
+         		    We use 5-fold cross validation.</p>
                 </div>
                 {% include html_result_tables/tfds_crema_d-1.0.0-full.html %}
             </div>
@@ -204,9 +182,8 @@ layout: default
                     <p>This is a multiclass classification task on environmental sounds.
                         The <a href="https://github.com/karoldvl/ESC-50">ESC-50</a> dataset is a
                         collection of 2000 environmental sounds organized into 50
-                        classes.</p>
-                    <p>Results are averaged over five folds, which are predefined in the
-                    original dataset.</p>
+                        classes.
+         		        We use 5-fold cross validation. (The folds are predefined in the original dataset.)</p>
                 </div>
                 {% include html_result_tables/esc50-v2.0.0-full.html %}
             </div>
@@ -307,7 +284,7 @@ layout: default
 
             <!-- MAESTRO -->
             <div id="maestro" class="leaderboard-task">
-                <h2 class="task-title secret-task">MAESTRO</h2>
+                <h2 class="task-title secret-task">MAESTRO 5h</h2>
                 <div class="task-description">
                     <p>
                         Music transcription task using
@@ -386,21 +363,6 @@ layout: default
                 {% include html_result_tables/vox_lingua_top10-hear2021-full.html %}
             </div>
         </div>
-<!--        <hr class="divider-line"/>-->
-<!--        <div id="error-description" class="error-notes" style="padding-bottom: 50px">-->
-<!--            <p><b>Errors</b></p>-->
-<!--            <p>We were unable to run some models on some of the tasks, these cases are-->
-<!--                denoted with -ERR in place of the score, along with the type of error:</p>-->
-<!--            <div>-->
-<!--                <ol>-->
-<!--                    <li>GPU memory was exceed on a V100 (>= 16GB) during embedding computation.</li>-->
-<!--                    <li>GPU memory was exceed on an A100 (>= 40GB) during embedding computation.</li>-->
-<!--                    <li>Embeddings took longer than 20 GPU hours to compute on an A100.</li>-->
-<!--                    <li>Returned embeddings included a NaN value.</li>-->
-<!--                    <li>Model threw an exception during embedding computation.</li>-->
-<!--                </ol>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 </article>
 
