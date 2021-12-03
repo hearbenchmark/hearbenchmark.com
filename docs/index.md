@@ -16,14 +16,9 @@ abstract: >
 
 ## News
 
-We will be hosting a NeurIPS challenge entitled ["HEAR 2021: Holistic Evaluation of Audio
-Representations"](hear2021-holistic-evaluation-of-audio-representations.html).
+The [Leaderboard Results](hear2021-results.html) for the [HEAR 2021 NeurIPS Challenge](hear2021-holistic-evaluation-of-audio-representations.html) are now available.
+
+## Stay Informed
 
 Please consider subscribing to our low-volume announcement [mailing list](http://eepurl.com/hwrhrz) and following us on
 [twitter](https://twitter.com/neuralaudio). Or simply check this web-page for updates.
-
-## Discussion
-
-Do you want to talk about audio ML? Please join our [forum](https://discuss.neuralaudio.ai/). Discussion is open to all
-audio researchers, whether you are participating in the shared task or simply want to exchange knowledge on audio ML.
-
