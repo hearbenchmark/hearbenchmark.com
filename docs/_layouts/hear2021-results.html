@@ -160,21 +160,11 @@ layout: default
                     of two beehives. The beehives are in one of two states: a Queen-less
                     beehive, where for some reason the Queen is missing, and a normal
                     beehive.</p>
-                    <p>This task has been split into two different sizes:
-                    a 5hr version and a full dataset version.</p>
                     <p>From: <a href="https://zenodo.org/record/2667806#.YafvMPHMJpQ">
                         Audio-Based identification of Beehive states: The dataset
                     </a></p>
                 </div>
-
-                <div id="beehive_states-v2-5h.html" class="subtask">
-                    <h3>5 Hour Dataset</h3>
-                    {% include html_result_tables/beehive_states-v2-5h.html %}
-                </div>
-                <div id="beehive_states-v2-full" class="subtask">
-                    <h3>Full Dataset</h3>
-                    {% include html_result_tables/beehive_states-v2-full.html %}
-                </div>
+                {% include html_result_tables/beehive_states-v2-full.html %}
             </div>
 
             <!-- Beijing Opera -->
@@ -209,7 +199,7 @@ layout: default
                 {% include html_result_tables/tfds_crema_d-1.0.0-full.html %}
             </div>
 
-            <!-- ESC50 5hr -->
+            <!-- ESC50 -->
             <div id="esc50" class="leaderboard-task">
                 <h2 class="task-title secret-task">ESC-50</h2>
                 <div class="task-description">
@@ -219,18 +209,8 @@ layout: default
                         classes.</p>
                     <p>Results are averaged over five folds, which are predefined in the
                     original dataset.</p>
-                    <p>In additional to the full dataset, we also include a smaller 5
-                    hour version for HEAR 2021.</p>
                 </div>
-
-                <div id="esc50-v2.0.0-5h" class="subtask">
-                    <h3>5 Hour Dataset</h3>
-                    {% include html_result_tables/esc50-v2.0.0-5h.html %}
-                </div>
-                <div id="esc50-v2.0.0-full" class="subtask">
-                    <h3>Full Dataset</h3>
-                    {% include html_result_tables/esc50-v2.0.0-full.html %}
-                </div>
+                {% include html_result_tables/esc50-v2.0.0-full.html %}
             </div>
 
             <!-- FSD50k Full -->
@@ -325,6 +305,20 @@ layout: default
                     </p>
                 </div>
                 {% include html_result_tables/libricount-v1.0.0-hear2021-full.html %}
+            </div>
+
+            <!-- MAESTRO -->
+            <div id="maestro" class="leaderboard-task">
+                <h2 class="task-title secret-task">MAESTRO</h2>
+                <div class="task-description">
+                    <p>
+                        Music transcription task using
+                        <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO</a>.
+                    </p>
+                    <p>
+                       Results TBA.
+                    </p>
+                </div>
             </div>
 
             <!-- Mridingam Stroke -->
