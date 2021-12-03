@@ -142,7 +142,7 @@ layout: default
                     <p>This is a binary classification task using audio recordings
                     of two beehives. The beehives are in one of two states: a Queen-less
                     beehive, where for some reason the Queen is missing, and a normal
-                    beehive. Some clips in this data set are 10 minutes long. (<a href="https://arxiv.org/abs/1811.06330">Nolasco et al. 2019</a>)</p>
+                    beehive. There are 930 clips in this data set, which are mostly 10 minutes long. (<a href="https://arxiv.org/abs/1811.06330">Nolasco et al. 2019</a>)</p>
                 </div>
                 {% include html_result_tables/beehive_states-v2-full.html %}
             </div>
@@ -155,7 +155,7 @@ layout: default
                     <a href="https://zenodo.org/record/1285212#.YafyDvHMJpQ">Beijing
                         Opera Percussion Instrument Dataset</a>. The Beijing Opera
                     uses six main percussion instruments that can be classified into
-                    four main categories: Bangu, Naobo, Daluo, and Xiaoluo.
+                    four main categories: Bangu, Naobo, Daluo, and Xiaoluo. There are 236 audio clips.
                     Scores are averaged over 5-folds.</p>
                 </div>
                 {% include html_result_tables/beijing_opera-v1.0-hear2021-full.html %}
@@ -170,7 +170,7 @@ layout: default
                     contains audiovisual data of actors reciting sentences with one of
                     six different emotions (Anger, Disgust, Fear, Happy, Neutral and Sad).
         		    For HEAR 2021 we only use the audio recordings.
-         		    As per the literature, we use 5-fold cross validation.</p>
+         		    As per the literature, we use 5-fold cross validation. There are 7438 clips.</p>
                 </div>
                 {% include html_result_tables/tfds_crema_d-1.0.0-full.html %}
             </div>
@@ -199,6 +199,9 @@ layout: default
                         the <a href="https://research.google.com/audioset/ontology/index.html">
                             AudioSet Ontology</a>, which consists of 200 classes.
                     </p>
+                    <p>
+                    All other scene embedding tasks used a fixed audio clip length.
+                    However, for FSD50k scene embedding, we did not alter the audio clip length. Each clip is between 0 and 30 seconds long.
                 </div>
                 {% include html_result_tables/fsd50k-v1.0-full.html %}
             </div>
@@ -207,11 +210,10 @@ layout: default
             <div id="gunshot_triangulation-v1.0-full" class="leaderboard-task">
                 <h2 class="task-title secret-task">Gunshot Triangulation</h2>
                 <div class="task-description">
-                    <p>The gunshot triangulation task is a novel multiclass classification
+                    <p>The gunshot triangulation task is a novel resource multiclass classification
                     task that utilizes the dataset:
                         <a href="https://zenodo.org/record/3997406#.YagCO_HMJpR">
-                            Gunshots recorded in an open field using iPod Touch devices
-                        </a>. This dataset consists of 22 shots from 7 different firearms.
+                            Gunshots recorded in an open field using iPod Touch devices</a>. This dataset consists of 22 shots from 7 different firearms, a total of 88 audio clips.
                         Each shot is recorded using four different iPod Touches located
                         at different distances from the shooter. The goal of this
                         task is to classify audio by the iPod Touch that recorded it, i.e. classify the location of the microphone.
@@ -264,7 +266,7 @@ layout: default
                         created this task using <a href="https://zenodo.org/record/1216072#.YagHavHMJpT">
                         LibriCount, a dataset for speaker count estimation</a>. The dataset
                         contains audio that is simulated cocktail party environment with 0 to 10
-                        speakers. The goal of this task is to estimate how many speakers
+                        speakers. The goal of this task is to classify how many speakers
                         are present in each of the recordings.
          		        Scores are averaged over 5 folds.
                     </p>
@@ -316,15 +318,8 @@ layout: default
                 <div class="task-description">
                     <p>This is a multiclass classification task where the goal is to
                         match a vocal imitation of a sound with the original sound
-                        that is being imitated. This task uses the dataset:
-                        <a href="https://zenodo.org/record/1340763">
-                            Vocal Imitation Set v1.1.3</a>: Thousands of vocal imitations
-                            of hundreds of sounds from the AudioSet ontology. This dataset
-                        compromises vocal imitations of 302 reference sounds.
-                    </p>
-                    <p>
-                        We created a 3-fold split for this task and averaged the results
-                        from each fold.
+                        that is being imitated. This <a href="https://zenodo.org/record/1340763">dataset</a> contains 5601 vocal imitations of 302 reference sounds, organized by AudioSet ontology. Given a vocal sound, the classification task is to retrieve the original audio it was imitating.
+         		        Scores are averaged over 3 folds.
                     </p>
                 </div>
                 {% include html_result_tables/vocal_imitation-v1.1.3-full.html %}
@@ -339,11 +334,8 @@ layout: default
                             VoxLingua107</a> dataset. The goal of the task is to identify
                         the spoken language in an audio file. For HEAR 2021 we selected
                         the top 10 most frequent languages from the development set, which
-                        resulted in just over 5 hours of audio.
-                    </p>
-                    <p>
-                        We created 5-fold splits for training/testing and averaged the
-                        results over each fold.
+                        resulted in just over 5 hours of audio over 972 audio clips.
+         		        Scores are averaged over 5 folds.
                     </p>
                 </div>
                 {% include html_result_tables/vox_lingua_top10-hear2021-full.html %}
