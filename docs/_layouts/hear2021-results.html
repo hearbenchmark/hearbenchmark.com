@@ -279,14 +279,14 @@ layout: default
                 <h2 class="task-title secret-task">MAESTRO 5h</h2>
                 <div class="task-description">
                     <p>
-                        Music transcription task using
-                        <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO</a>.
+                        Music transcription task adapted from <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO</a>.
                         For HEAR 2021 we created a subsampled version of this task that included
-                        5 hours of training + validation audio. A shallow transcription model was
+                        5 hours of training + validation audio, using 120 second clips.
+                        A shallow transcription model was
                         trained on timestamp based embeddings provided by participant models.
                     </p>
                     <p>
-                        We use note onset FMS and note onset with offset FMS for evaulation, as per
+                        We use note onset FMS and note onset with offset FMS for evaluation, as per
                         the original MAESTRO paper
                         (<a href="https://arxiv.org/pdf/1810.12247.pdf">Hawthorne et al., 2019</a>)
                         and the preceding Onsets and Frames paper
