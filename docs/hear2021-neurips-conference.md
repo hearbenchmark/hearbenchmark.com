@@ -21,15 +21,16 @@ the lightning talks we will have an open question and discussion period.
 
 The breakout session will start at 19:25 GMT and last for approximately one hour.
 
-### Breakout Schedule
-The current tentative team order for lightning talks is:
+### Lightning Talks
 
-1. MARL + Soundsensing
-2. Descript / MARL
-3. CP-JKU 
-4. NTU-GURA
-5. CVSSP
-6. RedRice
-7. Logitech AI
+| Title                                                                                                                    | Team                | Presenters                                                                                                  |
+|--------------------------------------------------------------------------------------------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------|
+| **OpenL3 and YAMNet - strong baselines for general purpose audio embeddings**                                            | MARL + Soundsensing | Jon Nordby                                                                                                  |
+| **Wav2CLIP: Learning Robust Audio Representations From CLIP**                                                            | Descript / MARL     | Ho-Hsiang Wu (NYU MARL), Prem Seetharaman (Descript), Kundan Kumar (Descript), Juan Pablo Bello (NYU MARL). |
+| **PaSST: Efficient Training of Audio Transformers with Patchout**                                                        | CP-JKU              | Khaled Koutini                                                                                              |
+| **Fusion and Concatenation are All You Need**                                                                            | NTU-GURA            | Tung-Yu Wu, Chen-An Li, Tsu-Yuan Hsu, Tzu-Han Li                                                            |
+| **PANNs: Large-scale pretrained audio neural networks for audio pattern recognition**                                    | CVSSP               | Qiuqiang Kong, Turab Iqbal                                                                                  |
+| **Practical sound event detection models for general audio understanding: The RedRice submission to the HEAR challenge** | RedRice             | Heinrich Dinkel                                                                                             |
+| **SERAB BYOL-S**                                                                                                         | Logitech AI         | Gasser Elbanna                                                                                              |
 
 Lightning talks will be followed by a question period and open discussion.
