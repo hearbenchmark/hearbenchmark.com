@@ -6,3 +6,12 @@ article ul li {
     margin-bottom: 4px;
     margin-top: 4px;
 }
+
+.team-affiliation p {
+    font-size: smaller;
+    margin-bottom: -6px;
+}
+
+.team-members sup {
+    font-size: x-small;
+}
