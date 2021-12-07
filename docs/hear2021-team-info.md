@@ -63,6 +63,30 @@ it does not require learning a visual model in concert with an auditory model.
 
 <hr class="divider-line"/>
 
+## Descript/MARL
+<div class="team-members">
+    <p>
+        Ho-Hsiang Wu<sup>1</sup>, Prem Seetharaman<sup>2</sup>
+    </p>
+    <div class="team-affiliation">
+        <p><sup>1</sup>Music and Audio Research Laboratory (MARL) New York University</p>
+        <p><sup>2</sup>Descript</p>
+    </div>
+</div>
+
+#### Abstract
+We propose Wav2CLIP, a robust audio representation learning method by distilling from
+Contrastive Language-Image Pre-training (CLIP). Wav2CLIP projects audio into a shared
+embedding space with images and text, which enables multimodal applications such as
+zero-shot classification, and cross-modal retrieval. Furthermore, Wav2CLIP needs just
+~10% of the data to achieve competitive performance on downstream tasks compared with
+fully supervised models, and is more efficient to pre-train than competing methods as
+it does not require learning a visual model in concert with an auditory model.
+
+[[paper](https://arxiv.org/abs/2110.11499), [code](https://github.com/descriptinc/lyrebird-wav2clip)]
+
+<hr class="divider-line"/>
+
 ## RedRice
 <div class="team-members">
     <p>
