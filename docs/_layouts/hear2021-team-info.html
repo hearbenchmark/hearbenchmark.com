@@ -29,11 +29,14 @@ layout: default
         </div>
 
         <div class="divider"></div>
-
-        <div>
-            <p><b>Summary</b></p>
-            {% include toc.html html=content h_max=2 id="hear-toc"%}
-        </div>
+<!--        <div>-->
+<!--            {% if page.toc_title %}-->
+<!--                <p><b>{{page.toc_title}}</b></p>-->
+<!--            {% else %}-->
+<!--                <p><b>Summary</b></p>-->
+<!--            {% endif %}-->
+<!--            {% include toc.html html=content h_max=2 id="hear-toc"%}-->
+<!--        </div>-->
         {{ content }}
 
     </div>

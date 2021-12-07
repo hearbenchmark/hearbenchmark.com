@@ -1,10 +1,30 @@
 ---
-layout: hear2021
+layout: hear2021-team-info
 title: HEAR 2021
 subtitle: Team Information
 toc_title: Teams
 #date: 2021-05-09
 ---
+<div>
+    <p>Teams</p>
+    <ul>
+        <li>AMAAI</li>
+        <li>AMAAI Lab</li>
+        <li><a href="#cp-jku">CP-JKU</a></li>
+        <li>CVSSP</li>
+        <li><a href="#descriptmarl">Descript/MARL</a></li>
+        <li>ibkuroyagi</li>
+        <li>ID56-SSL</li>
+        <li>Logitech AI</li>
+        <li>MARL + Soundsensing</li>
+        <li><a href="#ntu-gura">NTU-GURA</a></li>
+        <li><a href="#redrice">RedRice</a></li>
+        <li>Soundsensing</li>
+        <li>Stellenbosch LSL</li>
+        <li>UDONS</li>
+    </ul>
+    <p>Team information will be updated as it becomes available.</p>
+</div>
 
 <hr class="divider-line"/>
 
@@ -63,27 +83,23 @@ it does not require learning a visual model in concert with an auditory model.
 
 <hr class="divider-line"/>
 
-## Descript/MARL
+## NTU-GURA
 <div class="team-members">
     <p>
-        Ho-Hsiang Wu<sup>1</sup>, Prem Seetharaman<sup>2</sup>
+        Tung-Yu Wu (EE)<sup>1</sup>, Chen-An Li (CSIE)<sup>1</sup>, Tzu-Han Lin (CSIE)<sup>1</sup>, Tsu-Yuan Hsu (CSIE)<sup>1</sup>, advised by Hung-Yi Lee<sup>1</sup>
     </p>
     <div class="team-affiliation">
-        <p><sup>1</sup>Music and Audio Research Laboratory (MARL) New York University</p>
-        <p><sup>2</sup>Descript</p>
+        <p><sup>1</sup>National Taiwan University</p>
     </div>
 </div>
 
 #### Abstract
-We propose Wav2CLIP, a robust audio representation learning method by distilling from
-Contrastive Language-Image Pre-training (CLIP). Wav2CLIP projects audio into a shared
-embedding space with images and text, which enables multimodal applications such as
-zero-shot classification, and cross-modal retrieval. Furthermore, Wav2CLIP needs just
-~10% of the data to achieve competitive performance on downstream tasks compared with
-fully supervised models, and is more efficient to pre-train than competing methods as
-it does not require learning a visual model in concert with an auditory model.
+Rather than focusing on the development of one single huge SSL models, we investigate
+the collaboration of multiple models for feature representation. Experiments are
+conducted to examine the effects of intra- and inter-model feature operations such as
+early fusion and concatenation.
 
-[[paper](https://arxiv.org/abs/2110.11499), [code](https://github.com/descriptinc/lyrebird-wav2clip)]
+[[code](https://github.com/tony10101105/HEAR-2021-NeurIPS-Challenge---NTU)]
 
 <hr class="divider-line"/>
 
