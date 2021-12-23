@@ -14,7 +14,7 @@ toc_title: Teams
         <li>CVSSP</li>
         <li><a href="#descriptmarl">Descript/MARL</a></li>
         <li>ibkuroyagi</li>
-        <li>ID56-SSL</li>
+        <li><a href="#id56-ssl">ID56-SSL</a></li>
         <li>Logitech AI</li>
         <li>MARL + Soundsensing</li>
         <li><a href="#ntu-gura">NTU-GURA</a></li>
@@ -80,6 +80,57 @@ fully supervised models, and is more efficient to pre-train than competing metho
 it does not require learning a visual model in concert with an auditory model.
 
 [[paper](https://arxiv.org/abs/2110.11499), [code](https://github.com/descriptinc/lyrebird-wav2clip)]
+
+<hr class="divider-line"/>
+
+## ID56-SSL
+<div class="team-members">
+    <p>
+        Mashrur Mahmud Morshed<sup>1,2</sup>, Ahmad Omar Ahsan<sup>1</sup>
+    </p>
+    <div class="team-affiliation">
+        <p><sup>1</sup>AI Engineer, Intelligent Machines Ltd.</p>
+        <p><sup>2</sup>Systems & Software Lab, IUT</p>
+    </div>
+</div>
+
+#### Abstract
+Our submission involves using lightweight all-MLP architectures on spectrogram inputs, 
+and generating scene embeddings by concatenation followed by temporal interpolation. 
+We have two submission variants: kwmlp (Keyword-MLP) and audiomlp.
+
+Keyword-MLP[1]† is a model for keyword spotting on Google Speech Commands V2-35. 
+It consists of identical, sequentially stacked gated MLP (gMLP[2]‡) blocks and accepts 
+MFCCs as inputs. The model has an isotropic architecture: all blocks are identical and 
+have the same input and output size of (T, 64). The timestamp embeddings of size 64 
+are obtained by simply removing the classification head at the end.
+
+The audiomlp submission consists of the Audio-MLP-Autoencoder, a denoising autoencoder 
+where the encoder and decoder both are similar sequentially stacked gMLP blocks. The 
+‘noise’ for the autoencoder is Spectral Augmentation, i.e. zeroed out time and 
+frequency bands. There is a narrow bottleneck between the encoder and the decoder, 
+which outputs the timestamp embeddings of size 8.
+
+Both approaches use the same scene embedding algorithm. The raw audios of arbitrary
+duration are split into 1s chunks and then converted to spectrograms (with a 10ms hop
+length) and passed to the models. The output timestamp embeddings for each 1s chunk are
+first concatenated across the time axis. We then reduce the time dimension with linear
+interpolation and finally flatten to obtain the scene embedding vector. As opposed to
+the naive averaging approach, we tried interpolation with the aim of conserving temporal
+information in the scene embeddings.
+
+<div class="bibliography">
+<p>
+    [1] Morshed, Mashrur M., and Ahmad Omar Ahsan. "Attention-Free Keyword Spotting." 
+    arXiv preprint arXiv:2110.07749 (2021). †Under review at ICASSP-2022.
+</p>
+<p>
+    [2] Liu, Hanxiao, Zihang Dai, David R. So, and Quoc V. Le. "Pay Attention to MLPs."
+    arXiv preprint arXiv:2105.08050 (2021). ‡Accepted to NeurIPS-2021.
+</p>
+</div>
+
+[[paper](https://arxiv.org/abs/2110.07749), [code](https://github.com/ID56/HEAR-2021-Audio-MLP)]
 
 <hr class="divider-line"/>
 

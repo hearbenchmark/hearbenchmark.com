@@ -8,10 +8,14 @@ article ul li {
 }
 
 .team-affiliation p {
-    font-size: smaller;
+    font-size: medium;
     margin-bottom: -6px;
 }
 
 .team-members sup {
     font-size: x-small;
+}
+
+.bibliography p {
+    font-size: medium;
 }
