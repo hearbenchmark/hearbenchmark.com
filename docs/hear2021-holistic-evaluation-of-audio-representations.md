@@ -46,10 +46,7 @@ post your results within two weeks of receiving them.
 
 To validate your entry follows the [common API](#common-api) prior
 to submission, please run your entry with the [HEAR
-Validator](https://github.com/neuralaudio/hear-validator).  Please
-post on the [discussion
-board](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/5) if
-you have any questions or difficulties.
+Validator](https://github.com/neuralaudio/hear-validator).
 
 We also provide a [baseline](https://github.com/neuralaudio/hear-baseline)
 using the HEAR API, for example purposes.
@@ -110,11 +107,6 @@ be shallowly trained for each team and each task.
 <p></p>
 
 To stay up-to-date, we will be making announcements in several places:
-* Our [HEAR
-2021](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/)
-category in the Neural Audio AI [forum](https://discuss.neuralaudio.ai/).
-The forum also provides a place to discuss audio ML research beyond
-this challenge.
 * Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
 * Our [twitter](https://twitter.com/neuralaudio) account.
 
@@ -200,9 +192,8 @@ special emphasis on low-resource and/or underrepresented domains.
 A primary goal of this challenge is to encourage the development
 of freely-available general-purpose audio representation models.
 If you have any questions or concerns about the rules, we are happy
-to help you. Please post on the
-[forum](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/) or
-[email us](mailto:deep-at-neuralaudio.ai) privately.
+to help you. Please [email us](mailto:deep-at-neuralaudio.ai) if you
+have any questions.
 
 <p></p>
 **Freely-available:**
@@ -421,11 +412,3 @@ Joseph Turian and Björn W. Schuller and Dorien Herremans and Katrin
 Kirchhoff and Paola Garcia Perera and Philippe Esling.
 
 You can learn more about the journal editors [here](pmlr-hear-journal-editors).
-
-<p></p>
-## Questions?
-
-We encourage you to post on the
-[forum](https://discuss.neuralaudio.ai/c/hear-2021-neurips-challenge/).
-However, if your question is private, please [email
-us](mailto:deep-at-neuralaudio.ai) directly.
