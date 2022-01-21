@@ -85,6 +85,7 @@ We will use unnormalized l1.
   * **2022-01-21** -
     * Details about [PMLR](hear2021-pmlr.html) special issue submissions are now available. Submission deadline is February 28th, 2022.
     * All HEAR 2021 [datasets](hear2021-datasets.html) are now available.
+    * All HEAR pypi packages have been updated. Please run `pip3 install --upgrade heareval hearbaseline hearpreprocess`.
     * [Recordings](https://youtube.com/playlist?list=PLZuJ3mj5mFsjB67esCQjWoCXKweyn2KVH) of NeurIPS team presentations are now available.
     * Due to a preprocessing bug, NeurIPS 2021 results for the crema-d, gztan genre, and gztan music/speech tasks are retracted. Corrected results are forthcoming.
   * **2021-11-29** -
