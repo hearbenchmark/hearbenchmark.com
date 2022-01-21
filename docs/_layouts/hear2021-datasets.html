@@ -1,0 +1,338 @@
+---
+layout: default
+---
+<article>
+    <div class="Margins">
+        <div class="center">
+            <div style="padding-top: 50px; padding-bottom: 50px;">
+                <img src="/assets/img/hear-header-sponsor.jpg">
+            </div>
+            <h1 class="LatexTitle">
+                {{ page.title }}
+                {%- if page.subtitle -%}
+                    <br/> {{ page.subtitle }}
+                {%- endif -%}
+            </h1>
+            <!-- <p class="LatexName">{{ page.author }}</p> -->
+            <p class="LatexDate">
+                {{ page.date | date: '%B %-d, %Y' }}
+            </p>
+            {%- if page.abstract -%}
+            <div class="AbstractMargins">
+                <h3 class="LatexAbstract">
+                    Abstract
+                </h3>
+                <p class="LatexAbstractText">{{page.abstract}}</p>
+            </div>
+            {%- endif -%}
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- TOC for tasks is populated using JS based on tasks below -->
+        <div>
+            <p>
+                <b>Open Tasks:</b>
+            </p>
+            <div id="open-task-toc"></div>
+            <p>
+                <b>Secret Tasks:</b>
+            </p>
+            <div id="secret-task-toc"></div>
+        </div>
+
+        <hr class="divider-line"/>
+
+        <div id="tasks-wrapper">
+
+            <!-- Speech Commands 5hr -->
+            <div id="speech_commands" class="leaderboard-task">
+                <h2 class="task-title open-task">Speech Commands</h2>
+                <div class="task-description">
+                    <p>Classification of known spoken commands, with additional
+                        categories for silence and unknown commands. This task was
+                        described in <a href="https://arxiv.org/abs/1804.03209">Speech
+                            Commands: A Dataset for Limited-Vocabulary Speech Recognition</a>. As per the literature, we measure accuracy. We also provide scores for a 5-hour subset.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- NSynth Pitch 5h -->
+            <div id="nsynth_pitch" class="leaderboard-task">
+                <h2 class="task-title open-task">NSynth Pitch</h2>
+                <div class="task-description">
+                    <p>NSynth Pitch is a HEAR 2021 open task and is a multiclass
+                        classification problem. The goal of this task is to classify
+                        instrumental sounds from the
+                        <a href="https://magenta.tensorflow.org/datasets/nsynth">NSynth
+                    Dataset</a> into one of 88 pitches. Results for this task are measured
+                    by pitch accuracy as well as chroma accuracy. The chroma accuracy metric
+                    only considers the pitch class and disregards octave errors.</p>
+                    <p>
+                        For HEAR 2021 we created two versions of this dataset: a 5 hour
+                        and 50 hour version.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- DCASE -->
+            <div id="dcase2016_task2-hear2021-full" class="leaderboard-task">
+                <h2 class="task-title open-task">DCASE 2016 Task 2</h2>
+                <div class="task-description">
+                    <p>
+                        Adapted from <a
+                        href="http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio">DCASE
+                        2016, Task 2</a> office sound event detection. Our
+                        evaluation uses different splits,
+                        so the numbers cannot be directly compared
+                        to previously published results.</p>
+                        <p>Postprocessing: Segments were postprocessed
+                        using 250 ms median filtering. At each
+                        validation step, a minimum event duration
+                        of 125 or 250 ms was chosen to maximize
+                        onset-only event-based F-measure (with 200ms
+                        tolerance). Scores were computed using <a
+                                    href="https://tut-arg.github.io/sed_eval/">sed_eval</a>.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- Beehive states -->
+            <div id="beehive_states" class="leaderboard-task">
+                <h2 class="task-title secret-task">Beehive States</h2>
+                <div class="task-description">
+                    <p>This is a binary classification task using audio recordings
+                    of two beehives. The beehives are in one of two states: a Queen-less
+                    beehive, where for some reason the Queen is missing, and a normal
+                    beehive. There are 930 clips in this data set, which are mostly 10 minutes long. (<a href="https://arxiv.org/abs/1811.06330">Nolasco et al. 2019</a>)</p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- Beijing Opera -->
+            <div id="beijing_opera-v1.0-hear2021-full" class="leaderboard-task">
+                <h2 class="task-title secret-task">Beijing Opera Percussion</h2>
+                <div class="task-description">
+                    <p>This is a novel audio classification task developed using the
+                    <a href="https://zenodo.org/record/1285212#.YafyDvHMJpQ">Beijing
+                        Opera Percussion Instrument Dataset</a>. The Beijing Opera
+                    uses six main percussion instruments that can be classified into
+                    four main categories: Bangu, Naobo, Daluo, and Xiaoluo. There are 236 audio clips.
+                    Scores are averaged over 5-folds.</p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- CREMA-D -->
+            <div id="tfds_crema_d-1.0.0-full.html" class="leaderboard-task">
+                <h2 class="task-title secret-task">CREMA-D</h2>
+                <div class="task-description">
+                    <p><a href="https://github.com/CheyneyComputerScience/CREMA-D">CREMA-D</a>
+                        is a dataset for emotion recognition. The original dataset
+                    contains audiovisual data of actors reciting sentences with one of
+                    six different emotions (Anger, Disgust, Fear, Happy, Neutral and Sad).
+        		    For HEAR 2021 we only use the audio recordings.
+         		    As per the literature, we use 5-fold cross validation. There are 7438 clips.</p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- ESC50 -->
+            <div id="esc50" class="leaderboard-task">
+                <h2 class="task-title secret-task">ESC-50</h2>
+                <div class="task-description">
+                    <p>This is a multiclass classification task on environmental sounds.
+                        The <a href="https://github.com/karoldvl/ESC-50">ESC-50</a> dataset is a
+                        collection of 2000 environmental sounds organized into 50
+                        classes.
+         		        Scores are averaged over 5 folds. (The folds are predefined in the original dataset.)</p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- FSD50k Full -->
+            <div id="fsd50k-v1.0-full" class="leaderboard-task">
+                <h2 class="task-title secret-task">FSD50k</h2>
+                <div class="task-description">
+                    <p><a href="https://zenodo.org/record/4060432#.YagAX_HMJpQ">FSD50K</a>
+                        is a multilabel task. The dataset contains a large collection of
+                        human-labeled sound events from <a href="https://freesound.org/">
+                            Freesound</a>. Each sound event is labeled using classes from
+                        the <a href="https://research.google.com/audioset/ontology/index.html">
+                            AudioSet Ontology</a>, which consists of 200 classes.
+                    </p>
+                    <p>
+                    All other scene embedding tasks used a fixed audio clip length.
+                    However, for FSD50k scene embedding, we did not alter the audio clip length. Each clip is between 0 and 30 seconds long.
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- Gunshot Triangulation -->
+            <div id="gunshot_triangulation-v1.0-full" class="leaderboard-task">
+                <h2 class="task-title secret-task">Gunshot Triangulation</h2>
+                <div class="task-description">
+                    <p>The gunshot triangulation task is a novel resource multiclass classification
+                    task that utilizes the dataset:
+                        <a href="https://zenodo.org/record/3997406#.YagCO_HMJpR">
+                            Gunshots recorded in an open field using iPod Touch devices</a>. This dataset consists of 22 shots from 7 different firearms, a total of 88 audio clips.
+                        Each shot is recorded using four different iPod Touches located
+                        at different distances from the shooter. The goal of this
+                        task is to classify audio by the iPod Touch that recorded it, i.e. classify the location of the microphone.
+                    </p>
+                    <p>
+                        The dataset was split into 7 different folds where each firearm
+                        belonged to only one fold. Results are averaged over each fold.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- GTZAN -->
+            <div id="tfds_gtzan-1.0.0-full" class="leaderboard-task">
+                <h2 class="task-title secret-task">GTZAN Genre</h2>
+                <div class="task-description">
+                    <p>
+                        This is a multiclass classification task. The
+                        <a href="http://marsyas.info/downloads/datasets.html#gtzan-genre-collection">
+                            GTZAN Genre Collection</a> is a dataset of 1000 audio tracks
+                        (each 30 seconds in duration) that are categorized into
+                        ten genres (100 tracks per genre).
+         		        As per the literature, scores are averaged over 10 folds.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- GTZAN Music - Speech -->
+            <div id="tfds_gtzan_music_speech-1.0.0-full" class="leaderboard-task">
+                <h2 class="task-title secret-task">GTZAN Music Speech</h2>
+                <div class="task-description">
+                    <p><a href="http://marsyas.info/downloads/datasets.html#music-speech">
+                        GTZAN Music Speech</a> is a binary classification task. The goal
+                    is to distinguish between music and speech. The dataset consists of
+                    120 tracks (each 30 seconds in duration) and each class (music/speech)
+                    has 60 examples.
+         		        As per the literature, scores are averaged over 10 folds.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- Libricount -->
+            <div id="libricount-v1.0.0-hear2021-full" class="leaderboard-task">
+                <h2 class="task-title secret-task">LibriCount</h2>
+                <div class="task-description">
+                    <p>
+                        LibriCount is a multiclass speaker count identification task. We
+                        created this task using <a href="https://zenodo.org/record/1216072#.YagHavHMJpT">
+                        LibriCount, a dataset for speaker count estimation</a>. The dataset
+                        contains audio that is simulated cocktail party environment with 0 to 10
+                        speakers. The goal of this task is to classify how many speakers
+                        are present in each of the recordings.
+         		        Scores are averaged over 5 folds.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- MAESTRO -->
+            <div id="maestro" class="leaderboard-task">
+                <h2 class="task-title secret-task">MAESTRO 5h</h2>
+                <div class="task-description">
+                    <p>
+                        Music transcription task adapted from <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO</a>.
+                        For HEAR 2021 we created a subsampled version of this task that included
+                        5 hours of training + validation audio, using 120 second clips.
+                        A shallow transcription model was
+                        trained on timestamp based embeddings provided by participant models.
+                    </p>
+                    <p>
+                        We use note onset FMS and note onset with offset FMS for evaluation, as per
+                        the original MAESTRO paper
+                        (<a href="https://arxiv.org/pdf/1810.12247.pdf">Hawthorne et al., 2019</a>)
+                        and the preceding Onsets and Frames paper
+                        (<a href="https://arxiv.org/pdf/1710.11153.pdf">Hawthorne er al., 2018</a>).
+                    </p>
+                    <p>
+                        Note onset measures the ability of the model to estimate note onsets
+                        with 50ms tolerance and ignores offsets. Note onset w/ offset includes
+                        onsets as well as requires note duration within 20% of ground truth or
+                        within 50ms, whichever is greater.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- Mridingam Stroke -->
+            <div id="mridangam_stroke" class="leaderboard-task">
+                <h2 class="task-title secret-task">Mridingham Stroke and Tonic</h2>
+                <div class="task-description">
+                    <p>We used the <a href="https://zenodo.org/record/4068196">
+                        Mridangam Stroke Dataset</a> for two distinct multiclass
+                    classification tasks: Stroke classification and Tonic classification.
+                        The Mridingam is a pitched percussion instrument used in carnatic
+                        music, a sub-genre of Indian classical music. The dataset comprises
+                        10 different strokes played on Mridingams with 6 different tonics.
+                        For each of the two tasks (stroke and tonic), scores are averaged over 5 folds.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- Vocal Imitations -->
+            <div id="vocal_imitation-v1.1.3-full" class="leaderboard-task">
+                <h2 class="task-title secret-task">Vocal Imitations</h2>
+                <div class="task-description">
+                    <p>This is a multiclass classification task where the goal is to
+                        match a vocal imitation of a sound with the original sound
+                        that is being imitated. This <a href="https://zenodo.org/record/1340763">dataset</a> contains 5601 vocal imitations of 302 reference sounds, organized by AudioSet ontology. Given a vocal sound, the classification task is to retrieve the original audio it was imitating.
+         		        Scores are averaged over 3 folds.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+
+            <!-- Vox Lingua Top10 -->
+            <div id="vox_lingua_top10-hear2021-full" class="leaderboard-task">
+                <h2 class="task-title secret-task">Vox Lingua Top 10</h2>
+                <div class="task-description">
+                    <p>This is a novel multiclass classification task derived from the
+                        <a href="http://bark.phon.ioc.ee/voxlingua107/">
+                            VoxLingua107</a> dataset. The goal of the task is to identify
+                        the spoken language in an audio file. For HEAR 2021 we selected
+                        the top 10 most frequent languages from the development set, which
+                        resulted in just over 5 hours of audio over 972 audio clips.
+         		        Scores are averaged over 5 folds.
+                    </p>
+                </div>
+                <hr class="divider-line-less"/>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- Regular Datatables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+
+<!-- Bootstrap Datatables (Uncomment to try this style and comment out imports above)
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap4.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap4.min.js"></script>
+-->
+
+<!-- Custom CSS & JS -->
+<link rel="stylesheet" href="{{ "/assets/hear2021.css" | prepend: site.baseurl | prepend: site.url }}">
+<link rel="stylesheet" href="{{ "/assets/hear-dataset.css" | prepend: site.baseurl | prepend: site.url }}">
+<script src="{{ "/assets/js/hear-results.js" | prepend: site.baseurl | prepend: site.url }}"></script>
