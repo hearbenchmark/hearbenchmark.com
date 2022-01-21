@@ -26,15 +26,9 @@ abstract: >
 ---
 
 ## NeurIPS 2021 Conference
-We will be sharing the results of the HEAR 2021 evaluation live at NeurIPS 2021
-on December 7th from 19:05-19:25 GMT during the 
-[Competition Track Day 1 Session](https://neurips.cc/Conferences/2021/Schedule?showEvent=21954).
 
-Following this presentation we will be hosting a breakout Zoom session. During this
-session invited participants will share their submissions in a 5-minute
-lightning talk format. This will be followed by an open question and discussion period.
-
-For more information please see [HEAR @ NeurIPS 2021](/hear2021-neurips-conference).
+Recordings of team presentations at NeurIPS 2021 are available [for
+viewing](https://youtube.com/playlist?list=PLZuJ3mj5mFsjB67esCQjWoCXKweyn2KVH).
 
 ## Submissions
 Submissions are closed.
