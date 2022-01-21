@@ -17,14 +17,18 @@ layout: default
             <p class="LatexDate">
                 {{ page.date | date: '%B %-d, %Y' }}
             </p>
-            {%- if page.abstract -%}
             <div class="AbstractMargins">
                 <h3 class="LatexAbstract">
                     Abstract
                 </h3>
-                <p class="LatexAbstractText">{{page.abstract}}</p>
+                <p class="LatexAbstractText">
+These are the evaluation tasks for the HEAR (Holistic Evaluation of Audio Representations) 2021 NeurIPS challenge.<br><br>
+
+The datasets have different open licenses. Please see <a href="https://zenodo.org/record/5885750/files/LICENSE.txt">LICENSE.txt</a> for each individual dataset's license.<br><br>
+
+Datasets were all normalized to a common human-readable format using hearpreprocess. Our <a href="https://zenodo.org/record/5885750">Zenodo archive</a> has all audio resampled to 48000Hz. For other sampling rates (16000, 22050, 32000, 44100), please download files (requester pays) from Google Storage gs://hear2021-archive/tasks/ or AWS s3://hear2021-archive/tasks/
+                </p>
             </div>
-            {%- endif -%}
 
         </div>
 
