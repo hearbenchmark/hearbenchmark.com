@@ -6,7 +6,13 @@ toc_title: Teams
 #date: 2021-05-09
 ---
 <div>
-    <p>Teams</p>
+
+<p>Recordings of team presentations at NeurIPS 2021 are available
+<a
+href="https://youtube.com/playlist?list=PLZuJ3mj5mFsjB67esCQjWoCXKweyn2KVH">for
+viewing</a>.</p>
+
+    <p><b>Teams</b></p>
     <ul>
         <li>AMAAI</li>
         <li>AMAAI Lab</li>
