@@ -71,12 +71,8 @@ Evaluation tasks with downstream learning:
 entire audio clip.
 * Timestamp-based: Sound event detection/transcription.
 
-For evaluation tasks that require training, a shallow downstream
-model will be learned with no fine-tuning of participant models.
-
-For some kinds of tasks, we will use only pairwise embedding distance
-(i.e., no learning).
-We will use unnormalized l1.
+A shallow downstream
+model is learned with no fine-tuning of participant models.
 
 <p></p>
 
