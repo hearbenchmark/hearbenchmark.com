@@ -5,124 +5,51 @@ subtitle: Holistic Evaluation of Audio Representations
 author: Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller and Christian James Steinmetz and Colin Malloy and George Tzanetakis and Gissel Velarde and Kirk McNally and Max Henry and Nicolas Pinto and Yonatan Bisk and Gyanendra Das and Humair Raj Khan and Camille Noufi and Dorien Herremans and Eduardo Fonseca and Jesse Engel and Justin Salamon and Philippe Esling and Pranay Manocha and Shinji Watanabe and Zeyu Jin
 #date: 2021-06-29
 abstract: >
-  The aim of this challenge is to develop a general-purpose audio
-  representation that provides a strong basis for learning in a
-  wide variety of tasks and scenarios. The HEAR 2021 challenge
-  invites you to create an audio embedding that is as holistic as
-  the human ear, i.e., one that performs well across a variety of
-  everyday domains:
-  What approach best generalizes to a
-  wide range of downstream audio tasks without fine-tuning?
-  <br><br>
+  What audio embedding approach generalizes best to a wide range
+  of downstream tasks across a variety of everyday domains without
+  fine-tuning? The aim of the HEAR 2021 NeurIPS challenge is to
+  develop a general-purpose audio representation that provides a
+  strong basis for learning in a wide variety of tasks and scenarios.
   HEAR 2021 evaluates audio representations using a benchmark suite
   across a variety of domains, including speech, environmental
-  sound, and music. In the spirit of shared exchange, all 
-  participants must submit an audio embedding model following
-  a <a href="hear2021-rules.html">common API</a> that is general-purpose, open-source, and freely
-  available to use.
-  <br><br>
-  <a href="hear2021-pmlr.html">PMLR</a> will publish a HEAR special issue,
-  with submission deadline of February 28th, 2022.
+  sound, and music. In the spirit of shared exchange, each participant
+  submitted an audio embedding model following a <a
+  href="hear2021-rules.html">common API</a> that is general-purpose,
+  open-source, and freely available to use.
+  Twenty-nine models by thirteen external teams were evaluated on
+  nineteen diverse downstream tasks derived from sixteen datasets.
+  Open <a href="https://github.com/neuralaudio/hear-eval-kit/">evaluation
+  code</a>, <a
+  href="https://github.com/neuralaudio/hear2021-submitted-models/">submitted
+  models</a> and <a href="hear2021-datasets.html">datasets</a> are
+  key contributions, enabling comprehensive and reproducible
+  evaluation, as well as previously impossible longitudinal studies.
+  It still remains an open question whether one single general-purpose
+  audio representation can perform as holistically as the human
+  ear.
 ---
 
-## Introduction
+## Contributions
 
-The HEAR 2021 challenge invites you to create an audio embedding
-that is as holistic as the human ear, i.e., one that performs well
-across a variety of everyday domains.  The challenge starts with
-three diverse and approachable open tasks, but also includes a
-variety of held-out secret tasks. The three open tasks are: **word
-classification**, **pitch detection**, and **sound event detection**.
-Each is relatively simple on its own.  Our twist is asking you to
-solve them all at once.
+The main contributions of HEAR 2021 are:
+* [datasets](hear2021-datasets.html),
+* [models](https://github.com/neuralaudio/hear2021-submitted-models),
+* and [evaluation code](https://github.com/neuralaudio/hear-eval-kit/).
 
-Teams develop an embedding of arbitrary size to be fed into a
-generic predictor by our evaluation algorithm. This predictor is
-shallowly trained for each team and each task.
+For detailed information about HEAR 2021, please see our upcoming
+<a href="assets/hear2021.pdf">journal article</a>, to appear in the
+PMLR Issue on NeurIPS 2021 Competitions.
 
-The HEAR 2021 NeurIPS Challenge saw 28 models from 14 different
-teams attack 3 open tasks and 13 secret tasks.
-Here are the [results](hear2021-results.md).
-Recordings of team presentations at NeurIPS 2021 are available [for
-viewing](https://youtube.com/playlist?list=PLZuJ3mj5mFsjB67esCQjWoCXKweyn2KVH).
+PMLR will also publish a special issue for HEAR 2021. <a
+href="hear2021-pmlr.html">Submissions to the HEAR PMLR</a> special
+issue are open until 2022-03-15, even if you did not participate
+in NeurIPS 2021.
 
-Please submit to the upcoming [PMLR](hear2021-pmlr) special issue,
-even if you did not participate in NeurIPS 2021.
+Recordings of team presentations at NeurIPS 2021 are available for <a href="https://youtube.com/playlist?list=PLZuJ3mj5mFsjB67esCQjWoCXKweyn2KVH">viewing</a>.
 
-<p></p>
-## Evaluation
-
-We adopt the principles proposed by [Groyal *et. al*
-(2019)](https://arxiv.org/abs/1905.01235) for evaluating the
-quality of a learned representation: a good representation should
-(1) transfer to a wide range of different tasks, and, (2) transfer
-with limited supervision.
-
-<p></p>
-### Wide Range of Tasks
-HEAR 2021 benchmarks span multiple audio domains: speech,
-environmental sound, and music, with tasks that involve short and
-long time spans. In addition to well-known baselines, we have
-endeavored to find low-resource evaluation tasks that particularly benefit
-humanity.
-
-Evaluation tasks with downstream learning:
-* Scene-based: Classification/multi-classification/tagging of an
-entire audio clip.
-* Timestamp-based: Sound event detection/transcription.
-
-A shallow downstream
-model is learned with no fine-tuning of participant models.
-
-<p></p>
-
-<p></p>
-## News and Announcements
-  * **2022-01-21** -
-    * Details about [PMLR](hear2021-pmlr.html) special issue submissions are now available. Submission deadline is February 28th, 2022.
-    * All HEAR 2021 [datasets](hear2021-datasets.html) are now available.
-    * All HEAR pypi packages have been updated. Please run `pip3 install --upgrade heareval hearbaseline hearpreprocess`.
-    * [Recordings](https://youtube.com/playlist?list=PLZuJ3mj5mFsjB67esCQjWoCXKweyn2KVH) of NeurIPS team presentations are now available.
-    * Due to a preprocessing bug, NeurIPS 2021 results for the crema-d, gztan genre, and gztan music/speech tasks are retracted. Corrected results are forthcoming.
-  * **2021-11-29** -
-    * We will be presenting live at the NeurIPS conference. See 
-    [HEAR @ NeurIPS 2021](/hear2021-neurips-conference) for more information.
-    * Eduardo Fonseca has been added to the steering committee.
-  * **2021-09-13** -
-    * Our [leaderboard](https://neuralaudio.ai/hear2021-leaderboard.html)
-    is live, and will be updated with secret tasks and early
-    submissions.
-    * Open tasks and downstream evaluation code have been
-    [released](https://github.com/neuralaudio/hear-eval-kit/).
-  * **2021-08-24** -
-    * The final submission deadline is **October 31st 2021**.
-    * Leaderboard will now be a rolling update and you can [submit
-    multiple versions](https://forms.gle/Bz9n7e3LNSK6X4mt7).
-    * Release of the [HEAR Baseline model](https://github.com/neuralaudio/hear-baseline)
-    * Release a validator tool for participants to check their submissions follow the
-    [common API](#common-api): [HEAR Validator](https://github.com/neuralaudio/hear-validator)
-    * `Tensor` return types of `get_timestamp_embeddings` are clarified.
-  * **2021-07-16** -
-    * PMLR will host a HEAR special issue.
-    * Some clarifications to the NSynth task are added. See the specific
-      [changelog](https://github.com/neuralaudio/neuralaudio.github.io/pull/15)
-      for a detailed list of updates.
-  * **2021-06-29** -
-    * All three [open tasks](#open-tasks) have been announced.
-    * The API has been simplified and clarified. For a detailed set
-    of updates, please see find the specific
-    [changelog](https://github.com/neuralaudio/neuralaudio.github.io/pull/10/).
-    * Google Cloud Platform has generously donated compute resources
-    for our leaderboard. Low resource participants, please reach
-    out for GPU sponsorship!
-    * The first leaderbord is *ready for submission*. Please submit
-    [here](https://docs.google.com/forms/d/e/1FAIpQLSfSz7l4Aohg4JD_TTqKcIOkejM_ws0ho4kfD2nDeKQ4YWz5RA/viewform?usp=send_form).
-
-<p></p>
-
-To stay up-to-date, we will be making announcements in several places:
-* Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
+To stay up-to-date with HEAR, please consider following:
 * Our [twitter](https://twitter.com/neuralaudio) account.
+* Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
 
 ## Sponsors
 We are proud to announce that HEAR 2021 was sponsored by Google and
