@@ -5,8 +5,7 @@ subtitle: Special Journal Issue
 #date: 2021-05-09
 ---
 
-## Summary
-
+## Call for Submissions
 
 PMLR will publish a HEAR special issue. Everyone is encouraged to
 submit, including submissions that were not part of the NeurIPS
