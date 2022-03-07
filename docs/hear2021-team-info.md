@@ -1,14 +1,16 @@
 ---
 layout: hear2021-team-info
-title: HEAR 2021
-subtitle: Team Information
-toc_title: Teams
+title: HEAR 2021 Submitted Models
+toc_title: Models
 #date: 2021-05-09
 ---
 <div>
 
-<p>Recordings of team presentations at NeurIPS 2021 are available
-<a
+<p>Audio representation models submitted to HEAR 2021 are available
+on <a
+href="https://github.com/neuralaudio/hear2021-submitted-models">github</a>
+and described below.  Recordings of team presentations at NeurIPS
+2021 are available <a
 href="https://youtube.com/playlist?list=PLZuJ3mj5mFsjB67esCQjWoCXKweyn2KVH">for
 viewing</a>.</p>
 

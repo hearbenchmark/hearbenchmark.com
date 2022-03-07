@@ -21,8 +21,7 @@ abstract: >
   a <a href="hear2021-rules.html">common API</a> that is general-purpose, open-source, and freely
   available to use.
   <br><br>
-  <a href="hear2021-pmlr.html">PMLR</a> will publish a HEAR special issue,
-  with submission deadline of February 28th, 2022.
+  <a href="hear2021-pmlr.html">PMLR</a> will publish a HEAR special issue. Submissions to the HEAR PMLR special issue are currently open.
 ---
 
 ## Introduction
