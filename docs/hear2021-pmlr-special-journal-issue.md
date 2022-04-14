@@ -7,27 +7,21 @@ subtitle: Special Journal Issue
 
 ## Call for Submissions
 
-PMLR will publish a HEAR special issue. Everyone is encouraged to
-submit, including submissions that were not part of the NeurIPS
-2021 challenge.
+What audio embedding approach generalizes best to a wide range of
+downstream tasks across a variety of everyday domains without
+fine-tuning?
 
-The submission deadline is February 28th, 2022. Please [email
-us](mailto:deep at neuralaudio dot ai) if you need an extension.
+The Holistic Evaluation of Audio Representations (HEAR) PMLR special
+issue solicits article submissions on the topic of holistic evaluation
+of audio representations. Submissions are strongly encouraged to
+present results on the 19 HEAR [shared tasks](hear2021-datasets),
+and possibly use the models submitted to the HEAR 2021 NeurIPS
+challenge.
+
+The submission deadline is June 30th, 2022. Submissions are open
+on
+[OpenReview](https://openreview.net/group?id=NeurIPS.cc/2021/Workshop/HEAR-PMLR&referrer=%5BHomepage%5D(%2F)).
 There is no page limit.
-
-Besides evaluating on the HEAR 2021 [tasks](hear2021-datasets) using
-[heareval](https://github.com/neuralaudio/hear-eval-kit/), we
-encourage submissions to do broader experimental work. For example:
-
-* experiment with larger hyperparameter grids and more grid points
-* ablation studies
-* measure model variance under different weight initializations
-* augment the training data
-
-If you make any interesting progress on evaluation methodology, we
-encourage you to [submit a
-PR](https://github.com/neuralaudio/hear-eval-kit/pulls) so that
-other submitters can benefit from your contributions.
 
 ## PMLR Journal Editors
 

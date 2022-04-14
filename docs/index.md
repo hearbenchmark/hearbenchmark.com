@@ -37,12 +37,12 @@ The main contributions of HEAR 2021 are:
 * and [evaluation code](https://github.com/neuralaudio/hear-eval-kit/).
 
 For detailed information about HEAR 2021, please see our upcoming
-<a href="assets/hear2021.pdf">journal article</a>, to appear in the
-PMLR Issue on NeurIPS 2021 Competitions.
+<a href="https://arxiv.org/abs/2203.03022">journal article</a>, to
+appear in the PMLR Issue on NeurIPS 2021 Competitions.
 
 PMLR will also publish a special issue for HEAR 2021. <a
 href="hear2021-pmlr.html">Submissions to the HEAR PMLR</a> special
-issue are open until 2022-03-15, even if you did not participate
+issue are open until 2022-06-30, even if you did not participate
 in NeurIPS 2021.
 
 Recordings of team presentations at NeurIPS 2021 are available for <a href="https://youtube.com/playlist?list=PLZuJ3mj5mFsjB67esCQjWoCXKweyn2KVH">viewing</a>.
