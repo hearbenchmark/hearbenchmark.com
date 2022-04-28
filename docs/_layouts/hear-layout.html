@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<article>
+    <div class="Margins">
+        <div class="center">
+            {% if page.banner %}
+            <div id="banner-image">
+                <img src="{{ site.baseurl }}/assets/img/hear-benchmark-logo.jpg">
+            </div>
+            {% endif %}
+            <h1 class="LatexTitle">
+                {{ page.title }}
+                {%- if page.subtitle -%}
+                    <br/> {{ page.subtitle }}
+                {%- endif -%}
+            </h1>
+            <p class="LatexDate">
+                {{ page.date | date: '%B %-d, %Y' }}
+            </p>
+            {%- if page.abstract -%}
+            <div class="AbstractMargins">
+                <h3 class="LatexAbstract">
+                    Abstract
+                </h3>
+                <p class="LatexAbstractText">{{page.abstract}}</p>
+            </div>
+            {%- endif -%}
+
+        </div>
+
+        <div class="divider"></div>
+
+        {% if page.summary %}
+        <div>
+            <p><b>Summary</b></p>
+            {% include toc.html html=content h_max=2 id="hear-toc"%}
+        </div>
+        {% endif %}
+
+        {{ content }}
+    </div>
+</article>
+
+<link rel="stylesheet" href="{{ "/assets/hear2021.css" | prepend: site.baseurl | prepend: site.url }}">
