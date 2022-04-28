@@ -1,19 +1,19 @@
 #- name: Home
-#  link: 
+#  link:
 #- name: Intro
 #  link: hear2021-holistic-evaluation-of-audio-representations.html
-- name: Rules
-  link: hear2021-rules.html
-- name: Data
-  link: hear2021-datasets.html
+#- name: Rules
+#  link: hear2021-rules.html
+- name: Tasks
+  link: hear-datasets.html
 - name: Paper
   link: https://arxiv.org/abs/2203.03022
-- name: Results
-  link: hear2021-results.html
+#- name: Results
+#  link: hear2021-results.html
 #- name: Teams
 #  link: hear2021-team-info.html
-- name: PMLR
-  link: hear2021-pmlr-special-journal-issue.html
+#- name: PMLR
+#  link: hear2021-pmlr-special-journal-issue.html
 #- name: Discuss
 #  link: /discuss.neuralaudio.ai/
 #- name: Github
