@@ -1,0 +1,14 @@
+- name: Speech Commands
+  info: 'Classification of known spoken commands, with additional
+    categories for silence and unknown commands. This task was
+    described in <a href="https://arxiv.org/abs/1804.03209">Speech
+    Commands: A Dataset for Limited-Vocabulary Speech Recognition</a>.
+    As per the literature, we measure accuracy. We also provide scores for a 5-hour subset.'
+- name: NSynth Pitch
+  info: 'NSynth Pitch is a HEAR 2021 open task and is a multiclass
+    classification problem. The goal of this task is to classify
+    instrumental sounds from the
+    <a href="https://magenta.tensorflow.org/datasets/nsynth">NSynth
+    Dataset</a> into one of 88 pitches. Results for this task are measured
+    by pitch accuracy as well as chroma accuracy. The chroma accuracy metric
+    only considers the pitch class and disregards octave errors.'

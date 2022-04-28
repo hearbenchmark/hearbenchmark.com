@@ -34,3 +34,13 @@ article ul li {
     color: #fff;
     text-decoration: none;
 }
+
+/* For Dataset Page */
+.accordion h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.accordion {
+    padding-bottom: 25px;
+}
