@@ -1,4 +1,4 @@
-title: HEAR 2021
+title: HEAR Benchmark
 email: deep@neuralaudio.ai
 description: >- # this means to ignore newlines until "baseurl:"
   Neural Audio AI research and HEAR 2021 NeurIPS audio representation
@@ -10,7 +10,7 @@ baseurl: "/hearbenchmark.github.io" # the subpath of your site, e.g. /blog
 # Build settings
 #theme: default
 # Original
-remote_theme: turian/latex
+remote_theme: jorshi/latex
 #remote_theme: vosaul/latex
 # Add favicon and later some style tweaks
 #remote_theme: turian/latexjekyll
