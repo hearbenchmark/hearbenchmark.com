@@ -19,3 +19,18 @@ article ul li {
 .bibliography p {
     font-size: medium;
 }
+
+#banner-image {
+    padding: 50px;
+}
+
+#banner-image img {
+    width: 70%;
+    display: block;
+    margin: auto
+}
+
+#button-group a {
+    color: #fff;
+    text-decoration: none;
+}
