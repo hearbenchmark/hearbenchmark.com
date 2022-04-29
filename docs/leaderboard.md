@@ -1,7 +1,6 @@
 ---
-layout: hear-leaderboard
-
+layout: hear-layout-wide
 title: HEAR Leaderboard
-banner: false
-#date: 2021-09-06
 ---
+
+{% include leaderboard-table.html %}
