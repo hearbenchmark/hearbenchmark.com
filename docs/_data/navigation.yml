@@ -6,10 +6,16 @@
 #  link: hear2021-rules.html
 - name: Tasks
   link: hear-datasets.html
-- name: Leaderboard
-  link: leaderboard.html
+- name: Code
+  link:
 - name: Paper
   link: https://arxiv.org/abs/2203.03022
+- name: Leaderboard
+  link: leaderboard.html
+- name: Submit
+  link:
+- name: Challenge
+  link: https://neuralaudio.ai/hear.html
 #- name: Results
 #  link: hear-leaderboard.html
 #- name: Teams
