@@ -10,7 +10,7 @@ banner: false
 <script>
 
     //var csv is the CSV file with headers
-    function csvJSON(csv){
+    function csvJSON(csv, precision=4){
 
       var lines=csv.split("\n");
       var result = [];
@@ -24,7 +24,12 @@ banner: false
           var currentline=lines[i].split(",");
 
           for(var j=0;j<headers.length;j++){
-              obj.push(currentline[j]);
+              let value = parseFloat(currentline[j]);
+              if (!isNaN(value)) {
+                obj.push(value.toPrecision(precision));
+              } else {
+                obj.push(currentline[j]);
+              }
           }
 
           result.push(obj);
@@ -40,6 +45,7 @@ banner: false
 
     const leaderboard_url = '{{ "/assets/leaderboard.csv" | prepend: site.baseurl | prepend: site.url }}';
     let leaderboard_data = {};
+
     $(document).ready(function() {
         console.log(leaderboard_url);
         $.get(leaderboard_url, function(data) {
@@ -51,10 +57,27 @@ banner: false
                 columns.push({title: leaderboard_data.headers[i]});
             }
 
-            console.log(columns);
-            $("#example").DataTable({
+            let table = $('#leaderboard-table');
+            table.addClass("compact");
+
+            let t = table.DataTable({
                 data: leaderboard_data.data,
-                columns: columns
+                columns: columns,
+                searching: false,
+                paging: false,
+                scrollX: true,
+                scrollCollapse: true,
+                fixedColumns: {
+                    left: 1
+                },
+                // "info": false,
+                "order": [[1, 'desc' ]],
+                "columnDefs": [
+                    {
+                        "targets": 0,
+                        "className": "dt-left dt-bold"
+                    },
+                ]
             });
 
         });
@@ -62,9 +85,10 @@ banner: false
     });
 </script>
 
-<table id="example" class="display" width="100%"></table>
+<table id="leaderboard-table" class="stripe row-border order-column cell-border hear2021-leaderboard" style="width:100%"></table>
 
 <script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/4.0.2/js/dataTables.fixedColumns.min.js"></script>
 
 <!-- Bootstrap Datatables (Uncomment to try this style and comment out imports above)
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
@@ -78,4 +102,4 @@ banner: false
 <!-- Custom CSS & JS -->
 <link rel="stylesheet" href="{{ "/assets/hear2021.css" | prepend: site.baseurl | prepend: site.url }}">
 <link rel="stylesheet" href="{{ "/assets/hear-leaderboard.css" | prepend: site.baseurl | prepend: site.url }}">
-<script src="{{ "/assets/js/hear-results.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+<!--<script src="{{ "/assets/js/hear-results.js" | prepend: site.baseurl | prepend: site.url }}"></script>-->

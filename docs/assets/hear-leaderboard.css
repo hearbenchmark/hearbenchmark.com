@@ -44,3 +44,17 @@ h3 {
     font-size: 1.8rem;
     padding-top: 30px;
 }
+
+.dt-bold {
+    font-weight: bold;
+}
+
+table.dataTable.stripe th  {
+    background-color: white;
+}
+table.dataTable.stripe tr.odd td  {
+    background-color: #F3F3F3;
+}
+table.dataTable.stripe tr.even td {
+    background-color: white;
+}
