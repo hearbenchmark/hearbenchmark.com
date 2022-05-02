@@ -1,5 +1,5 @@
 ---
-layout: hear-layout
+layout: hear-layout-wide
 title: HEAR Tasks
 ---
 

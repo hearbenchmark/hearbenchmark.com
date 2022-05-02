@@ -72,7 +72,9 @@
 <!-- Info for each task to be inserted into table -->
 <div style="display: none">
   {% for i in site.data.hear-tasks %}
-    <div id="{{ i.id }}-info" style="text-align: left;"><span>{{ i.info }}</span></div>
+    <div id="{{ i.id }}-info" style="text-align: left; max-width: 90vw;">
+      <span>{{ i.info }}</span>
+    </div>
   {% endfor %}
 </div>
 
