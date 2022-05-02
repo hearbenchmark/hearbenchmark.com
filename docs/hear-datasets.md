@@ -18,4 +18,4 @@ all audio task but only at 48000Hz sampling rate. For other sampling rates
 Storage gs://hear2021-archive/tasks/ or AWS s3://hear2021-archive/tasks/ 
 (with CLI flag <tt>--requester-payer requester</tt>).
 
-{% include dataset-accordian.html %}
+{% include tasks-table.html %}

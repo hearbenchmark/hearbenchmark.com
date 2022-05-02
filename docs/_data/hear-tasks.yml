@@ -1,10 +1,28 @@
-- name: Speech Commands
+- name: Speech Commands 5hr
+  id: speech-commands-5hr
+  open: true
+  embed-type: S
+  predictor-type: C
+  split-method: TVT
+  duration: 1.0
+  num-clips: 22890
+  metric: Accuracy
+  novel: true
   info: 'Classification of known spoken commands, with additional
     categories for silence and unknown commands. This task was
     described in <a href="https://arxiv.org/abs/1804.03209">Speech
     Commands: A Dataset for Limited-Vocabulary Speech Recognition</a>.
-    As per the literature, we measure accuracy. We also provide scores for a 5-hour subset.'
-- name: NSynth Pitch
+    As per the literature, we measure accuracy.'
+- name: NSynth Pitch 5hr
+  id: nsynth-pitch-5hr
+  open: true
+  embed-type: S
+  predictor-type: C
+  split-method: TVT
+  duration: 4.0
+  num-clips: 5000
+  metric: Pitch Acc.
+  novel: true
   info: 'NSynth Pitch is a HEAR 2021 open task and is a multiclass
     classification problem. The goal of this task is to classify
     instrumental sounds from the
