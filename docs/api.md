@@ -1,6 +1,6 @@
 ---
-layout: hear2021
-title: HEAR 2021 Rules
+layout: hear-layout
+title: HEAR API
 #date: 2021-05-09
 ---
 

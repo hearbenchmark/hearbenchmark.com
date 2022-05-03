@@ -21,7 +21,7 @@ HEAR consists of:
   develop new models and perform evaluation using HEAR evaluation code;
 * A leaderboard to keep track of performance on the HEAR benchmark.
 
-<div id="button-group" style="margin-top: 30px; display: flex; justify-content: center; align-items: left; gap: 12px;">
+<div id="button-group" style="margin-top: 30px; margin-bottom: 30px; display: flex; justify-content: center; align-items: left; gap: 12px;">
     <a href="{{ site.baseurl }}/hear-tasks.html" role="button" class="btn btn-primary">Tasks</a>
     <a href="#" role="button" class="btn btn-primary">Code</a>
     <a href="https://arxiv.org/abs/2203.03022" role="button" class="btn btn-primary">Paper</a>
