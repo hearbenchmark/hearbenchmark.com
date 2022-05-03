@@ -7,7 +7,7 @@
 - name: Tasks
   link: hear-tasks.html
 - name: Code
-  link:
+  link: code.html
 - name: Paper
   link: https://arxiv.org/abs/2203.03022
 - name: Leaderboard
@@ -15,7 +15,7 @@
 - name: API
   link: api.html
 - name: Submit
-  link:
+  link: submit.html
 - name: Challenge
   link: https://neuralaudio.ai/hear.html
 #- name: Results

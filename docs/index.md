@@ -23,7 +23,9 @@ HEAR consists of:
 
 <div id="button-group" style="margin-top: 30px; margin-bottom: 30px; display: flex; justify-content: center; align-items: left; gap: 12px;">
     <a href="{{ site.baseurl }}/hear-tasks.html" role="button" class="btn btn-primary">Tasks</a>
-    <a href="#" role="button" class="btn btn-primary">Code</a>
+    <a href="{{ site.baseurl }}/code.html" role="button" class="btn btn-primary">Code</a>
+    <a href="{{ site.baseurl }}/api.html" role="button" class="btn btn-primary">API</a>
+    <a href="{{ site.baseurl }}/leaderboard.html" role="button" class="btn btn-primary">Leaderboard</a>
     <a href="https://arxiv.org/abs/2203.03022" role="button" class="btn btn-primary">Paper</a>
 </div>
 
