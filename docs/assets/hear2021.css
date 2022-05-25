@@ -2,6 +2,10 @@
     margin-bottom: 5px;
 }
 
+article {
+    padding-bottom: 50px;
+}
+
 article ul li {
     margin-bottom: 4px;
     margin-top: 4px;
@@ -43,4 +47,8 @@ article ul li {
 
 .accordion {
     padding-bottom: 25px;
+}
+
+code {
+    color: #1b1818;
 }
