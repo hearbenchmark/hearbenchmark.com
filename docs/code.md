@@ -16,7 +16,14 @@ get started using the `hear-eval-kit` is available on our github page.
 [[GitHub](https://github.com/neuralaudio/hear-eval-kit), [PyPI](https://pypi.org/project/heareval/)]
 
 ## Data Pre-processing Code
-[hear-preprocess](https://github.com/neuralaudio/hear-preprocess) 
+Individuals who would like to regenerate the HEAR benchmark tasks themselves can use `hear-preprocess`.
+However, all the HEAR benchmark tasks are [available to download]({{ site.baseurl }}/hear-tasks.html#downloading) 
+in a common pre-preprocessed format with human-readable metadata.
+The `hear-preprocess` package was used to process HEAR datasets into 
+this format. It can also easily be extended to process new datasets beyond those included
+in the HEAR benchmark. 
+
+[[GitHub](https://github.com/neuralaudio/hear-preprocess), [PyPI](https://pypi.org/project/hearpreprocess/)]
 
 - Evaluation: [hear-eval-kit](https://github.com/neuralaudio/hear-eval-kit)
 - Dataset Pre-processing: [hear-preprocess](https://github.com/neuralaudio/hear-preprocess)
