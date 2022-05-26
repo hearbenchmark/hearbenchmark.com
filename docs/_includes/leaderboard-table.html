@@ -35,7 +35,7 @@
       return data;
     }
 
-    const leaderboard_url = '{{ "/assets/leaderboard.csv" | prepend: site.baseurl | prepend: site.url }}';
+    const leaderboard_url = '{{ "/leaderboard.csv" | prepend: site.baseurl | prepend: site.url }}';
     let leaderboard_data = {};
 
     $(document).ready(function() {
