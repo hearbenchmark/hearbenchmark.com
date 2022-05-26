@@ -25,7 +25,17 @@ in the HEAR benchmark.
 
 [[GitHub](https://github.com/neuralaudio/hear-preprocess), [PyPI](https://pypi.org/project/hearpreprocess/)]
 
-- Evaluation: [hear-eval-kit](https://github.com/neuralaudio/hear-eval-kit)
-- Dataset Pre-processing: [hear-preprocess](https://github.com/neuralaudio/hear-preprocess)
-- Baseline Models: [hear-baseline](https://github.com/neuralaudio/hear-baseline)
-- Model Validator: [hear-validator](https://github.com/neuralaudio/hear-validator)
+## Baseline Models
+Several baseline models that implement the [common API]({{ site.baseurl }}/api.html) are
+in included the `hearbaseline` Python package. Two baseline models on the leaderboard
+are included in this repository: `wav2vec2` and `CREPE`.
+
+[[GitHub](https://github.com/neuralaudio/hear-baseline), [PyPI](https://pypi.org/project/hearbaseline/)]
+
+## Model Validator
+
+`hear-validator` provides a command-line tool to verify that an audio embedding model 
+conforms to the [common API]({{ site.baseurl }}/api.html)
+required by `hear-eval-kit`.
+
+[[GitHub](https://github.com/neuralaudio/hear-validator), [PyPI](https://pypi.org/project/hearvalidator/)]
