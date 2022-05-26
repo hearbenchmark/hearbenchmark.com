@@ -3,6 +3,9 @@ layout: hear-layout
 title: HEAR Code
 ---
 
+The following open-source Python packages were developed to support the HEAR benchmark 
+and to encourage the development new audio embedding models that are easy to share and evaluate.
+
 ## Evaluation Code
 The `hear-eval-kit` is used to evaluate audio
 embedding models on the HEAR datasets. It consists of the following functionality: 1) 
