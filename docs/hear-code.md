@@ -3,9 +3,6 @@ layout: hear-layout
 title: HEAR Code
 ---
 
-The following open-source Python packages were developed to support the HEAR benchmark 
-and to encourage the development new audio embedding models that are easy to share and evaluate.
-
 ## Evaluation Code
 The `hear-eval-kit` is used to evaluate audio
 embedding models on the HEAR datasets. It consists of the following functionality: 1) 
@@ -29,7 +26,7 @@ in the HEAR benchmark.
 [[GitHub](https://github.com/neuralaudio/hear-preprocess), [PyPI](https://pypi.org/project/hearpreprocess/)]
 
 ## Baseline Models
-Several baseline models that implement the [common API]({{ site.baseurl }}/api.html) are
+Several baseline models that implement the [common API]({{ site.baseurl }}/hear-api.html) are
 in included the `hearbaseline` Python package. Two baseline models on the leaderboard
 are included in this repository: `wav2vec2` and `CREPE`.
 
@@ -38,7 +35,7 @@ are included in this repository: `wav2vec2` and `CREPE`.
 ## Model Validator
 
 `hear-validator` provides a command-line tool to verify that an audio embedding model 
-conforms to the [common API]({{ site.baseurl }}/api.html)
+conforms to the [common API]({{ site.baseurl }}/hear-api.html)
 required by `hear-eval-kit`.
 
 [[GitHub](https://github.com/neuralaudio/hear-validator), [PyPI](https://pypi.org/project/hearvalidator/)]

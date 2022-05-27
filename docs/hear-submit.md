@@ -6,7 +6,7 @@ title: Submit to HEAR
 Submissions to the HEAR benchmark leaderboard are welcome at any time. To evaluate on 
 the HEAR benchmark you will need to:
 
-1. Develop an audio embedding model that follows the [HEAR API]({{ site.baseurl }}/api.html).
+1. Develop an audio embedding model that follows the [HEAR API]({{ site.baseurl }}/hear-api.html).
       * You may train your embedding model on any data that you want, **except** for data from 
         splits in HEAR tasks that are explicitly denoted as test splits in train/validation/test 
         dataset split setups. 
