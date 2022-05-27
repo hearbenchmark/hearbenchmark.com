@@ -10,7 +10,7 @@ in this repository](https://github.com/jorshi/hearbenchmark.github.io/issues). I
 have questions that are specific to using the [hear-eval-kit](https://github.com/neuralaudio/hear-eval-kit),
 please open a new [issue in that repository](https://github.com/neuralaudio/hear-eval-kit/issues).
 
-## How to submit your results
+## How to submit your results to the leaderboard
 
 Once you have developed an audio embedding model and evaluated it using the benchmark
 suite of tasks with the [hear-eval-kit](https://github.com/neuralaudio/hear-eval-kit),
