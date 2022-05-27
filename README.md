@@ -1,12 +1,9 @@
 # HEAR Benchmark
 
-The aim of the HEAR benchmark is to develop a general-purpose audio representation 
-that provides a strong basis for learning in a wide variety of tasks and scenarios.
-HEAR evaluates audio representations using a benchmark suite across a variety of domains,
-including speech, environmental sound, and music.
-
-This is the static site for the [HEAR Benchmark](https://neuralaudio.ai) website and
-submission repository for new entries to the HEAR leaderboard.
+This is the static site for the [HEAR Benchmark](https://jorshi.github.io/hearbenchmark.github.io/)
+website and submission repository for new entries to the HEAR leaderboard. To find out
+more about HEAR, please visit the [website](https://jorshi.github.io/hearbenchmark.github.io/)
+or read the [paper](https://arxiv.org/abs/2203.03022).
 
 If you have any questions about submitting to the HEAR benchmark please open a new [issue
 in this repository](https://github.com/jorshi/hearbenchmark.github.io/issues). If you
