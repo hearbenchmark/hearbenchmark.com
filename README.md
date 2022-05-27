@@ -32,10 +32,10 @@ submit the results here.
    git checkout -b TEAM-NAME
    ```
 
-5. Append your test score results to the file `docs/leaderboard.csv`. The test score is
+5. Append your test score results to the file `docs/leaderboard.csv`. The test scores are
    output by `hear-eval-kit` in a separate json file for
    each task. This [example google colab](https://colab.research.google.com/github/neuralaudio/hear-eval-kit/blob/main/heareval_evaluation_example.ipynb)
-   demonstrates how to run evaluation and find the final test score. You will also need
+   demonstrates how to run evaluation and find the final test scores. You will also need
    to include a model name and URL for your work in the CSV file. Your model name should
    be your team/institution name and short name describing your model, for example: HEAR Baseline.
    The included URL can be a link to a GitHub repo or paper for your work.
@@ -54,7 +54,7 @@ submit the results here.
 
 8. Issue a [pull request](https://help.github.com/articles/using-pull-requests/) (PR) 
    with title containing team name and follow the template that will appear 
-   once you opened the pull request. Within the template you will be required
+   once you open the pull request. Within the template you will be required
    to fill out details related to your submission including a brief description of your
    model and type of training data used (speech/broad/music).
 
