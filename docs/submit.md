@@ -21,8 +21,12 @@ the HEAR benchmark you will need to:
 3. Use [`hear-eval-kit`](https://github.com/neuralaudio/hear-eval-kit/) to:
       * a) Compute embeddings for all HEAR tasks using your model
       * b) Evaluate embeddings by training a shallow downstream classifier
-4. Submit your results to the leaderboard by appending them to the CSV file located in 
-   GitHub repository for this website and then submitting a pull request. 
-    * For detailed instructions on how to submit the results of your evaluation 
-      please refer to the readme on the GitHub page.
+4. Submit your results to the leaderboard by appending them to the 
+   [CSV file](https://github.com/jorshi/hearbenchmark.github.io/blob/main/docs/leaderboard.csv)
+   located in the [GitHub repository](https://github.com/jorshi/hearbenchmark.github.io)
+   for this website and then creat a pull request with the updated CSV file. Detailed 
+   submission instructions are provided in the README for the GitHub repository.
 
+<div id="button-group" style="margin-top: 30px; margin-bottom: 30px; display: flex; justify-content: center; align-items: left; gap: 12px;">
+    <a href="https://github.com/jorshi/hearbenchmark.github.io" role="button" class="btn btn-primary">Submit</a>
+</div>
