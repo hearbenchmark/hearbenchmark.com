@@ -17,6 +17,7 @@
         for (let i=1; i < lines.length; i++) {
             let obj = [];
             let currentLine = lines[i].split(",");
+            let score_sum = 0;
 
             for (let j=0; j < headers.length; j++) {
 
@@ -29,27 +30,30 @@
                 // Try to format number
                 let value = parseFloat(currentLine[j]);
                 if (!isNaN(value)) {
+                    score_sum += value;
                     obj.push(value.toPrecision(precision));
                 } else {
                     obj.push(currentLine[j]);
                 }
             }
-          result.push(obj);
-      }
+            obj.push(score_sum.toString());
+            result.push(obj);
+        }
 
-      let data = {
-          headers: headers,
-          data: result
-      }
+        // The sum of the test scores, score_sum, will be a hidden column
+        headers.push("score_sum");
+        let data = {
+            headers: headers,
+            data: result
+        }
 
-      return data;
+        return data;
     }
 
     const leaderboard_url = '{{ "/leaderboard.csv" | prepend: site.baseurl | prepend: site.url }}';
     let leaderboard_data = {};
 
     $(document).ready(function() {
-        console.log(leaderboard_url);
         $.get(leaderboard_url, function(data) {
             leaderboard_data = csvJSON(data);
 
@@ -74,12 +78,17 @@
                     left: 1
                 },
                 // "info": false,
-                "order": [[0, 'asc' ]],
+                "order": [[columns.length - 1, 'desc' ]],
                 "columnDefs": [
                     {
                         "targets": 0,
                         "className": "dt-left dt-bold"
                     },
+                    {
+                        "targets": columns.length - 1,
+                        "visible": false,
+                        "searchable": false,
+                    }
                 ]
             });
 
