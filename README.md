@@ -18,7 +18,7 @@ submit the results here.
 
 1. Create a [github](https://github.com) account
 
-2. [Fork](https://help.github.com/articles/fork-a-repo/) the [HEAR Benchmark Site](https://github.com/neuralaudio/neuralaudio.github.io/issues) repository
+2. [Fork](https://help.github.com/articles/fork-a-repo/) the [HEAR Benchmark Site](https://github.com/neuralaudio/neuralaudio.github.io) repository
 
 3. Clone this new repository into your desktop environment
 
