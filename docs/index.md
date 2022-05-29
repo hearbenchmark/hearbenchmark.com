@@ -30,10 +30,9 @@ HEAR consists of:
 </div>
 
 The HEAR benchmark was launched as a NeurIPS competition in 2021. 
-For detailed information about the HEAR 2021 competition please see the 
-[competition website](https://neuralaudio.ai/hear.html) and our upcoming 
-[journal article](https://arxiv.org/abs/2203.03022), 
-to appear in the PMLR issue on NeurIPS 2021 Competitions.
+Please see our upcoming [journal article](https://arxiv.org/abs/2203.03022), 
+to appear in the PMLR issue on NeurIPS 2021 Competitions, for more information on the
+HEAR 2021 competition.
 
 ## Call for Papers
 

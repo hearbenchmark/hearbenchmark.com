@@ -91,7 +91,7 @@ A primary goal of the HEAR benchmark is to promote the development of freely-ava
 genera-purpose audio representation models. As such, we encourage models submitted 
 to the benchmark leaderboard to be open-source, freely available, and easy-to-use. 
 We have a list of suggestions for developing an audio embedding model that supports 
-these aims, which are based on the [HEAR 2021 challenge rules](https://neuralaudio.ai/hear2021-rules.html).
+these aims, which are based on the HEAR 2021 challenge rules.
 <p></p>
 **Freely-available:**
 * Release your code as a pip3-installable package under an Apache-2.0  or
