@@ -53,7 +53,7 @@ submit the results here.
    ```
 
 8. Issue a [pull request](https://help.github.com/articles/using-pull-requests/) (PR) 
-   with title the containing your team name and follow the template that will appear 
+   with the title containing your team name and follow the template that will appear 
    once you open the pull request. Within the template you will be required
    to fill out details related to your submission including a brief description of your
    model and type of training data used (speech/broad/music).
