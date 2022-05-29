@@ -31,13 +31,12 @@ HEAR consists of:
 
 The HEAR benchmark was launched as a NeurIPS competition in 2021. 
 Please see our upcoming [journal article](https://arxiv.org/abs/2203.03022), 
-to appear in the PMLR issue on NeurIPS 2021 Competitions, for more information on the
-HEAR 2021 competition.
+to appear in the PMLR issue on NeurIPS 2021 Competitions, for more information on HEAR.
 
 ## Call for Papers
 
-PMLR will publish a special issue for the HEAR 2021 competition. <a
-href="hear2021-pmlr.html">Submissions to the HEAR PMLR</a> special issue are open until 2022-06-30, even if you did not participate in NeurIPS 2021.
+PMLR will publish a special issue for HEAR. <a
+href="hear2021-pmlr.html">Submissions to the HEAR PMLR</a> special issue are open until 2022-06-30, even if you did not participate in the NeurIPS 2021 competition.
 
 ## News
 To stay up-to-date with HEAR, please consider following:

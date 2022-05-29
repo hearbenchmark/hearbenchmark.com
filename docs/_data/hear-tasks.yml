@@ -33,7 +33,7 @@
   metric: Pitch Acc.
   novel: true
   url: https://magenta.tensorflow.org/datasets/nsynth
-  info: 'NSynth Pitch is a HEAR 2021 open task and is a multiclass
+  info: 'NSynth Pitch is a HEAR open task and is a multiclass
     classification problem. The goal of this task is to classify
     instrumental sounds from the
     <a href="https://magenta.tensorflow.org/datasets/nsynth">NSynth
@@ -51,7 +51,7 @@
   metric: Pitch Acc.
   novel: true
   url: https://magenta.tensorflow.org/datasets/nsynth
-  info: 'NSynth Pitch is a HEAR 2021 open task and is a multiclass
+  info: 'NSynth Pitch is a HEAR open task and is a multiclass
     classification problem. The goal of this task is to classify
     instrumental sounds from the
     <a href="https://magenta.tensorflow.org/datasets/nsynth">NSynth
@@ -138,7 +138,7 @@
                                  is a dataset for emotion recognition. The original dataset
                              contains audiovisual data of actors reciting sentences with one of
                              six different emotions (Anger, Disgust, Fear, Happy, Neutral and Sad).
-                 		    For HEAR 2021 we only use the audio recordings.
+                 		    For HEAR we only use the audio recordings.
                   		    As per the literature, we use 5-fold cross validation. There are 7438 clips.'
 - name: ESC-50
   id: esc-50
@@ -327,7 +327,7 @@
   info: 'This is a novel multiclass classification task derived from the
          VoxLingua107 dataset (<a href="https://interactiveaudiolab.github.io/assets/papers/DCASE2018_Kim.pdf">Valk and Alum¨ae, 2021</a>).
          The goal of the task is to identify the
-         spoken language in an audio file. For HEAR 2021 we selected the top 10 most frequent
+         spoken language in an audio file. For HEAR we selected the top 10 most frequent
          languages from the development set, which resulted in just over 5 hours of audio over 972
          audio clips.
 '
