@@ -1,0 +1,106 @@
+<!-- Regular Datatables -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script>
+    /* Convert a CSV string to Javascript Object */
+    function csvJSON(csv, precision=4){
+        let lines=csv.split("\n");
+        let result = [];
+        let linkIcon = '<i class="bi bi-box-arrow-up-right"></i>';
+
+        // Doesn't work if there are commas in the data
+        let headers=lines[0].split(",");
+
+        for (let i=1; i < lines.length; i++) {
+            let obj = [];
+            let currentLine = lines[i].split(",");
+            let score_sum = 0;
+
+            for (let j=0; j < headers.length; j++) {
+
+                // Format URL
+                if (headers[j] == "URL") {
+                    obj.push('<a href="' + currentLine[j] + '">' + linkIcon + '</a>');
+                    continue;
+                }
+
+                // Try to format number
+                let value = parseFloat(currentLine[j]);
+                if (!isNaN(value)) {
+                    score_sum += value;
+                    obj.push(value.toPrecision(precision));
+                } else {
+                    obj.push(currentLine[j]);
+                }
+            }
+            obj.push(score_sum.toString());
+            result.push(obj);
+        }
+
+        // The sum of the test scores, score_sum, will be a hidden column
+        headers.push("score_sum");
+        let data = {
+            headers: headers,
+            data: result
+        }
+
+        return data;
+    }
+
+    const leaderboard_url = '{{ "/leaderboard.csv" | prepend: site.baseurl | prepend: site.url }}';
+    let leaderboard_data = {};
+
+    $(document).ready(function() {
+        $.get(leaderboard_url, function(data) {
+            leaderboard_data = csvJSON(data);
+
+            let columns = [];
+            for (let i = 0; i < leaderboard_data.headers.length; i++)
+            {
+                columns.push({title: leaderboard_data.headers[i]});
+            }
+
+            let table = $('#leaderboard-table');
+            table.addClass("compact");
+
+            let t = table.DataTable({
+                data: leaderboard_data.data,
+                columns: columns,
+                searching: false,
+                paging: false,
+                scrollX: true,
+                scrollY: "75vh",
+                scrollCollapse: true,
+                fixedColumns: {
+                    left: 1
+                },
+                // "info": false,
+                "order": [[columns.length - 1, 'desc' ]],
+                "columnDefs": [
+                    {
+                        "targets": 0,
+                        "className": "dt-left dt-bold"
+                    },
+                    {
+                        "targets": columns.length - 1,
+                        "visible": false,
+                        "searchable": false,
+                    }
+                ]
+            });
+
+        });
+
+    });
+</script>
+
+<table id="leaderboard-table" class="stripe row-border order-column cell-border hear2021-leaderboard" style="width:100%"></table>
+
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/4.0.2/js/dataTables.fixedColumns.min.js"></script>
+
+<!-- Custom CSS & JS -->
+<link rel="stylesheet" href="{{ "/assets/hear-leaderboard.css" | prepend: site.baseurl | prepend: site.url }}">

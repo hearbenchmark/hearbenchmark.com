@@ -1,0 +1,333 @@
+- name: DCASE 2016 Task 2
+  id: dcase-2016-task-2
+  open: true
+  embed-type: T
+  predictor-type: L
+  split-method: TVT
+  duration: 120.0
+  num-clips: 72
+  metric: Onset FMS
+  novel: true
+  url: http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio
+  info: 'Adapted from <a
+         href="http://dcase.community/challenge2016/task-sound-event-detection-in-synthetic-audio">DCASE
+         2016, Task 2</a> office sound event detection. Our
+         evaluation uses different splits,
+         so the numbers cannot be directly compared
+         to previously published results. <br />
+         Postprocessing: Segments were postprocessed
+         using 250 ms median filtering. At each
+         validation step, a minimum event duration
+         of 125 or 250 ms was chosen to maximize
+         onset-only event-based F-measure (with 200ms
+         tolerance). Scores were computed using <a
+                     href="https://tut-arg.github.io/sed_eval/">sed_eval</a>.'
+- name: NSynth Pitch 5hr
+  id: nsynth-pitch-5hr
+  open: true
+  embed-type: S
+  predictor-type: C
+  split-method: TVT
+  duration: 4.0
+  num-clips: 5000
+  metric: Pitch Acc.
+  novel: true
+  url: https://magenta.tensorflow.org/datasets/nsynth
+  info: 'NSynth Pitch is a HEAR 2021 open task and is a multiclass
+    classification problem. The goal of this task is to classify
+    instrumental sounds from the
+    <a href="https://magenta.tensorflow.org/datasets/nsynth">NSynth
+    Dataset</a> into one of 88 pitches. Results for this task are measured
+    by pitch accuracy as well as chroma accuracy. The chroma accuracy metric
+    only considers the pitch class and disregards octave errors.'
+- name: NSynth Pitch 50hr
+  id: nsynth-pitch-50hr
+  open: true
+  embed-type: S
+  predictor-type: C
+  split-method: TVT
+  duration: 4.0
+  num-clips: 49060
+  metric: Pitch Acc.
+  novel: true
+  url: https://magenta.tensorflow.org/datasets/nsynth
+  info: 'NSynth Pitch is a HEAR 2021 open task and is a multiclass
+    classification problem. The goal of this task is to classify
+    instrumental sounds from the
+    <a href="https://magenta.tensorflow.org/datasets/nsynth">NSynth
+    Dataset</a> into one of 88 pitches. Results for this task are measured
+    by pitch accuracy as well as chroma accuracy. The chroma accuracy metric
+    only considers the pitch class and disregards octave errors.'
+- name: Speech Commands 5hr
+  id: speech-commands-5hr
+  open: true
+  embed-type: S
+  predictor-type: C
+  split-method: TVT
+  duration: 1.0
+  num-clips: 22890
+  metric: Accuracy
+  novel: true
+  url: https://arxiv.org/abs/1804.03209
+  info: 'Classification of known spoken commands, with additional
+    categories for silence and unknown commands. This task was
+    described in <a href="https://arxiv.org/abs/1804.03209">Speech
+    Commands: A Dataset for Limited-Vocabulary Speech Recognition</a>.
+    As per the literature, we measure accuracy.'
+- name: Speech Commands Full
+  id: speech-commands-full
+  open: true
+  embed-type: S
+  predictor-type: C
+  split-method: TVT
+  duration: 1.0
+  num-clips: 100503
+  metric: Accuracy
+  novel: false
+  url: https://arxiv.org/abs/1804.03209
+  info: 'Classification of known spoken commands, with additional
+    categories for silence and unknown commands. This task was
+    described in <a href="https://arxiv.org/abs/1804.03209">Speech
+    Commands: A Dataset for Limited-Vocabulary Speech Recognition</a>.
+    As per the literature, we measure accuracy.'
+- name: Beehive States
+  id: beehive-states
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: TVT
+  duration: 600.0
+  num-clips: 576
+  metric: AUCROC
+  novel: false
+  url: https://arxiv.org/abs/1811.06330
+  info: 'This is a binary classification task using audio recordings
+    of two beehives. The beehives are in one of two states: a Queen-less
+    beehive, where for some reason the Queen is missing, and a normal
+    beehive. There are 930 clips in this data set, which are mostly 10 minutes long.
+    (<a href="https://arxiv.org/abs/1811.06330">Nolasco et al. 2019</a>)'
+- name: Beijing Opera Percussion
+  id: beijing-opera-percussion
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 5-fold
+  duration: 4.77
+  num-clips: 236
+  metric: Accuracy
+  novel: true
+  url: https://zenodo.org/record/1285212#.YafyDvHMJpQ
+  info: 'This is a novel audio classification task developed using the
+         <a href="https://zenodo.org/record/1285212#.YafyDvHMJpQ">Beijing
+             Opera Percussion Instrument Dataset</a>. The Beijing Opera
+         uses six main percussion instruments that can be classified into
+         four main categories: Bangu, Naobo, Daluo, and Xiaoluo. There are 236 audio clips.
+         Scores are averaged over 5-folds.'
+- name: CREMA-D
+  id: crema-d
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 5-fold
+  duration: 5.0
+  num-clips: 7438
+  metric: Accuracy
+  novel: false
+  url: https://github.com/CheyneyComputerScience/CREMA-D
+  info: '<a href="https://github.com/CheyneyComputerScience/CREMA-D">CREMA-D</a>
+                                 is a dataset for emotion recognition. The original dataset
+                             contains audiovisual data of actors reciting sentences with one of
+                             six different emotions (Anger, Disgust, Fear, Happy, Neutral and Sad).
+                 		    For HEAR 2021 we only use the audio recordings.
+                  		    As per the literature, we use 5-fold cross validation. There are 7438 clips.'
+- name: ESC-50
+  id: esc-50
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 5-fold
+  duration: 5.0
+  num-clips: 2000
+  metric: Accuracy
+  novel: false
+  url: https://github.com/karoldvl/ESC-50
+  info: 'This is a multiclass classification task on environmental sounds.
+    The <a href="https://github.com/karoldvl/ESC-50">ESC-50</a> dataset is a
+    collection of 2000 environmental sounds organized into 50 classes.
+    Scores are averaged over 5 folds. (The folds are predefined in the original dataset.)'
+- name: FSD50K
+  id: fsd50k
+  open: false
+  embed-type: S
+  predictor-type: L
+  split-method: TVT
+  duration: 0.3-30.0
+  num-clips: 51185
+  metric: mAP
+  novel: false
+  url: http://arxiv.org/abs/2010.00475
+  info: 'FSD50K is a multilabel task (<a href="http://arxiv.org/abs/2010.00475">Fonseca et al., 2020</a>).
+    This dataset contains
+    over 100 hours of human-labeled sound events from <a href="https://freesound.org/">Freesound</a>).
+    Each of the approximately 51k audio clips is labeled using one or more of 200 classes
+    from the AudioSet Ontology, encompassing environmental sounds, speech, and music.
+    Unlike the other datasets, for FSD50K scene embeddings we did not alter the audio
+    clip length. Each clip is between 0.3 and 30 seconds long. We use the predefined
+    train/val/eval split. Evaluation is done using mean average precision (mAP).'
+- name: Gunshot Triangulation
+  id: gunshot-trangulation
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 7-fold
+  duration: 1.5
+  num-clips: 88
+  metric: Accuracy
+  novel: true
+  url: https://datadryad.org/stash/dataset/doi:10.5061/dryad.wm37pvmkc
+  info: 'Gunshot triangulation is a novel resource multiclass classification task that utilizes a
+    unique dataset: gunshots recorded in an open field using iPod Touch
+    devices (<a href="https://datadryad.org/stash/dataset/doi:10.5061/dryad.wm37pvmkc">Cooper and Shaw, 2020</a>).
+    This data consist of 22 shots from 7 different firearms,
+    for a total of 88 audio clips, the smallest dataset in HEAR. Each shot is recorded using four
+    different iPod Touches, located at different distances from the shooter. The goal of this
+    task is to classify audio by the iPod Touch that recorded it, i.e., to identify the location of
+    the microphone. The dataset was split into 7 different folds, where each firearm belonged
+    to only one fold. Results are averaged over each fold.'
+- name: GTZAN Genre
+  id: gtzan-genre
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 10-fold
+  duration: 30.0
+  num-clips: 1000
+  metric: Accuracy
+  novel: false
+  url: https://doi.org/10.1109/TSA.2002.800560
+  info: 'The GTZAN Genre Collection (<a href="https://doi.org/10.1109/TSA.2002.800560">Tzanetakis and Cook, 2002</a>) is a dataset
+         of 1000 audio tracks (each 30 seconds in duration) that are categorized into ten genres (100
+         tracks per genre). The task is multiclass classification. As per the literature, scores are
+         averaged over 10 folds. However, we don’t used the corrected artist-conditional splits from
+         (<a href="http://arxiv.org/abs/1306.1461">Sturm, 2013</a>).'
+- name: GTZAN Music Speech
+  id: gtzan-music-speech
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 10-fold
+  duration: 30.0
+  num-clips: 128
+  metric: Accuracy
+  novel: false
+  url: http://marsyas.info/downloads/datasets.html#music-speech
+  info: '<a href="http://marsyas.info/downloads/datasets.html#music-speech">GTZAN Music Speech</a>
+    is a binary classification task, where the goal is to distinguish between music and speech.
+     The dataset consists of 120 tracks (each 30 seconds in duration) and each class
+     (music/speech) has 60 examples.'
+- name: LibriCount
+  id: libricount
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 5-fold
+  duration: 5.0
+  num-clips: 5720
+  metric: Accuracy
+  novel: false
+  url: https://doi.org/10.5281/zenodo.1216072
+  info: 'LibriCount is a multiclass speaker count identification task (<a href="https://doi.org/10.5281/zenodo.1216072">St&#246;ter et al.,
+         2018b</a>). The dataset contains audio of a simulated cocktail party environment with between
+         0 to 10 speakers. The goal of this task is to classify how many speakers are present in each
+         of the recordings. Following <a href="https://arxiv.org/abs/1712.04555">St&#246;ter et al. (2018a)</a>, we treat this as a classification, not
+         regression, problem.'
+- name: MAESTRO 5hr
+  id: maestro-5hr
+  open: false
+  embed-type: T
+  predictor-type: L
+  split-method: 5-fold
+  duration: 120.0
+  num-clips: 185
+  metric: Onset FMS
+  novel: true
+  url: https://arxiv.org/abs/1810.12247
+  info: 'This is a novel music transcription task adapted from MAESTRO. For
+         HEAR, we created a subsampled version that includes 5 hours of training and
+         validation audio, in 120 second clips. To evaluate submissions, a shallow transcription model was
+         trained on timestamp-based embeddings provided by the participant models.
+         <br />
+         We use note onset FMS and note onset with offset FMS for evaluation, as per the
+         original MAESTRO paper (<a href="https://arxiv.org/abs/1810.12247">Hawthorne et al., 2019</a>) and the preceding Onsets and Frames
+         paper (<a href="https://arxiv.org/abs/1710.11153">Hawthorne et al., 2018</a>).
+         <br />
+         Note onset measures the ability of the model to estimate note onsets with 50 ms tolerance
+         and ignores offsets. Note onset w/ offset includes onsets as well as requires note duration
+         within 20% of ground truth or within 50 ms, whichever is greater.'
+- name: Mridangam Stroke
+  id: mridangam-stroke
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 5-fold
+  duration: 0.81
+  num-clips: 6977
+  metric: Accuracy
+  novel: true
+  url: https://doi.org/10.1109/ICASSP.2013.6637633
+  info: 'We used the Mridangam Stroke Dataset (<a href="https://doi.org/10.1109/ICASSP.2013.6637633">Anantapadmanabhan et al., 2013</a>)
+    for two novel multiclass classification tasks: Stroke classification and
+    Tonic classification. The Mridingam is a pitched percussion instrument used
+    in carnatic music, which is a sub-genre of Indian classical music. This dataset comprises 10
+    different strokes played on Mridingams with 6 different tonics.'
+- name: Mridangam Tonic
+  id: mridangam-tonic
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 5-fold
+  duration: 0.81
+  num-clips: 6977
+  metric: Accuracy
+  novel: true
+  url: https://doi.org/10.1109/ICASSP.2013.6637633
+  info: 'We used the Mridangam Stroke Dataset (<a href="https://doi.org/10.1109/ICASSP.2013.6637633">Anantapadmanabhan et al., 2013</a>)
+    for two novel multiclass classification tasks: Stroke classification and
+    Tonic classification. The Mridingam is a pitched percussion instrument used
+    in carnatic music, which is a sub-genre of Indian classical music. This dataset comprises 10
+    different strokes played on Mridingams with 6 different tonics.'
+- name: Vocal Imitations
+  id: vocal-imitations
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 3-fold
+  duration: 11.26
+  num-clips: 5601
+  metric: mAP
+  novel: true
+  url: https://interactiveaudiolab.github.io/assets/papers/DCASE2018_Kim.pdf
+  info: 'Vocal Imitations (<a href="https://interactiveaudiolab.github.io/assets/papers/DCASE2018_Kim.pdf">Kim et al., 2018a</a>)
+    is a novel multiclass classification
+         task, where the goal is to match a vocal imitation of a sound with the sound that is being
+         imitated. The dataset contains 5601 vocal imitations of 302 reference sounds, organized by
+         AudioSet ontology. Given a vocal sound, the classification task is to retrieve the original
+         audio it is imitating.'
+- name: VoxLingua107 Top10
+  id: voxlingua
+  open: false
+  embed-type: S
+  predictor-type: C
+  split-method: 5-fold
+  duration: 18.64
+  num-clips: 972
+  metric: Accuracy
+  novel: true
+  url: https://arxiv.org/abs/2011.12998
+  info: 'This is a novel multiclass classification task derived from the
+         VoxLingua107 dataset (<a href="https://interactiveaudiolab.github.io/assets/papers/DCASE2018_Kim.pdf">Valk and Alum¨ae, 2021</a>).
+         The goal of the task is to identify the
+         spoken language in an audio file. For HEAR 2021 we selected the top 10 most frequent
+         languages from the development set, which resulted in just over 5 hours of audio over 972
+         audio clips.
+'

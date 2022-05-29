@@ -1,0 +1,86 @@
+<!-- Regular Datatables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+      let taskTable = $('#tasks-table');
+      taskTable.addClass("compact");
+
+      let table = taskTable.DataTable({
+          searching: false,
+          paging: false,
+          scrollX: true,
+          fixedColumns: {
+              left: 2
+          }
+      });
+
+      // Show/hide info
+      $('#tasks-table tbody').on('click', 'td.dt-control', function() {
+        let tr = $(this).closest('tr');
+        let row = table.row(tr);
+        let info = $("#" + tr.attr('id') + "-info");
+
+        if (row.child.isShown()) {
+            row.child.hide();
+            tr.removeClass('shown');
+        } else {
+            row.child(info.clone()).show();
+            tr.addClass('shown');
+        }
+      });
+    });
+</script>
+
+<!-- Page HTML -->
+<div style="padding-top: 25px;">
+<table id="tasks-table" class="stripe row-border order-column cell-border hear2021-leaderboard" style="width:100%;">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Task Name</th>
+      <th>Embed Type</th>
+      <th>Predictor Type</th>
+      <th>Split Method</th>
+      <th>Duration (sec)</th>
+      <th># clips</th>
+      <th>Evaluation Metric</th>
+      <th>Novel</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for i in site.data.hear-tasks %}
+      <tr id="{{ i.id }}" class="hear-open-tasks">
+        <td class="dt-control"></td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.embed-type }}</td>
+        <td>{{ i.predictor-type }}</td>
+        <td>{{ i.split-method }}</td>
+        <td>{{ i.duration }}</td>
+        <td>{{ i.num-clips }}</td>
+        <td>{{ i.metric }}</td>
+        <td>{% if i.novel %}&#10003;{% endif %}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<!-- Info for each task to be inserted into table -->
+<div style="display: none">
+  {% for i in site.data.hear-tasks %}
+    <div id="{{ i.id }}-info" style="text-align: left; max-width: 90vw;">
+      <span>{{ i.info }}</span>
+    </div>
+  {% endfor %}
+</div>
+
+
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/4.0.2/js/dataTables.fixedColumns.min.js"></script>
+
+<!-- Custom CSS & JS -->
+<link rel="stylesheet" href="{{ "/assets/hear-leaderboard.css" | prepend: site.baseurl | prepend: site.url }}">

@@ -2,6 +2,23 @@
     margin-bottom: 5px;
 }
 
+.Margins ol>li, ul>li {
+    line-height: 125%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 1024px) {
+    .Margins {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+article {
+    padding-bottom: 50px;
+}
+
 article ul li {
     margin-bottom: 4px;
     margin-top: 4px;
@@ -18,4 +35,33 @@ article ul li {
 
 .bibliography p {
     font-size: medium;
+}
+
+#banner-image {
+    padding: 50px;
+}
+
+#banner-image img {
+    width: 70%;
+    display: block;
+    margin: auto
+}
+
+#button-group a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* For Dataset Page */
+.accordion h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.accordion {
+    padding-bottom: 25px;
+}
+
+code {
+    color: #1b1818;
 }

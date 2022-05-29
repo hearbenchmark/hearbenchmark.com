@@ -4,16 +4,17 @@ layout: default
 <article>
     <div class="Margins">
         <div class="center">
-            <div style="padding-top: 50px; padding-bottom: 50px;">
-                <img src="/assets/img/hear-header-sponsor.jpg">
+            {% if page.banner %}
+            <div id="banner-image">
+                <img src="{{ site.baseurl }}/assets/img/hear-benchmark-new-bold.png">
             </div>
-            <h1 class="LatexTitle">
+            {% endif %}
+            <h1 class="LatexTitle" style="padding-top: 15px">
                 {{ page.title }}
                 {%- if page.subtitle -%}
                     <br/> {{ page.subtitle }}
                 {%- endif -%}
             </h1>
-            <!-- <p class="LatexName">{{ page.author }}</p> -->
             <p class="LatexDate">
                 {{ page.date | date: '%B %-d, %Y' }}
             </p>
@@ -29,16 +30,15 @@ layout: default
         </div>
 
         <div class="divider"></div>
-<!--        <div>-->
-<!--            {% if page.toc_title %}-->
-<!--                <p><b>{{page.toc_title}}</b></p>-->
-<!--            {% else %}-->
-<!--                <p><b>Summary</b></p>-->
-<!--            {% endif %}-->
-<!--            {% include toc.html html=content h_max=2 id="hear-toc"%}-->
-<!--        </div>-->
-        {{ content }}
 
+        {% if page.summary %}
+        <div>
+            <p><b>Summary</b></p>
+            {% include toc.html html=content h_max=2 id="hear-toc"%}
+        </div>
+        {% endif %}
+
+        {{ content }}
     </div>
 </article>
 
