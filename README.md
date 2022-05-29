@@ -23,7 +23,7 @@ submit the results here.
 3. Clone this new repository into your desktop environment
 
    ```
-   git clone https://github.com/YOUR-USERNAME/hearbenchmark.github.io
+   git clone https://github.com/YOUR-USERNAME/neuralaudio.github.io
    ```
 
 4. Create a branch using your team name
