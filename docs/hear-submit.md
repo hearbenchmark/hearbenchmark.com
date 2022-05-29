@@ -24,7 +24,7 @@ the HEAR benchmark and submit your results to the leaderboard:
 4. Submit your results to the leaderboard by appending them to the 
    [CSV file](https://github.com/neuralaudio/neuralaudio.github.io/blob/main/docs/leaderboard.csv)
    located in the [GitHub repository](https://github.com/neuralaudio/neuralaudio.github.io)
-   for this website and then creat a pull request with the updated CSV file. Detailed 
+   for this website and then create a pull request with the updated CSV file. Detailed 
    submission instructions are provided in the README for the GitHub repository.
 
 <div id="button-group" style="margin-top: 30px; margin-bottom: 30px; display: flex; justify-content: center; align-items: left; gap: 12px;">
