@@ -1,12 +1,12 @@
 # HEAR Benchmark
 
-This is the static site for the [HEAR Benchmark](https://jorshi.github.io/hearbenchmark.github.io/)
+This is the static site for the [HEAR Benchmark](https://neuralaudio.ai/)
 website and submission repository for new entries to the HEAR leaderboard. To find out
-more about HEAR, please visit the [website](https://jorshi.github.io/hearbenchmark.github.io/)
+more about HEAR, please visit the [website](https://neuralaudio.ai/)
 or read the [paper](https://arxiv.org/abs/2203.03022).
 
 If you have any questions about submitting to the HEAR benchmark please open a new [issue
-in this repository](https://github.com/jorshi/hearbenchmark.github.io/issues). If you
+in this repository](https://github.com/neuralaudio/neuralaudio.github.io/issues). If you
 have questions that are specific to using the [hear-eval-kit](https://github.com/neuralaudio/hear-eval-kit),
 please open a new [issue in that repository](https://github.com/neuralaudio/hear-eval-kit/issues).
 
@@ -18,7 +18,7 @@ submit the results here.
 
 1. Create a [github](https://github.com) account
 
-2. [Fork](https://help.github.com/articles/fork-a-repo/) the [HEAR Benchmark Site](https://github.com/jorshi/hearbenchmark.github.io) repository
+2. [Fork](https://help.github.com/articles/fork-a-repo/) the [HEAR Benchmark Site](https://github.com/neuralaudio/neuralaudio.github.io/issues) repository
 
 3. Clone this new repository into your desktop environment
 
