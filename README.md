@@ -1,8 +1,8 @@
 # HEAR Benchmark
 
-This is the static site for the [HEAR Benchmark](https://neuralaudio.ai/)
+This is the static site for the [HEAR Benchmark](https://hearbenchmark.com)
 website and submission repository for new entries to the HEAR leaderboard. To find out
-more about HEAR, please visit the [website](https://neuralaudio.ai/)
+more about HEAR, please visit the [website](https://hearbenchmark.com)
 or read the [paper](https://arxiv.org/abs/2203.03022).
 
 If you have any questions about submitting to the HEAR benchmark please open a new [issue
@@ -18,7 +18,7 @@ submit the results here.
 
 1. Create a [github](https://github.com) account
 
-2. [Fork](https://help.github.com/articles/fork-a-repo/) the [HEAR Benchmark Site](https://github.com/neuralaudio/neuralaudio.github.io) repository
+2. [Fork](https://help.github.com/articles/fork-a-repo/) the [HEAR Benchmark Site](https://github.com/neuralaudio/hear-benchmark) repository
 
 3. Clone this new repository into your desktop environment
 
