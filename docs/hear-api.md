@@ -3,7 +3,7 @@ layout: hear-layout
 title: HEAR API
 ---
 
-Leaderboard results are computed using [heareval](https://github.com/neuralaudio/hear-eval-kit/), 
+Leaderboard results are computed using [heareval](https://github.com/hearbenchmark/hear-eval-kit/), 
 which requires that models follow a common API.
 
 * Your model must be able to produce two kinds of embeddings:
@@ -12,8 +12,8 @@ which requires that models follow a common API.
     * **Scene embeddings**: return a single embedding for a entire audio clip.
 
 To help you develop a model that follows the  common API, see the 
-[HEAR validator](https://github.com/neuralaudio/hear-validator). 
-We also provide a [baseline](https://github.com/neuralaudio/hear-baseline) using 
+[HEAR validator](https://github.com/hearbenchmark/hear-validator). 
+We also provide a [baseline](https://github.com/hearbenchmark/hear-baseline) using 
 the HEAR API, for example purposes.
 
 <hr />
