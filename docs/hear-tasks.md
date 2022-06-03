@@ -23,7 +23,7 @@ For all tasks except FSD50k, clips were standardized to one duration using paddi
 ## Downloading
 
 Datasets were all preprocessed and normalized to a common human-readable format using 
-<a href="https://github.com/neuralaudio/hear-preprocess">hearpreprocess</a>. They
+<a href="https://github.com/hearbenchmark/hear-preprocess">hearpreprocess</a>. They
 are available for download from our <a href="https://zenodo.org/record/5887964">Zenodo mirror</a>. 
 This has all audio tasks, but only at 48000Hz sampling rate. 
 

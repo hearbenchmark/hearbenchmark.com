@@ -6,19 +6,19 @@ more about HEAR, please visit the [website](https://hearbenchmark.com)
 or read the [paper](https://arxiv.org/abs/2203.03022).
 
 If you have any questions about submitting to the HEAR benchmark please open a new [issue
-in this repository](https://github.com/neuralaudio/hear-benchmark/issues). If you
-have questions that are specific to using the [hear-eval-kit](https://github.com/neuralaudio/hear-eval-kit),
-please open a new [issue in that repository](https://github.com/neuralaudio/hear-eval-kit/issues).
+in this repository](https://github.com/hearbenchmark/hear-benchmark/issues). If you
+have questions that are specific to using the [hear-eval-kit](https://github.com/hearbenchmark/hear-eval-kit),
+please open a new [issue in that repository](https://github.com/hearbenchmark/hear-eval-kit/issues).
 
 ## How to submit your results to the leaderboard
 
 Once you have developed an audio embedding model and evaluated it using the benchmark
-suite of tasks with the [hear-eval-kit](https://github.com/neuralaudio/hear-eval-kit),
+suite of tasks with the [hear-eval-kit](https://github.com/hearbenchmark/hear-eval-kit),
 submit the results here.
 
 1. Create a [github](https://github.com) account
 
-2. [Fork](https://help.github.com/articles/fork-a-repo/) the [HEAR Benchmark Site](https://github.com/neuralaudio/hear-benchmark) repository
+2. [Fork](https://help.github.com/articles/fork-a-repo/) the [HEAR Benchmark Site](https://github.com/hearbenchmark/hear-benchmark) repository
 
 3. Clone this new repository into your desktop environment
 
