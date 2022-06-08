@@ -42,3 +42,19 @@ href="hear2021-pmlr.html">Submissions to the HEAR PMLR</a> special issue are ope
 To stay up-to-date with HEAR, please consider following:
 * Our [twitter](https://twitter.com/neuralaudio) account.
 * Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
+
+## Organizing Team
+Joseph Turian and Jordie Shier and Bhiksha Raj and Björn W. Schuller
+and Christian James Steinmetz and Colin Malloy and George Tzanetakis
+and Gissel Velarde and Kirk McNally and Max Henry and Nicolas Pinto
+and Yonatan Bisk and Gyanendra Das and Humair Raj Khan and Camille
+Noufi and Dorien Herremans and Eduardo Fonseca and Jesse Engel and
+Justin Salamon and Philippe Esling and Pranay Manocha and
+Shinji Watanabe and Zeyu Jin
+
+You can learn more about the committee [here](hear-committee-members).
+
+## Sponsors
+HEAR was sponsored by Google and all evaluations conducted
+as a part of the 2021 NeurIPS challenge were performed on 
+Google Cloud Platform. 
