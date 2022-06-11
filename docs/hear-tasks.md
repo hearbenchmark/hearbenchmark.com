@@ -18,7 +18,7 @@ Summary the 19 evaluation tasks in the HEAR Benchmark.
 
 **Note on clip duration**: 
 
-For all tasks except FSD50k, clips were standardized to one duration using padding or trimming, typically the 95th percentile length in the original corpus.
+For all tasks except FSD50K, clips were standardized to one duration using padding or trimming, typically the 95th percentile length in the original corpus.
 
 ## Downloading
 
