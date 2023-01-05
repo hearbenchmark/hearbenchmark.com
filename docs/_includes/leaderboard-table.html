@@ -51,9 +51,17 @@
     }
 
     const leaderboard_url = '{{ "/leaderboard.csv" | prepend: site.baseurl | prepend: site.url }}';
+    const model_url = '{{ "/models.json" | prepend: site.baseurl | prepend: site.url }}';
     let leaderboard_data = {};
 
     $(document).ready(function() {
+        $('#model-table').DataTable({
+            ajax: model_url,
+            columns: [
+                { data: "team" }
+            ]
+        });
+
         $.get(leaderboard_url, function(data) {
             leaderboard_data = csvJSON(data);
 
@@ -98,6 +106,8 @@
 </script>
 
 <table id="leaderboard-table" class="stripe row-border order-column cell-border hear2021-leaderboard" style="width:100%"></table>
+
+<table id="model-table" class="stripe row-border order-column cell-border hear2021-leaderboard" style="width:100%"></table>
 
 <script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/fixedcolumns/4.0.2/js/dataTables.fixedColumns.min.js"></script>
