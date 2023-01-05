@@ -1,0 +1,55 @@
+<!-- Assumes datatables & ajax is already loaded -->
+<script>
+    $(document).ready(function() {
+        let taskTable = $('#models-table');
+        taskTable.addClass("compact");
+
+        let table = taskTable.DataTable({
+            searching: false,
+            paging: false,
+            scrollX: true,
+            fixedColumns: {
+                left: 2
+            }
+        });
+    });
+</script>
+
+<!-- Page HTML -->
+<div style="padding-top: 25px;">
+    <table id="models-table" class="stripe row-border order-column cell-border hear2021-leaderboard" style="width:100%;">
+      <thead>
+        <tr>
+          <th>Team Name</th>
+          <th>Model</th>
+          <th>Authors</th>
+          <th>Model URL</th>
+          <th>Paper URL</th>
+          <th>Pre-train Speech</th>
+          <th>Pre-train Broad</th>
+          <th>Pre-train Music</th>
+          <th>Num M Params</th>
+          <th>Scene Dims</th>
+          <th>Timestamp Dims</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        {% for i in site.data.hear-models %}
+          <tr>
+            <td>{{ i.team }}</td>
+            <td>{{ i.model }}</td>
+            <td>{{ i.authors }}</td>
+            <td><a href="{{ i.model_url }}"><i class="bi bi-box-arrow-up-right"></i></a></td>
+            <td><a href="{{ i.paper_url }}"><i class="bi bi-box-arrow-up-right"></i></a></td>
+            <td>{% if i.train_speech %}&#10003;{% endif %}</td>
+            <td>{% if i.train_broad %}&#10003;{% endif %}</td>
+            <td>{% if i.train_music %}&#10003;{% endif %}</td>
+            <td>{{ i.num_params }}</td>
+            <td>{{ i.scene_dim }}</td>
+            <td>{{ i.timestamp_dim }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>

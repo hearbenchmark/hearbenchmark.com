@@ -1,0 +1,11 @@
+- team: CP-JKU
+  model: CP-JKU mn04_as (e1+l)
+  authors: Florian Schmid, Khaled Koutini, Gerhard Widmer
+  model_url: https://github.com/fschmid56/EfficientAT_HEAR
+  paper_url: https://arxiv.org/pdf/2211.04772.pdf
+  train_speech: false
+  train_broad: true
+  train_music: false
+  num_params: 0.983
+  scene_dim: 911
+  timestamp_dim: 911
