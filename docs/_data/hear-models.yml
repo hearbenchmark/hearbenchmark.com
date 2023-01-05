@@ -9,6 +9,7 @@
   num_params: 0.983
   scene_dim: 911
   timestamp_dim: 911
+  date: Jan 2023
 - team: CP-JKU
   model: CP-JKU mn40_as (e1+l+all_se)
   authors: Florian Schmid, Khaled Koutini, Gerhard Widmer
@@ -20,3 +21,4 @@
   num_params: 68.43
   scene_dim: 8423
   timestamp_dim: 8423
+  date: Jan 2023
