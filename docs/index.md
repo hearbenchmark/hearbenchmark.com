@@ -40,7 +40,7 @@ href="hear2021-pmlr.html">Submissions to the HEAR PMLR</a> special issue are ope
 
 ## News
 To stay up-to-date with HEAR, please consider following:
-* Our [twitter](https://twitter.com/neuralaudio) account.
+* Our [twitter](https://twitter.com/hearbenchmark) account.
 * Our low-volume announcement [mailing list](http://eepurl.com/hwrhrz).
 
 ## Organizing Team
