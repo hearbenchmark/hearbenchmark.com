@@ -22,7 +22,7 @@ HEAR consists of:
 * A leaderboard to keep track of performance on the HEAR benchmark.
 
 <div id="button-group" style="margin-top: 30px; margin-bottom: 30px; display: flex; justify-content: center; align-items: left; gap: 12px;">
-    <a href="{{ site.baseurl }}/hear-tasks.html" role="button" class="btn btn-primary">Tasks</a>
+    <a href="{{ site.baseurl }}/hear-tasks.html" role="button" class="btn btn-primary">Tasks + Data</a>
     <a href="{{ site.baseurl }}/hear-code.html" role="button" class="btn btn-primary">Code</a>
     <a href="{{ site.baseurl }}/hear-api.html" role="button" class="btn btn-primary">API</a>
     <a href="{{ site.baseurl }}/hear-leaderboard.html" role="button" class="btn btn-primary">Leaderboard</a>
