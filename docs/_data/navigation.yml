@@ -1,4 +1,4 @@
-- name: Tasks
+- name: Tasks + Data
   link: hear-tasks.html
 - name: Code
   link: hear-code.html
