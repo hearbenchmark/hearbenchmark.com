@@ -22,11 +22,11 @@ the HEAR benchmark and submit your results to the leaderboard:
       * a) Compute embeddings for all HEAR tasks using your model
       * b) Evaluate embeddings by training a shallow downstream classifier
 4. Submit your results to the leaderboard by appending them to the 
-   [CSV file](https://github.com/hearbenchmark/hear-benchmark/blob/main/docs/leaderboard.csv)
-   located in the [GitHub repository](https://github.com/hearbenchmark/hear-benchmark)
+   [CSV file](https://github.com/hearbenchmark/hearbenchmark.com/blob/main/docs/leaderboard.csv)
+   located in the [GitHub repository](https://github.com/hearbenchmark/hearbenchmark.com)
    for this website and then create a pull request with the updated CSV file. Detailed 
    submission instructions are provided in the README for the GitHub repository.
 
 <div id="button-group" style="margin-top: 30px; margin-bottom: 30px; display: flex; justify-content: center; align-items: left; gap: 12px;">
-    <a href="https://github.com/hearbenchmark/hear-benchmark" role="button" class="btn btn-primary">Submit</a>
+    <a href="https://github.com/hearbenchmark/hearbenchmark.com" role="button" class="btn btn-primary">Submit</a>
 </div>
