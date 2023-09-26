@@ -25,6 +25,9 @@
                 if (headers[j] == "URL") {
                     obj.push('<a href="' + currentLine[j] + '">' + linkIcon + '</a>');
                     continue;
+                } else if (headers[j] == "Submission Date") {
+                    obj.push(currentLine[j]);
+                    continue;
                 }
 
                 // Try to format number
